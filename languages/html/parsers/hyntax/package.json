@@ -1,0 +1,17 @@
+{
+  "name": "@astql/html.hyntax",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "echo \"build\""
+  },
+  "peerDependencies": {
+    "@astql/html": "0.0.0",
+    "astql": "0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "hyntax": "^1.1.5"
+  }
+}

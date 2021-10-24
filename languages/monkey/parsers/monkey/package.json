@@ -1,0 +1,17 @@
+{
+  "name": "@astql/monkey.monkey",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "echo \"build\""
+  },
+  "peerDependencies": {
+    "@astql/monkey": "0.0.0",
+    "astql": "0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "@gengjiawen/monkey-wasm": "^0.7.0"
+  }
+}

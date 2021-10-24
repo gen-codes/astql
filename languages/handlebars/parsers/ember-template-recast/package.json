@@ -1,0 +1,17 @@
+{
+  "name": "@astql/handlebars.ember-template-recast",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "echo \"build\""
+  },
+  "peerDependencies": {
+    "@astql/handlebars": "0.0.0",
+    "astql": "0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "ember-template-recast": "^5.0.1"
+  }
+}

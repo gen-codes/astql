@@ -1,0 +1,572 @@
+[
+  {
+    "packageName": "@astql/css.cssom",
+    "packageFolder": "languages/css/parsers/cssom",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/css.csstree",
+    "packageFolder": "languages/css/parsers/csstree",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/css",
+    "packageFolder": "languages/css",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/css.postcss",
+    "packageFolder": "languages/css/parsers/postcss",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/css.rework",
+    "packageFolder": "languages/css/parsers/rework",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/glsl.glsl-parser",
+    "packageFolder": "languages/glsl/parsers/glsl-parser",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/glsl",
+    "packageFolder": "languages/glsl",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/go.go",
+    "packageFolder": "languages/go/parsers/go",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/go",
+    "packageFolder": "languages/go",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/graphql.graphql-js",
+    "packageFolder": "languages/graphql/parsers/graphql-js",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/graphql",
+    "packageFolder": "languages/graphql",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/graphviz",
+    "packageFolder": "languages/graphviz",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/graphviz.redot",
+    "packageFolder": "languages/graphviz/parsers/redot",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/handlebars.ember-template-recast",
+    "packageFolder": "languages/handlebars/parsers/ember-template-recast",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/handlebars.glimmer",
+    "packageFolder": "languages/handlebars/parsers/glimmer",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/handlebars.handlebars",
+    "packageFolder": "languages/handlebars/parsers/handlebars",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/handlebars",
+    "packageFolder": "languages/handlebars",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/html.angular-eslint",
+    "packageFolder": "languages/html/parsers/angular-eslint",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/html.angular",
+    "packageFolder": "languages/html/parsers/angular",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/html.htmlparser2",
+    "packageFolder": "languages/html/parsers/htmlparser2",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/html.hyntax",
+    "packageFolder": "languages/html/parsers/hyntax",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/html",
+    "packageFolder": "languages/html",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/html.parse5",
+    "packageFolder": "languages/html/parsers/parse5",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/html.posthtml",
+    "packageFolder": "languages/html/parsers/posthtml",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/html.svelte",
+    "packageFolder": "languages/html/parsers/svelte",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/icu",
+    "packageFolder": "languages/icu",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/icu.intl-messageformat-parser",
+    "packageFolder": "languages/icu/parsers/intl-messageformat-parser",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/java",
+    "packageFolder": "languages/java",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/java.java-parser",
+    "packageFolder": "languages/java/parsers/java-parser",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/js.babylon",
+    "packageFolder": "languages/js/parsers/babylon",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/js.babylon6",
+    "packageFolder": "languages/js/parsers/babylon6",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/js.babylon7",
+    "packageFolder": "languages/js/parsers/babylon7",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/js.esprima",
+    "packageFolder": "languages/js/parsers/esprima",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/js.flow",
+    "packageFolder": "languages/js/parsers/flow",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/js",
+    "packageFolder": "languages/js",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/js.typescript",
+    "packageFolder": "languages/js/parsers/typescript",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/json",
+    "packageFolder": "languages/json",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/json.json-to-ast",
+    "packageFolder": "languages/json/parsers/json-to-ast",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/json.momoa",
+    "packageFolder": "languages/json/parsers/momoa",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/lua",
+    "packageFolder": "languages/lua",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/lua.luaparse",
+    "packageFolder": "languages/lua/parsers/luaparse",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/lucene",
+    "packageFolder": "languages/lucene",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/lucene.lucene",
+    "packageFolder": "languages/lucene/parsers/lucene",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/markdown",
+    "packageFolder": "languages/markdown",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/markdown.remark",
+    "packageFolder": "languages/markdown/parsers/remark",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/mdx",
+    "packageFolder": "languages/mdx",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/mdx.mdxhast",
+    "packageFolder": "languages/mdx/parsers/mdxhast",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/monkey",
+    "packageFolder": "languages/monkey",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/monkey.monkey",
+    "packageFolder": "languages/monkey/parsers/monkey",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/ocaml",
+    "packageFolder": "languages/ocaml",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/ocaml.refmt-ml",
+    "packageFolder": "languages/ocaml/parsers/refmt-ml",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/php",
+    "packageFolder": "languages/php",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/php.php-parser",
+    "packageFolder": "languages/php/parsers/php-parser",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/protobuf",
+    "packageFolder": "languages/protobuf",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/protobuf.pbkit",
+    "packageFolder": "languages/protobuf/parsers/pbkit",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/pug",
+    "packageFolder": "languages/pug",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/pug.pug",
+    "packageFolder": "languages/pug/parsers/pug",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/python",
+    "packageFolder": "languages/python",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/python.python",
+    "packageFolder": "languages/python/parsers/python",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/reason.codeMirrorMode",
+    "packageFolder": "languages/reason/parsers/codeMirrorMode",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/reason",
+    "packageFolder": "languages/reason",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/reason.refmt",
+    "packageFolder": "languages/reason/parsers/refmt",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/regexp",
+    "packageFolder": "languages/regexp",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/regexp.regexp-tree",
+    "packageFolder": "languages/regexp/parsers/regexp-tree",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/regexp.regexpp",
+    "packageFolder": "languages/regexp/parsers/regexpp",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/regexp.regjsparser",
+    "packageFolder": "languages/regexp/parsers/regjsparser",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/rust",
+    "packageFolder": "languages/rust",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/rust.syn",
+    "packageFolder": "languages/rust/parsers/syn",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/san",
+    "packageFolder": "languages/san",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/san.san-template-parser",
+    "packageFolder": "languages/san/parsers/san-template-parser",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/scala",
+    "packageFolder": "languages/scala",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/scala.scalameta",
+    "packageFolder": "languages/scala/parsers/scalameta",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/solidity",
+    "packageFolder": "languages/solidity",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/solidity.solidity-parser-antlr",
+    "packageFolder": "languages/solidity/parsers/solidity-parser-antlr",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/solidity.solidity-parser-diligence",
+    "packageFolder": "languages/solidity/parsers/solidity-parser-diligence",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/sql",
+    "packageFolder": "languages/sql",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/sql.sqlite-parser",
+    "packageFolder": "languages/sql/parsers/sqlite-parser",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/thrift",
+    "packageFolder": "languages/thrift",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/thrift.thrift-parser",
+    "packageFolder": "languages/thrift/parsers/thrift-parser",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/utils.compileModule",
+    "packageFolder": "languages/utils/parsers/compileModule",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/utils.defaultParserInterface",
+    "packageFolder": "languages/utils/parsers/defaultParserInterface",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/utils",
+    "packageFolder": "languages/utils",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/utils.protectFromLoops",
+    "packageFolder": "languages/utils/parsers/protectFromLoops",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/utils.SettingsRenderer",
+    "packageFolder": "languages/utils/parsers/SettingsRenderer",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/vue",
+    "packageFolder": "languages/vue",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/vue.vue-compiler-dom",
+    "packageFolder": "languages/vue/parsers/vue-compiler-dom",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/vue.vue-eslint-parser",
+    "packageFolder": "languages/vue/parsers/vue-eslint-parser",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/vue.vue-template-compiler",
+    "packageFolder": "languages/vue/parsers/vue-template-compiler",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/wat",
+    "packageFolder": "languages/wat",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/wat.wat-parser",
+    "packageFolder": "languages/wat/parsers/wat-parser",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/webidl",
+    "packageFolder": "languages/webidl",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/webidl.webidl2",
+    "packageFolder": "languages/webidl/parsers/webidl2",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/yaml",
+    "packageFolder": "languages/yaml",
+    "reviewCategory": "language",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/yaml.yaml-ast-parser",
+    "packageFolder": "languages/yaml/parsers/yaml-ast-parser",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  },
+  {
+    "packageName": "@astql/yaml.yaml",
+    "packageFolder": "languages/yaml/parsers/yaml",
+    "reviewCategory": "parser",
+    "shouldPublish": true
+  }
+]

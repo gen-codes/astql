@@ -1,0 +1,17 @@
+{
+  "name": "@astql/rust.syn",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "echo \"build\""
+  },
+  "peerDependencies": {
+    "@astql/rust": "0.0.0",
+    "astql": "0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "astexplorer-syn": "^1.0.48"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@astql/mdx.mdxhast",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "echo \"build\""
+  },
+  "peerDependencies": {
+    "@astql/mdx": "0.0.0",
+    "astql": "0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.5.8"
+  }
+}

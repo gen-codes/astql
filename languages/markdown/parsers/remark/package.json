@@ -1,0 +1,21 @@
+{
+  "name": "@astql/markdown.remark",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "echo \"build\""
+  },
+  "peerDependencies": {
+    "@astql/markdown": "0.0.0",
+    "astql": "0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "remark": "^13.0.0",
+    "remark-gfm": "^1.0.0",
+    "remark-directive": "^1.0.0",
+    "remark-frontmatter": "^3.0.0",
+    "remark-math": "^4.0.0"
+  }
+}

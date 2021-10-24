@@ -1,0 +1,17 @@
+{
+  "name": "@astql/graphviz.redot",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "echo \"build\""
+  },
+  "peerDependencies": {
+    "@astql/graphviz": "0.0.0",
+    "astql": "0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "redot": "^0.6.0"
+  }
+}

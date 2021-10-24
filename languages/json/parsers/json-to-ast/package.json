@@ -1,0 +1,17 @@
+{
+  "name": "@astql/json.json-to-ast",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "echo \"build\""
+  },
+  "peerDependencies": {
+    "@astql/json": "0.0.0",
+    "astql": "0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "json-to-ast": "^2.1.0"
+  }
+}

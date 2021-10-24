@@ -1,0 +1,17 @@
+{
+  "name": "@astql/regexp.regjsparser",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "echo \"build\""
+  },
+  "peerDependencies": {
+    "@astql/regexp": "0.0.0",
+    "astql": "0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "regjsparser": "^0.6.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@astql/yaml.yaml",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "echo \"build\""
+  },
+  "peerDependencies": {
+    "@astql/yaml": "0.0.0",
+    "astql": "0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "yaml": "^1.7.2"
+  }
+}

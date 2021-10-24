@@ -1,0 +1,7 @@
+{
+  "name": "@astql/js",
+  "scripts": {
+    "build": "echo 'build'"
+  },
+  "version": "0.0.0"
+}
