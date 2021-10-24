@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Publish astql ecosystem",
+      "type": "minor",
+      "packageName": "@astql/handlebars"
+    }
+  ],
+  "packageName": "@astql/handlebars",
+  "email": "vkefallinos@gmail.com"
+}

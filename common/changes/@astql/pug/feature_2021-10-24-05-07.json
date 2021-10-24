@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Publish astql ecosystem",
+      "type": "minor",
+      "packageName": "@astql/pug"
+    }
+  ],
+  "packageName": "@astql/pug",
+  "email": "vkefallinos@gmail.com"
+}

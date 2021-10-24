@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Publish astql ecosystem",
+      "type": "minor",
+      "packageName": "@astql/ocaml"
+    }
+  ],
+  "packageName": "@astql/ocaml",
+  "email": "vkefallinos@gmail.com"
+}

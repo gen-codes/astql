@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Publish astql ecosystem",
+      "type": "minor",
+      "packageName": "@astql/protobuf.pbkit"
+    }
+  ],
+  "packageName": "@astql/protobuf.pbkit",
+  "email": "vkefallinos@gmail.com"
+}

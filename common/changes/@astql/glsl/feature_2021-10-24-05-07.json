@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Publish astql ecosystem",
+      "type": "minor",
+      "packageName": "@astql/glsl"
+    }
+  ],
+  "packageName": "@astql/glsl",
+  "email": "vkefallinos@gmail.com"
+}

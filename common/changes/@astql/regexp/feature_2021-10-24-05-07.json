@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Publish astql ecosystem",
+      "type": "minor",
+      "packageName": "@astql/regexp"
+    }
+  ],
+  "packageName": "@astql/regexp",
+  "email": "vkefallinos@gmail.com"
+}

@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Publish astql ecosystem",
+      "type": "minor",
+      "packageName": "@astql/handlebars.ember-template-recast"
+    }
+  ],
+  "packageName": "@astql/handlebars.ember-template-recast",
+  "email": "vkefallinos@gmail.com"
+}

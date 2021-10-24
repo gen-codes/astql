@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Publish astql ecosystem",
+      "type": "minor",
+      "packageName": "@astql/thrift.thrift-parser"
+    }
+  ],
+  "packageName": "@astql/thrift.thrift-parser",
+  "email": "vkefallinos@gmail.com"
+}

@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Publish astql ecosystem",
+      "type": "minor",
+      "packageName": "@astql/reason.codeMirrorMode"
+    }
+  ],
+  "packageName": "@astql/reason.codeMirrorMode",
+  "email": "vkefallinos@gmail.com"
+}
