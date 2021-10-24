@@ -1,5 +1,10 @@
 {
   "name": "@astql/handlebars.ember-template-recast",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "utils/"
+  ],
   "version": "0.0.0",
   "scripts": {
     "build": "echo \"build\""

@@ -1,5 +1,10 @@
 {
   "name": "@astql/regexp.regjsparser",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "utils/"
+  ],
   "version": "0.0.0",
   "scripts": {
     "build": "echo \"build\""

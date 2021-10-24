@@ -219,7 +219,7 @@ search.forEach(({file, content, result}) => {
           scripts: {
             build: "echo 'build'"
           },
-          version: '0.0.0',
+          version: '0.0.1',
         }, null, 2)
       },
       lang
