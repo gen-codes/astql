@@ -1,0 +1,22 @@
+{
+  "name": "@astql/reason.refmt",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "utils/",
+    "codeExample.txt"
+  ],
+  "version": "0.0.0",
+  "scripts": {
+    "build": "echo \"build\""
+  },
+  "peerDependencies": {
+    "astql": "0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "astexplorer-refmt": "^1.0.1"
+  }
+}

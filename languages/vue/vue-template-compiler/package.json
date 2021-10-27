@@ -1,0 +1,22 @@
+{
+  "name": "@astql/vue.vue-template-compiler",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "utils/",
+    "codeExample.txt"
+  ],
+  "version": "0.0.0",
+  "scripts": {
+    "build": "echo \"build\""
+  },
+  "peerDependencies": {
+    "astql": "0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "vue-template-compiler": "^2.6.9"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@astql/glsl.glsl-parser",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "utils/",
+    "codeExample.txt"
+  ],
+  "version": "0.0.0",
+  "scripts": {
+    "build": "echo \"build\""
+  },
+  "peerDependencies": {
+    "astql": "0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "glsl-tokenizer": "^2.1.2",
+    "glsl-parser": "^2.0.0"
+  }
+}

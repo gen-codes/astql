@@ -3,7 +3,7 @@
 export const id = 'javascript';
 export const displayName = 'JavaScript';
 export const mimeTypes = ['text/javascript'];
-export const fileExtension = 'js';
+export const fileExtensions = ['js', 'jsx', 'ts', 'tsx'];
 export const decideParser = (filename, text) => {
   const extension = filename.split('.').pop();
   switch (extension) {

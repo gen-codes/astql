@@ -200,49 +200,54 @@ search.forEach(({file, content, result}) => {
     };
   }
   if(file.endsWith('index.js')) {
-    projects.push({
-      packageName: `@astql/${lang}`,
-      projectFolder: `languages/${lang}`,
-      reviewCategory: 'language',
-      shouldPublish: true,
-    });
-    filetree[lang].package = {
-      files: {
-        'index.js': content,
-        'package.json': JSON.stringify({
-          name: `@astql/${lang}`,
-          "main": "index.js",
-          "files": [
-            "index.js",
-            "utils/"
-          ],
-          scripts: {
-            build: "echo 'build'"
-          },
-          version: '0.0.1',
-        }, null, 2)
-      },
-      lang
-    };
+
+    // projects.push({
+    //   packageName: `@astql/${lang}`,
+    //   projectFolder: `languages/${lang}`,
+    //   reviewCategory: 'language',
+    //   shouldPublish: true,
+    // });
+    fs.outputFileSync(`libs/astql/src/languages/${lang}/index.js`, content +`
+export const defaultParser = '${filetree[lang].parsers[0]?.parser}';
+`);
+    // filetree[lang].package = {
+    //   files: {
+    //     'index.js': content,
+    //     'package.json': JSON.stringify({
+    //       name: `@astql/${lang}`,
+    //       "main": "index.js",
+    //       "files": [
+    //         "index.js",
+    //         "utils/"
+    //       ],
+    //       scripts: {
+    //         build: "echo 'build'"
+    //       },
+    //       version: '0.0.1',
+    //     }, null, 2)
+    //   },
+    //   lang
+    // };
   } else {
     const [_, parser] = file.match(/\.\/languages-old\/.*?\/(.*?)\.js/);
     projects.push({
       packageName: `@astql/${lang}.${parser}`,
-      projectFolder: `languages/${lang}/parsers/${parser}`,
+      projectFolder: `languages/${lang}/${parser}`,
       reviewCategory: 'parser',
       shouldPublish: true,
     });
     try {
-      fs.copySync(`languages-old/${lang}/codeExample.txt`, `languages/${lang}/codeExample.txt`);
-      fs.copySync(`languages-old/${lang}/utils`, `languages/${lang}/utils`);
+      fs.copySync(`languages-old/${lang}/codeExample.txt`, `libs/astql/src/languages/${lang}/codeExample.txt`);
+      fs.copySync(`languages-old/${lang}/utils`, `libs/astql/src/languages/${lang}/utils`);
+      
 
-    } catch(e) {console.log(e);}
+    } catch(e) {console.log();}
 
     filetree[lang].parsers.push({
       files: {
         'index.js': content.replace(
           `import defaultParserInterface from '../utils/defaultParserInterface';`
-          , `import defaultParserInterface from 'astql/utils/defaultParserInterface'`
+          , `import defaultParserInterface from 'astql/utils/defaultParserInterface';`
         ).replace(
           `import defaultParserInterface from './utils/defaultParserInterface';`
           , `import defaultParserInterface from '@astql/${lang}.${parser}/utils/defaultParserInterface'`
@@ -252,14 +257,14 @@ search.forEach(({file, content, result}) => {
           "main": "index.js",
           "files": [
             "index.js",
-            "utils/"
+            "utils/",
+            "codeExample.txt"
           ],
           version: '0.0.0',
           scripts: {
             build: 'echo "build"'
           },
           peerDependencies: {
-            [`@astql/${lang}`]: '0.0.0',
             astql: '0.0.0',
           },
           devDependencies: {
@@ -285,19 +290,19 @@ search.forEach(({file, content, result}) => {
 const rush = require('./rush.json');
 projects.push({
   packageName: 'astql',
-  projectFolder: 'lib/astql',
+  projectFolder: 'libs/astql',
   shouldPublish: true,
 });
 rush.projects = projects;
 fs.outputFileSync('rush.json', JSON.stringify(rush, null, 2));
 for(const lang in filetree) {
-  for(const file in filetree[lang].package.files) {
-    fs.outputFileSync('./languages/' + lang + '/' + file, filetree[lang].package.files[file]);
-  }
+  // for(const file in filetree[lang].package.files) {
+  //   fs.outputFileSync('./languages/' + lang + '/' + file, filetree[lang].package.files[file]);
+  // }
 
   filetree[lang].parsers.forEach(p => {
     for(const file in p.files) {
-      fs.outputFileSync('./languages/' + lang + '/parsers/' + p.parser + '/' + file, p.files[file]);
+      fs.outputFileSync('./languages/' + lang + '/' + p.parser + '/' + file, p.files[file]);
     }
   });
 

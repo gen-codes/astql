@@ -1,0 +1,22 @@
+{
+  "name": "@astql/java.java-parser",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "utils/",
+    "codeExample.txt"
+  ],
+  "version": "0.0.0",
+  "scripts": {
+    "build": "echo \"build\""
+  },
+  "peerDependencies": {
+    "astql": "0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "java-parser": "^0.6.0"
+  }
+}
