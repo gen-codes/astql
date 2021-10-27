@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "fix astql",
+      "type": "minor",
+      "packageName": "astql"
+    }
+  ],
+  "packageName": "astql",
+  "email": "vkefallinos@gmail.com"
+}
