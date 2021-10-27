@@ -26,7 +26,7 @@
     ]
   },
   "scripts": {
-    "build": "webpack --watch",
+    "build": "webpack --mode production",
     "start": "webpack serve --progress --color"
   },
   "repository": {
