@@ -320,30 +320,6 @@
       "shouldPublish": true
     },
     {
-      "packageName": "@astql/utils.compileModule",
-      "projectFolder": "languages/utils/compileModule",
-      "reviewCategory": "parser",
-      "shouldPublish": true
-    },
-    {
-      "packageName": "@astql/utils.defaultParserInterface",
-      "projectFolder": "languages/utils/defaultParserInterface",
-      "reviewCategory": "parser",
-      "shouldPublish": true
-    },
-    {
-      "packageName": "@astql/utils.protectFromLoops",
-      "projectFolder": "languages/utils/protectFromLoops",
-      "reviewCategory": "parser",
-      "shouldPublish": true
-    },
-    {
-      "packageName": "@astql/utils.SettingsRenderer",
-      "projectFolder": "languages/utils/SettingsRenderer",
-      "reviewCategory": "parser",
-      "shouldPublish": true
-    },
-    {
       "packageName": "@astql/vue.vue-compiler-dom",
       "projectFolder": "languages/vue/vue-compiler-dom",
       "reviewCategory": "parser",
