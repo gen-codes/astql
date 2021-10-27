@@ -249,6 +249,10 @@ export const defaultParser = '${filetree[lang].parsers[0]?.parser}';
 
     filetree[lang].parsers.push({
       files: {
+        'tests/index.js': `
+it('should parse codeExample.txt', () => {
+  expect(true).toBe(true);
+})`,
         'src/index.js': content.replace(
           `import defaultParserInterface from '../utils/defaultParserInterface';`
           , `import defaultParserInterface from 'astql/utils/defaultParserInterface';`
@@ -267,7 +271,8 @@ export const defaultParser = '${filetree[lang].parsers[0]?.parser}';
           "main": "index.js",
           version: '0.0.1',
           scripts: {
-            build: 'digigov build --subpackages'
+            build: 'digigov build --subpackages',
+            test: 'digigov test'
           },
           peerDependencies: {
             astql: '0.0.9',
@@ -275,6 +280,7 @@ export const defaultParser = '${filetree[lang].parsers[0]?.parser}';
           devDependencies: {
             "@digigov/cli":"~0.5.24",
             "@digigov/cli-build":"0.5.24",
+            "@digigov/cli-test":"0.5.24",
             "rimraf":"~3.0.2"
           },
           dependencies: result.parse?.map(imp => {
