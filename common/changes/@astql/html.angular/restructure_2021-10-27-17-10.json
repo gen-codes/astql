@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Restructure astql",
+      "type": "minor",
+      "packageName": "@astql/html.angular"
+    }
+  ],
+  "packageName": "@astql/html.angular",
+  "email": "vkefallinos@gmail.com"
+}

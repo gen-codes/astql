@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Restructure astql",
+      "type": "minor",
+      "packageName": "@astql/icu.intl-messageformat-parser"
+    }
+  ],
+  "packageName": "@astql/icu.intl-messageformat-parser",
+  "email": "vkefallinos@gmail.com"
+}

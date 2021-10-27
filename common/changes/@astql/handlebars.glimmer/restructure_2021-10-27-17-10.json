@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Restructure astql",
+      "type": "minor",
+      "packageName": "@astql/handlebars.glimmer"
+    }
+  ],
+  "packageName": "@astql/handlebars.glimmer",
+  "email": "vkefallinos@gmail.com"
+}

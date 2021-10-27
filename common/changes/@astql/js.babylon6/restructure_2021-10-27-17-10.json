@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Restructure astql",
+      "type": "minor",
+      "packageName": "@astql/js.babylon6"
+    }
+  ],
+  "packageName": "@astql/js.babylon6",
+  "email": "vkefallinos@gmail.com"
+}

@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Restructure astql",
+      "type": "minor",
+      "packageName": "@astql/lucene.lucene"
+    }
+  ],
+  "packageName": "@astql/lucene.lucene",
+  "email": "vkefallinos@gmail.com"
+}

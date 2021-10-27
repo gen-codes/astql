@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Restructure astql",
+      "type": "minor",
+      "packageName": "@astql/html.hyntax"
+    }
+  ],
+  "packageName": "@astql/html.hyntax",
+  "email": "vkefallinos@gmail.com"
+}

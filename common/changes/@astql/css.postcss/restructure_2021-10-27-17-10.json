@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Restructure astql",
+      "type": "minor",
+      "packageName": "@astql/css.postcss"
+    }
+  ],
+  "packageName": "@astql/css.postcss",
+  "email": "vkefallinos@gmail.com"
+}

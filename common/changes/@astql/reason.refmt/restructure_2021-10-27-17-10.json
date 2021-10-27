@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Restructure astql",
+      "type": "minor",
+      "packageName": "@astql/reason.refmt"
+    }
+  ],
+  "packageName": "@astql/reason.refmt",
+  "email": "vkefallinos@gmail.com"
+}

@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Restructure astql",
+      "type": "minor",
+      "packageName": "@astql/ocaml.refmt-ml"
+    }
+  ],
+  "packageName": "@astql/ocaml.refmt-ml",
+  "email": "vkefallinos@gmail.com"
+}

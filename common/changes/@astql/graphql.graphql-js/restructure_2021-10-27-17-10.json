@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Restructure astql",
+      "type": "minor",
+      "packageName": "@astql/graphql.graphql-js"
+    }
+  ],
+  "packageName": "@astql/graphql.graphql-js",
+  "email": "vkefallinos@gmail.com"
+}

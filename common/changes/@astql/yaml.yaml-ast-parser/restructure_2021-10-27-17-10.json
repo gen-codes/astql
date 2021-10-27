@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Restructure astql",
+      "type": "minor",
+      "packageName": "@astql/yaml.yaml-ast-parser"
+    }
+  ],
+  "packageName": "@astql/yaml.yaml-ast-parser",
+  "email": "vkefallinos@gmail.com"
+}

@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Restructure astql",
+      "type": "minor",
+      "packageName": "@astql/thrift.thrift-parser"
+    }
+  ],
+  "packageName": "@astql/thrift.thrift-parser",
+  "email": "vkefallinos@gmail.com"
+}

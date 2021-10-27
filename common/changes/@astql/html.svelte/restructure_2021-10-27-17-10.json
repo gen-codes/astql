@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Restructure astql",
+      "type": "minor",
+      "packageName": "@astql/html.svelte"
+    }
+  ],
+  "packageName": "@astql/html.svelte",
+  "email": "vkefallinos@gmail.com"
+}
