@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Publish astql ecosystem",
+      "type": "minor",
+      "packageName": "@astql/css.rework"
+    }
+  ],
+  "packageName": "@astql/css.rework",
+  "email": "vkefallinos@gmail.com"
+}

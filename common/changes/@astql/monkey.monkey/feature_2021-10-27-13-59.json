@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Publish astql ecosystem",
+      "type": "minor",
+      "packageName": "@astql/monkey.monkey"
+    }
+  ],
+  "packageName": "@astql/monkey.monkey",
+  "email": "vkefallinos@gmail.com"
+}
