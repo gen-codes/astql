@@ -1,7 +1,7 @@
 import ParserConfig from "./ParserConfig";
 import astquery from "./query";
 import generateVisitorKeys from "./utils/generateVisitorKeys";
-import * as languages from './languages'
+import * as languages from './languages';
 export interface ASTNode {
   _type: string;
   getText: () => string;
@@ -33,7 +33,7 @@ export interface QuerySchema {
 }
 export type Query = string | QuerySchema | [QuerySchema];
 export interface CodeInterface {
-  loadParserConfig(path, text): Promise<ParserConfig | null>;
+  loadParserConfig(path, text): ParserConfig | null;
   text: string;
   ast: ASTNode | ASTNode[];
   path: string;
@@ -50,8 +50,8 @@ export interface CodeInterface {
     string[]>
 
 }
-export const importConfig = async (packageName) => {
-  return (await import(packageName)).default
+export const importConfig = (packageName) => {
+  return require(packageName).default
 }
 export class Code implements CodeInterface {
   constructor(
@@ -69,16 +69,12 @@ export class Code implements CodeInterface {
     this.queryHook = this.queryHook
     if (options?.parser) {
       if (typeof options.parser === 'string') {
-        importConfig(`@astql/${options.parser}`).then(conf=>{
-          this.config = conf
-        });
+        this.config = importConfig(`@astql/${options.parser}`);
       } else {
         this.config = options.parser;
       }
     } else {
-      this.loadParserConfig(path, text).then(conf=>{
-        this.config = conf
-      });
+      this.config = this.loadParserConfig(path, text);
     }
   }
   text: string;
