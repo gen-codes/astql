@@ -193,6 +193,9 @@ const filetree = {};
 const pkg = require('./package.json');
 const projects = [];
 search.forEach(({file, content, result}) => {
+  if(file.match(/\.\/languages-old\/utils/)){
+    return 
+  }
   const [_, lang] = file.match(/\.\/languages-old\/(.*?)\/.*?.js/);
   if(!filetree[lang]) {
     filetree[lang] = {
@@ -235,6 +238,7 @@ export const defaultParser = '${filetree[lang].parsers[0]?.parser}';
       projectFolder: `languages/${lang}/${parser}`,
       reviewCategory: 'parser',
       shouldPublish: true,
+      publishFolder: 'dist'
     });
     try {
       fs.copySync(`languages-old/${lang}/codeExample.txt`, `libs/astql/src/languages/${lang}/codeExample.txt`);
@@ -245,30 +249,33 @@ export const defaultParser = '${filetree[lang].parsers[0]?.parser}';
 
     filetree[lang].parsers.push({
       files: {
-        'index.js': content.replace(
+        'src/index.js': content.replace(
           `import defaultParserInterface from '../utils/defaultParserInterface';`
           , `import defaultParserInterface from 'astql/utils/defaultParserInterface';`
         ).replace(
-          `import defaultParserInterface from './utils/defaultParserInterface';`
-          , `import defaultParserInterface from '@astql/${lang}.${parser}/utils/defaultParserInterface'`
+          /\.\/utils/, `astql/languages/${lang}/utils`
+        )
+        .replace(
+          '../multiple-require', `astql/utils/multiple-require`
         ),
+        'README.md': `
+# ASTQL Parser ${parser} for ${lang}
+`,
+        'CHANGELOG.md': ``,
         'package.json': JSON.stringify({
           name: `@astql/${lang}.${parser}`,
           "main": "index.js",
-          "files": [
-            "index.js",
-            "utils/",
-            "codeExample.txt"
-          ],
-          version: '0.0.0',
+          version: '0.0.1',
           scripts: {
-            build: 'echo "build"'
+            build: 'digigov build --subpackages'
           },
           peerDependencies: {
-            astql: '0.0.0',
+            astql: '0.0.9',
           },
           devDependencies: {
-            'typescript': '^4.0.3'
+            "@digigov/cli":"~0.5.24",
+            "@digigov/cli-build":"0.5.24",
+            "rimraf":"~3.0.2"
           },
           dependencies: result.parse?.map(imp => {
             if(imp.startsWith('@')) {

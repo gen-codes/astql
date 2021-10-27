@@ -21,7 +21,7 @@ dependencies:
   '@rush-temp/handlebars.glimmer': file:projects/handlebars.glimmer.tgz
   '@rush-temp/handlebars.handlebars': file:projects/handlebars.handlebars.tgz
   '@rush-temp/html.angular': file:projects/html.angular.tgz
-  '@rush-temp/html.angular-eslint': file:projects/html.angular-eslint.tgz_@angular+compiler@12.2.11
+  '@rush-temp/html.angular-eslint': file:projects/html.angular-eslint.tgz_5bcc2fce18b662f73577c0734ae18e33
   '@rush-temp/html.htmlparser2': file:projects/html.htmlparser2.tgz
   '@rush-temp/html.hyntax': file:projects/html.hyntax.tgz
   '@rush-temp/html.parse5': file:projects/html.parse5.tgz
@@ -70,7 +70,6 @@ dependencies:
   astexplorer-go: 1.0.0
   astexplorer-refmt: 1.0.1
   astexplorer-syn: 1.0.57
-  astql: 0.0.2
   babylon5: /babylon/5.8.38
   babylon6: /babylon/6.18.0
   babylon7: /@babel/parser/7.15.8
@@ -11569,630 +11568,797 @@ packages:
     version: 0.0.0
   file:projects/css.cssom.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       cssom: 0.4.4
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/css.cssom'
     resolution:
-      integrity: sha512-BcysaBbpamhxRRm2uCHTcitvoFH3ndNZ8Zcisng9a8hvnSLJnSPANuS1F883DaZhSAYqPM4uZ500OayAOqZM/g==
+      integrity: sha512-B0Xsr+pAJIAlt5jn3YORYcXyv1BqJVeSux0buE7AhG1j5g4UwvZguGig3ghrY+bHUORrMx2YqOTOSsoPUvpy5g==
       tarball: file:projects/css.cssom.tgz
     version: 0.0.0
   file:projects/css.csstree.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       css-tree: 1.1.3
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/css.csstree'
     resolution:
-      integrity: sha512-gqrc0waKYM6ER99Tek5nw9mK+BYjk2/D/EWHBdTf0nCvW/IZW0tNEMtovmn+AuGIONJbDEPSK3Hn3XSyWJ33lg==
+      integrity: sha512-PlVJRPQNGhCNsRT08jDWq0cokvI0L324f3eK9QIjcL9JEzip5WYxXjowpPmpayqjpkxyZiQ0X8AbwFxHwEt6Bw==
       tarball: file:projects/css.csstree.tgz
     version: 0.0.0
   file:projects/css.postcss.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       postcss: 7.0.39
       postcss-less: 3.1.4
       postcss-safe-parser: 4.0.2
       postcss-scss: 2.1.1
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/css.postcss'
     resolution:
-      integrity: sha512-VSE551UqWIAw2AY+0BgcKvkVRIz9Xhol7c+2Bldjp3IBnHz3Wigg7KT9kzEib8R+WhGiMYndaOl/Wgn015iw4w==
+      integrity: sha512-Xfcr+O8z4pSJsKGd58Duf9fBgQY86v2oxpb4CegULm3Ai+OGrQr5rb4UtaIGO50ALBfqfTvjbQ1N3z/k0TtCHw==
       tarball: file:projects/css.postcss.tgz
     version: 0.0.0
   file:projects/css.rework.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       css: 2.2.4
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/css.rework'
     resolution:
-      integrity: sha512-1/5lE626ZaGr30ZYV8BFhQMqj4JnKwSiEEH/liy8Sg0/yJjPkSwFAwLV2CereQuUc8SOsi2GEvN5GKdzrvKmRA==
+      integrity: sha512-iVq+0e6VZrpsPpal2HOb868wgdLFuU/VpgFAb5O1XL7wX3QK7mXZLZtEp+AQgR405z7BIwQwWa1c9njcGow0AA==
       tarball: file:projects/css.rework.tgz
     version: 0.0.0
   file:projects/glsl.glsl-parser.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       glsl-parser: 2.0.1
       glsl-tokenizer: 2.1.5
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/glsl.glsl-parser'
     resolution:
-      integrity: sha512-OUHbDtayRb+7wyICmKAo9zNYoUaUd1PYlT6vPHZ8+CLUudrxSp9lwF5zUTy4bt0WZYKUniSd8FZtccdWNnP3Fw==
+      integrity: sha512-zsg3SJEbSlzDSjxqKXzCFM51cXSVkv+TAB42ZflkVC8oC2J/palOmKhIev7u1wYOJpmTnmduB9aU9KpUvRvDBA==
       tarball: file:projects/glsl.glsl-parser.tgz
     version: 0.0.0
   file:projects/go.go.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astexplorer-go: 1.0.0
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/go.go'
     resolution:
-      integrity: sha512-ckp40AtTOpvb+TjyqaTrT1YxitzhtiD234SzJQiIDAmAw3cgSAgHwV4Z3QgjX7EWfxKALf9QYn/zchw8arV9eA==
+      integrity: sha512-nA599ESB+wGDVlNoIHh9s8TdKC6hTC9ag3eyd7letkkdt7Br2rziFXIetiZAlwD8vbDp/ppLH3qxnPycX0WvEA==
       tarball: file:projects/go.go.tgz
     version: 0.0.0
   file:projects/graphql.graphql-js.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       graphql: 15.6.1
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/graphql.graphql-js'
     resolution:
-      integrity: sha512-ChsyOoKeo890Hypkmt2TMXH+6a4yAFEAVKYPsdjgnR7RvLsW/Xok6tN9YzhBFDRj9YgIqoCXGZ+ZtjvxpV2grQ==
+      integrity: sha512-j8FLhLQ2Nfebzt5gwU6RyCKihdDMx7YjeCxKKZIgRRaGchi0oOJiKiiuqCKw7jPNL5EUaXvhfZ4gIvCYQEY1bA==
       tarball: file:projects/graphql.graphql-js.tgz
     version: 0.0.0
   file:projects/graphviz.redot.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       redot: 0.6.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/graphviz.redot'
     resolution:
-      integrity: sha512-WmDIfAYdVySmgYPW7PV5kijiNIKu9g2YvwTIkX2Qmqvj7XxRyOF/X4hCTaxbSjWl84GoW08OONQWa1kegJn6cw==
+      integrity: sha512-EVifxOOeYvKLO1nnlxzGUSncuit3FTQbvhEEjwDSZof6vFKsQWDYvIUbLVWMvFVjqseK6TRwVVqe4/bGuFFrsg==
       tarball: file:projects/graphviz.redot.tgz
     version: 0.0.0
   file:projects/handlebars.ember-template-recast.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       ember-template-recast: 5.0.3
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/handlebars.ember-template-recast'
     resolution:
-      integrity: sha512-rhW9Ddt+vdRlgWULjGYx7wvFptJ92G6N7zWgZNppiyyPDQCzQxKVbfQbncyVH+jwuCHuhTZW8EO/rVaf0Gg7RQ==
+      integrity: sha512-iuUTDnQ31DWsoZ6v+UmnF3BStUTdbB54hCCSlwRze13X04ors0V1enNv1LuHL8vCpNTMPDIgxBwz1D0wVWlFww==
       tarball: file:projects/handlebars.ember-template-recast.tgz
     version: 0.0.0
   file:projects/handlebars.glimmer.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       '@glimmer/syntax': 0.73.2
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/handlebars.glimmer'
     resolution:
-      integrity: sha512-7uMfmJo/Zo5OLWI9dZLl+J5fYZOREV4gdBeeN+9QWDsCQX/I9u7r8BHNlty3mhtn9pQ4g9LXnSP+fdjd/oRtPw==
+      integrity: sha512-QGYu1C/Q3e7bjZWJlB13i9CUDFQxCf0+EhrS+gA0aGv71+XSOcC9vLYDejwMcbQAcX8NlDC3Ld7jGbumpEPfKw==
       tarball: file:projects/handlebars.glimmer.tgz
     version: 0.0.0
   file:projects/handlebars.handlebars.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       handlebars: 4.7.7
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/handlebars.handlebars'
     resolution:
-      integrity: sha512-jCEKNsEiy7jyqe1IPOimKGqY4kbUD0K3tjI3s82uoZ6m0/THmWerph7HUyi0AseC+eqeSmhIR4cub4cEmAEASw==
+      integrity: sha512-UODxGcdWkT1VBg53nrY7vjNjOwshiu7EunsVJDqU/8ENdNp4TXCaW0rUHkAB5Swx9wzgyeIBJfgUE4N+hZzhLg==
       tarball: file:projects/handlebars.handlebars.tgz
     version: 0.0.0
-  file:projects/html.angular-eslint.tgz_@angular+compiler@12.2.11:
+  file:projects/html.angular-eslint.tgz_5bcc2fce18b662f73577c0734ae18e33:
     dependencies:
       '@angular-eslint/template-parser': 12.5.0_5bcc2fce18b662f73577c0734ae18e33
-      astql: 0.0.0
-      typescript: 4.4.4
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
+      rimraf: 3.0.2
     dev: false
     id: file:projects/html.angular-eslint.tgz
     name: '@rush-temp/html.angular-eslint'
     peerDependencies:
       '@angular/compiler': '*'
+      typescript: '*'
     resolution:
-      integrity: sha512-lzP1Tq1kl8rUtlyylN95mpHAGG22Q5pfWF/t2Dt1rIEsofYJ2J5uMp6WfZQk3bR/PgJ7nM1aDOOhSdZNHyzaXQ==
+      integrity: sha512-i93bWrK5ve+Ds30f/QXFrfRDifozmCd0ZUBKgPLE2kHlDqwFmkWiPQyc59gFYTS9Oo3UYLKR+kkgmWtxfl5SfA==
       tarball: file:projects/html.angular-eslint.tgz
     version: 0.0.0
   file:projects/html.angular.tgz:
     dependencies:
       '@angular/compiler': 12.2.11
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/html.angular'
     resolution:
-      integrity: sha512-54DlC22he0awkYh4/TRtWjuur82iovwa+F1Bvw/lCMscLpyCgiL+PLCOuvQTHa4VlZknsnbahJsdDstuL0L3/g==
+      integrity: sha512-nY/f7vqlDxKIYZ9zOfjY+t7oAFUHuik/RLafwb3EV+OHS/wPo54wXufToKsenVuzi40E5ox3UtJUB3BspOlSZw==
       tarball: file:projects/html.angular.tgz
     version: 0.0.0
   file:projects/html.htmlparser2.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       domhandler: 4.2.2
       htmlparser2: 5.0.1
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/html.htmlparser2'
     resolution:
-      integrity: sha512-E5upXSZS3hDEq+/CMUKhioqX0KPOQ39239lewpE2SLNwPNDGYTHmM3HzahtkTGkobFsD+MOSXawtw/CSZlASMg==
+      integrity: sha512-0ezq1ykG8U8TZkFOZcLfGIA3hObhEs7kOjAXJSyz9QsLeALtS5SLfG6pJc+l9ew3l2vA8f0mP54dk946/cMkWQ==
       tarball: file:projects/html.htmlparser2.tgz
     version: 0.0.0
   file:projects/html.hyntax.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       hyntax: 1.1.9
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/html.hyntax'
     resolution:
-      integrity: sha512-8go+ezMnDgjC6m8qzsAuIo2Nr4W2nr0mb6ozwlrSWf8Z+hI5/HOZV9BY0p8D5bbuXJxyaG34dcnDiyz2WlWpXg==
+      integrity: sha512-Z6dM9695M6Ktzx/8VFe0kmhrC7He2eJ3EUwgdZLUmdjtxUwZAIAafBsbiTnsiEkvwfH1DmVLQMd7sNVSnLdY7A==
       tarball: file:projects/html.hyntax.tgz
     version: 0.0.0
   file:projects/html.parse5.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       parse5: 6.0.1
       parse5-htmlparser2-tree-adapter: 6.0.1
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/html.parse5'
     resolution:
-      integrity: sha512-I3f3irPtkBsZJt+wXwE1V5Td81h7EXgd0uPb+UhVhTy5gn2njok8vs/aZkV8BQcuMZn/0/0jgGqy3uWS0327LA==
+      integrity: sha512-piyxA68fUgb4qorvHr3OXE3pyddJM5xzj5bCZk38B/mGsNFsvfj33op5MrmUY1kH0EQQ/BYZfKHyVuX7SIyj+A==
       tarball: file:projects/html.parse5.tgz
     version: 0.0.0
   file:projects/html.posthtml.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       posthtml-parser: 0.5.3
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/html.posthtml'
     resolution:
-      integrity: sha512-wNTCRe/8KyfqpKjVZAEsiOFM/tiPVeubu9Kc2wbmi0j0BBV18N4Q0SdHOnjhPRAA5mCXH6eC2AjEUXEGOgSyuA==
+      integrity: sha512-pK0wf5X6AzQamoggGjdJKTz8TfL2zZLq7/ZytHoq4kVl/EfUo8zMh2IEdbS/6ROSr2cchlT3fhFnw4Jsf1buHw==
       tarball: file:projects/html.posthtml.tgz
     version: 0.0.0
   file:projects/html.svelte.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
+      rimraf: 3.0.2
       svelte: 3.44.0
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/html.svelte'
     resolution:
-      integrity: sha512-92C8yhMm+rnFAzF/Jc8PauwJ626VBFGWEh7vZncEWjNSHggQe7q3ybvBxtaEUCyeJQrYZ0FDmpPfUKVzKMmRmw==
+      integrity: sha512-/4kREaIDJNSsfVpFHVvQBmh76mLjaPJ997BcvpfKu5RgC7VHf7m/JrwtAVxvcrVloXBA5+adVRfhn414LZJfnA==
       tarball: file:projects/html.svelte.tgz
     version: 0.0.0
   file:projects/icu.intl-messageformat-parser.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       intl-messageformat-parser: 6.4.4
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/icu.intl-messageformat-parser'
     resolution:
-      integrity: sha512-Eu4eb9M+pUbNIZ+R5XKzrkNz8tev9/hUWuXea42ympxaeaqzeKDQ9ZEA2zBJuOgSNv8+Ggo0lOKdZpXefzu9OA==
+      integrity: sha512-9l2YV0d9uR6e0fqsspb+BVFtynlgEcYEMQ7hJSBJg3LnRUXCT5WFEmecfrM/DU3yDffyui6s42A/Ufvfd+lAbw==
       tarball: file:projects/icu.intl-messageformat-parser.tgz
     version: 0.0.0
   file:projects/java.java-parser.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       java-parser: 0.6.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/java.java-parser'
     resolution:
-      integrity: sha512-8wLsZZYdOeReh3Hr7iaeHlQLCfjg22TBG2rRtnOyw8mC3ekpwPob5rEj4PMfCGqdxJao6LH3w2R7ZwD+Y7DoBw==
+      integrity: sha512-yEjnfjcHBuJhHIGYHAd1PtHNaRc08JOjRl0j+xmhaBmZGNkw6JIQvb+ZYVlk2VIM0aXaScIxkMjXpeuyM710iA==
       tarball: file:projects/java.java-parser.tgz
     version: 0.0.0
   file:projects/js.babylon.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       babylon5: /babylon/5.8.38
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/js.babylon'
     resolution:
-      integrity: sha512-gTEtG40X2SbuU0QuYKuLOCyOqBKTNwKOo9AuuR7HlovuXxSrHZtrotd9qEIhVQlf9bQ45ETXCFoXiOAQXsSaiA==
+      integrity: sha512-ywQqO3NS74fflVYGNWXzRf6SAP2QnMw7efb8vSe/Q0sW4qv00nS3ABLCmpzEi3t6FJg8hB8LMD+9SiszR6hmJg==
       tarball: file:projects/js.babylon.tgz
     version: 0.0.0
   file:projects/js.babylon6.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       babylon6: /babylon/6.18.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/js.babylon6'
     resolution:
-      integrity: sha512-WCYhLJjkhHpGGteDo+/ikseCymlz7cZr4yLjT4us7TILRDFHP7bDhpeVHN6BB3g58kjDoAwilnV4mtystyDzpg==
+      integrity: sha512-YdmHvHAqFKlZPpCnqru0DBXTD5CVtO3Ul03d1bCttR1v6P5a7AKgIwHzTf4Vl4TJ3HC8BPS7oGANLkLtYdNmqQ==
       tarball: file:projects/js.babylon6.tgz
     version: 0.0.0
   file:projects/js.babylon7.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       babylon7: /@babel/parser/7.15.8
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/js.babylon7'
     resolution:
-      integrity: sha512-rknNSHzpt5I1AicrdhAtkFRVkfro8v1rRZAsfCM1mQv1TBpDO1dEte2JzNBxR7PhlIHAQ40JEk3UE4dHLxteSw==
+      integrity: sha512-7AVdl+RADX+2G2fTpysoAXMMqPWRmbKF7JrIS7PceiH+cOkB4oXGScTrM47nRgk3hEx7XeEvnN1CySpZ+QldhQ==
       tarball: file:projects/js.babylon7.tgz
     version: 0.0.0
   file:projects/js.esprima.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       esprima: 4.0.1
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/js.esprima'
     resolution:
-      integrity: sha512-JzRnayq1kQnrLQ51XmXqtbg3s/q2RtzYaFQyasfcu0IJhasUpSyVk+OBNBC8+SPK7b+kA1OFS0nY0oCxd9HQ5w==
+      integrity: sha512-JLItYLK3SsF/9hj65GOlLy9FfkdUZbzPydwSTdhR+JfNYm29MhojOtYSet9aYfXmyN9EbFdSpDjohW304Uqmhg==
       tarball: file:projects/js.esprima.tgz
     version: 0.0.0
   file:projects/js.flow.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       flow-parser: 0.144.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/js.flow'
     resolution:
-      integrity: sha512-gyvBk7VZ16HHL/cyultBkczwUK2gUybO9ZsVD//Th7+wrYlfPVEWWK6lQOfXF693JRIpAR5UovX6y0UKwaDcZw==
+      integrity: sha512-ePIwpHNR9cwqqgBYBHtmQATEdpWnVJY2HCI9s66uQ/8BMrxVZ/g/koG4FUmkbPlfAq9qD0NA/gA9B/tyjUiskg==
       tarball: file:projects/js.flow.tgz
     version: 0.0.0
   file:projects/js.typescript.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.2
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/js.typescript'
     resolution:
-      integrity: sha512-FbYp2f4whg8dnbfV8byGd1+NVPmVCcwvHtTgTJTx/tOm9Rt35h1SEJTzFOoXffFd+2BytYgwUwvj4Ao5WnSbpw==
+      integrity: sha512-IHBOjfiAVhKdHnewtEUJvax7nAtu7jBG+fNQHb1wNKyVRZ2aUUetiH3Sp04RJZxpht+OmyPLMUuiTzbHHhrzLA==
       tarball: file:projects/js.typescript.tgz
     version: 0.0.0
   file:projects/json.json-to-ast.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       json-to-ast: 2.1.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/json.json-to-ast'
     resolution:
-      integrity: sha512-VE6JzBt/D4neeVXz7lwCT5fntax7+FzHu095E53+nAKESUwX3hN5y2D0uijYMVere2Gfofpvbo9wLpLZuzCyUQ==
+      integrity: sha512-wpZf2ojTCFn5XPFnqqBongaGLdaIPHa1RGppyZ6jBdGIWLKxeyM7Rrk1k0RtBjHlFX/AQfs8eLu0UmSNQd+HVA==
       tarball: file:projects/json.json-to-ast.tgz
     version: 0.0.0
   file:projects/json.momoa.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       '@humanwhocodes/momoa': 1.0.1
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/json.momoa'
     resolution:
-      integrity: sha512-Bqabj0KqBz+Og08Psckc3p+vKggqSB2wZj6OAmpK9aKhO7c6/UGpGKIDTskFhv0uvphmNt/Wqx/0DW9zv9ptlw==
+      integrity: sha512-ZWy8Gr1RF5ejrlj1BjiBLj5UiQO9ePaKDMNby5eqUdSE99sSbLyQmozWsPV7koCrvLYzbdwr2dHtHipns1VSeQ==
       tarball: file:projects/json.momoa.tgz
     version: 0.0.0
   file:projects/lua.luaparse.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       luaparse: 0.3.1
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/lua.luaparse'
     resolution:
-      integrity: sha512-K4j0g2NjiDTTOiuziRlTKM9eTTV5N6hPGywmGV3J5jz9VjdXjaI50Y32V8IIfFQN+DCcwkSMOtDvcta+ePK65w==
+      integrity: sha512-so9fT5alIG2g6re5aPAo9LGEt1iabCuJgmBEFGeWJOQWxAdpPvmQwHo46EWaczagHTZzv7SnNscG+UpTHaRUsA==
       tarball: file:projects/lua.luaparse.tgz
     version: 0.0.0
   file:projects/lucene.lucene.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       lucene: 2.1.1
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/lucene.lucene'
     resolution:
-      integrity: sha512-rjftnWWBiVroQpfuwgUkmegWtX12ztLhzg/UXrw5ug1dMYLFQNN90BxDrtRQ/kz/IGDm+Ayn5fG6NUVQIJ2AOg==
+      integrity: sha512-Gycs6ouJUfDMFwN8vgOb85F8/CZVv25jj8vcvZ4KDby8LrdpP1Skvxx6f13i9ZZj+lobrQ2kY1X6by7BpumUXg==
       tarball: file:projects/lucene.lucene.tgz
     version: 0.0.0
   file:projects/markdown.remark.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       remark: 13.0.0
       remark-directive: 1.0.1
       remark-frontmatter: 3.0.0
       remark-gfm: 1.0.0
       remark-math: 4.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/markdown.remark'
     resolution:
-      integrity: sha512-u8aOf96dYxojHtpg62P2Vl+09Oo5RqFS8k28xtTwRscA65wLiwKuEyC0mbZIxPAonEf3cYeubeV7xgdkf5wv7Q==
+      integrity: sha512-zs1QtvcgrmgmpVQoW1DGD3A+34yTJLhXCvKMtwsXUxwJgrxrynX+AzQEV6MKgzVkbj8MokQKb921X2rLGqZSzg==
       tarball: file:projects/markdown.remark.tgz
     version: 0.0.0
   file:projects/mdx.mdxhast.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       '@mdx-js/mdx': 1.6.22
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/mdx.mdxhast'
     resolution:
-      integrity: sha512-URhhK0mGFwDo6SoNdc6fOITsPXUP/GWWxSoeMRAfA4D+S2sy9QLm28MB/KAj2pah5+Y/xULzj2VCqYjZLRx+pA==
+      integrity: sha512-szxdMEhvK1StfOKEPbCAQu95DnJXPIiV9cVxFrthWnm0Tn77tZzpOpkE8IqzR4SJsylD+sJbcR37YYdwjU6dvg==
       tarball: file:projects/mdx.mdxhast.tgz
     version: 0.0.0
   file:projects/monkey.monkey.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       '@gengjiawen/monkey-wasm': 0.7.0
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/monkey.monkey'
     resolution:
-      integrity: sha512-3wx2/cnesaO2R1cwcjYhCVL2AcHoxzzBWP9cGkf69TfXZNL8rkA5hsAnXJ/5IBR0vBpel4577lcfeYIdxeM9eA==
+      integrity: sha512-3wwONe4Qb+A4I7dxgUPgndOkSAySJ6MTc4NnSWm7I1ltWtNvcUKlmjpdUkhwWVO6wpwlRt7+uGE7K3IdFXjPvw==
       tarball: file:projects/monkey.monkey.tgz
     version: 0.0.0
   file:projects/ocaml.refmt-ml.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/ocaml.refmt-ml'
     resolution:
-      integrity: sha512-4W28A6zTkqPCtXnJqNY5uk7GxmeIQSiPDu3Y+CUrj6ZwwmM+kPbsiZYcNSrBwPhIU3l9Fq19aUwPcKlMVT4D+w==
+      integrity: sha512-vOrHOltf7+QHGdaiXHEqctyomc7nUb7J9Zyb2NIPWLkE+s16S2UvDPUhh8YidlIaOnkTdeI72WczMU0gC8x/Ow==
       tarball: file:projects/ocaml.refmt-ml.tgz
     version: 0.0.0
   file:projects/php.php-parser.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       php-parser: 3.0.3
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/php.php-parser'
     resolution:
-      integrity: sha512-OSCOn/OnqrtyNDYik4a20QGCZh3HRDDzDVBBZGEXbdJr56lSzUy1QZsoZ5tASJloMjn3xbuEI3ml2s3Fiuq72g==
+      integrity: sha512-VW3KgIFqK6qJc8+jACfKba0FTHdA9iP4rWodsWCfkOmwfoXoMLftgCB60eGO0+CADjpzETfWwgbGZQ6D8MbHQg==
       tarball: file:projects/php.php-parser.tgz
     version: 0.0.0
   file:projects/protobuf.pbkit.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       pbkit: 0.0.12
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/protobuf.pbkit'
     resolution:
-      integrity: sha512-uwTBTDcI+aaqS+awbIN0Bom5VeDjJzOU0yNwBcJfBUUByv86+P6TR+jMv9PUq1fUh2gcpM6TdxeBNi35lSKUow==
+      integrity: sha512-dAlKDAEhnoy6OrEZ+sdSYBRWyQpv+OnONbLjZZGKLI0ltT8K+K60VOUcQFLu0JQSOGvK3xFnJwLH4juXagxrDg==
       tarball: file:projects/protobuf.pbkit.tgz
     version: 0.0.0
   file:projects/pug.pug.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       pug-lexer: 4.1.0
       pug-parser: 5.0.1
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/pug.pug'
     resolution:
-      integrity: sha512-2soEpCftMVZgRXncZEHY3vouW1Loc09GXT7h8C9IvwaJLMWEv4bynC9MJaLLJya8tvHCi44hxQWFk4HxFmFfTg==
+      integrity: sha512-EV/VILY7K47feDxpEFTn3m38N32ZrJVKUh6jfACPFdy0JGexPc/JFHUPetsHdYE2631++nBokI4xkRsQMAzcMw==
       tarball: file:projects/pug.pug.tgz
     version: 0.0.0
   file:projects/python.python.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       filbert: 0.1.20
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/python.python'
     resolution:
-      integrity: sha512-ZtFTJp23qu3vs7XUBXTPqYYHzHf6HJdRVbRUg+eyFZPEGQ34LNqav5jHr//CyxP7YRSuYSkwABOfd5ttf/6ILA==
+      integrity: sha512-Ok7NVGwO/yn27KVVyIpiqr1Vyx87L6mo52DJcLakNLCpZI9nUwSu378vWWYSNYEnpp6Bi7wQqtwpGe/jWuYcHQ==
       tarball: file:projects/python.python.tgz
     version: 0.0.0
   file:projects/reason.refmt.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astexplorer-refmt: 1.0.1
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/reason.refmt'
     resolution:
-      integrity: sha512-cHGCMqMQQF1Wgdu0nz1+I1EtcvZClFvW7NrT7OHt8fb0TrJaw+1r89SkSFBK/SVAjc2Dhm2eF5pmDUg0oGDJHQ==
+      integrity: sha512-Y9jUb9oE7tCmglcnQ1B1j6SFmAdZl6eTfZ8IbAIci7nymJJk3l72FFNuZHEjSpzlf27X3kkRjv5J+niGsOSkcA==
       tarball: file:projects/reason.refmt.tgz
     version: 0.0.0
   file:projects/regexp.regexp-tree.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       regexp-tree: 0.1.24
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/regexp.regexp-tree'
     resolution:
-      integrity: sha512-UszYl5W14Flw+K2JSYkDa918L4mOT0hwMoVGrwYoe2aFLIb1rz2Z+VA/Igj/8bunuR1WGj5yh0YZBMc2zGV6Rw==
+      integrity: sha512-dA6AkQhBxH5ursEI8nGP77dcTiPVxdIzYwsusv5JNwEzBUx8GdDTuwYqssFqmyg+QKAwccAVFEWxHeMxtLGvag==
       tarball: file:projects/regexp.regexp-tree.tgz
     version: 0.0.0
   file:projects/regexp.regexpp.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       regexpp: 3.2.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/regexp.regexpp'
     resolution:
-      integrity: sha512-w2kcP4Avb+/4ky7OG4+YCDaCJbcN5+oDY7vP4PeG1PDyUpVuYLrdSxTsqWJn6n9VR33x8ZMHROYySOm48WbexQ==
+      integrity: sha512-rbuAx8UqcDomRd+FS4q6Cckz/t/5sqdfm4TcoejMIZ5L00jqq+gVQRJ2YQPViGpAP0WRXZWwfiBeQ8YGAnLDog==
       tarball: file:projects/regexp.regexpp.tgz
     version: 0.0.0
   file:projects/regexp.regjsparser.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
       regjsparser: 0.6.9
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/regexp.regjsparser'
     resolution:
-      integrity: sha512-VxJY65oSrNYPUyG0HgBhjdy7IFHuwiyZ1bOqjz26j+8zmuVYysO6ziR9ZJFwU0IAn/g391mn0oaiM63b6ysTLQ==
+      integrity: sha512-F+9JvR+kgxRVSgPNQmElMjYKxuj7R/V5Mu4YV0ajbaXiQkcYjuc1H1iLqpoSaZ3RyNrNzKG5FU/WR8VdvH2mGw==
       tarball: file:projects/regexp.regjsparser.tgz
     version: 0.0.0
   file:projects/rust.syn.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astexplorer-syn: 1.0.57
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/rust.syn'
     resolution:
-      integrity: sha512-IJwSU9i2wC4CY25R0GC94Ro/99i5/M8sPnEOmahCRInwOGnHZZ3wP0B/GlWyMC0Ip3qjV4+L64fec7xPaJckKQ==
+      integrity: sha512-p5Qc76/FcyL4M6+40i/lW1c+YWXVbFWa0cEtUOteAXs4bU2K72Sut6jAVd/BIufxyUOt45DGHDVQItxluPr6jg==
       tarball: file:projects/rust.syn.tgz
     version: 0.0.0
   file:projects/san.san-template-parser.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
+      rimraf: 3.0.2
       san: 3.10.10
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/san.san-template-parser'
     resolution:
-      integrity: sha512-8cwtkfVl8Eo8dAQAtviZDscq2rxKVHtJGgChcYPDkhSARF+ncOXX7CeI6806P0C2/547jNfzeO6az7IgrN03cw==
+      integrity: sha512-nLYiDkj1R24GA9UAMYy9rlw5995K3DxslrQyC3kN1d3zhFlKiV10rF75uWuYSUa29jA3flHg9kNlHemKuYGIpw==
       tarball: file:projects/san.san-template-parser.tgz
     version: 0.0.0
   file:projects/scala.scalameta.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
+      rimraf: 3.0.2
       scalameta-parsers: 4.4.17
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/scala.scalameta'
     resolution:
-      integrity: sha512-q7Phr3hH91TJQq4ABocFLtlXsb4gvlHJ7SjhvnFoO1SAkYqucox9VjjlxIw3RIhIhJICNizq3DNVpPpcg1g5QA==
+      integrity: sha512-ubArhacm9v7FfOzkRZnOyHlDKa8KD8ifvJ+cg41wAErOvsqAJwhwdURRRsNjJULCUqrnGlLt1IZAXk3s2VaqOQ==
       tarball: file:projects/scala.scalameta.tgz
     version: 0.0.0
   file:projects/solidity.solidity-parser-antlr.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
+      rimraf: 3.0.2
       solidity-parser-antlr: 0.4.11
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/solidity.solidity-parser-antlr'
     resolution:
-      integrity: sha512-wHl/kOKN424+VLqBrMf55WDaatX52AGoZoo5i56QoCtBP02FYA86LIf141r/UCoqI0I3XKv82ZnwH4RLzDG+/Q==
+      integrity: sha512-H/3bf5n651KAj8a75AdvVrjzDdmNDsuAfxXvjcBX0imphRv1ZufpK5GIAGksqKxeoKfKs/WuEnqKHpG0SWntcw==
       tarball: file:projects/solidity.solidity-parser-antlr.tgz
     version: 0.0.0
   file:projects/solidity.solidity-parser-diligence.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
+      rimraf: 3.0.2
       solidity-parser-diligence: 0.4.18
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/solidity.solidity-parser-diligence'
     resolution:
-      integrity: sha512-zmMPBM7PrZUZDHjLptsRNrBF5CoD6bZ82q5mQFMtIwzpU2JQmfGWE0gcwrOBGAPqhRonwfabG9bZT1TFTRuvdA==
+      integrity: sha512-9yvMK8hUXQ1Xfz8XO22gtDEH7XzQQecveK2U/Klu7n4YOvmkC2UBxXsZq5kv6+r6MUQ6njaPB6rgOuZVnESw9g==
       tarball: file:projects/solidity.solidity-parser-diligence.tgz
     version: 0.0.0
   file:projects/sql.sqlite-parser.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
+      rimraf: 3.0.2
       sqlite-parser: 1.0.1
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/sql.sqlite-parser'
     resolution:
-      integrity: sha512-77cyMw450tiaVyKwNwQf2VRuTs4yZ23Mm5SXQap0AukTZvIcvMOa/qBtykJWhtLnidtvuFwDtN5kBkaTi+saEA==
+      integrity: sha512-drmpzWxAmw1L5Y+mwaKLq+Kfxa17i7n4dAreNwxQhsWQWEO7QhCGjOBrsdkVWxM1geKX99juap1cJ+psoo5log==
       tarball: file:projects/sql.sqlite-parser.tgz
     version: 0.0.0
   file:projects/thrift.thrift-parser.tgz:
     dependencies:
       '@creditkarma/thrift-parser': 1.2.0
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/thrift.thrift-parser'
     resolution:
-      integrity: sha512-xYU2yyizjOfWiVBw/EHyl5prX1IX56NkW55EiwFvGNVzGieuSUM1GyVTqATM0zMKwFPfE8G5qNlrvsNBBZhYmA==
+      integrity: sha512-g2+0pJ1iR1kO6feb4DaXIH27LQYDY/R6NQQ65X3hdSCZkU5jCyovJM5VHPYO40jFcM50ZcFchlHPto7BGnOwgA==
       tarball: file:projects/thrift.thrift-parser.tgz
     version: 0.0.0
   file:projects/vue.vue-compiler-dom.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       '@vue/compiler-dom': 3.2.20
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/vue.vue-compiler-dom'
     resolution:
-      integrity: sha512-TkCyZP/3nqOG8Kb5ukpwXKkRLRpZN/tKz7xGuHDqzrYex6Uvhd0I+Sbl4QMRNLqKSDAdW3bJPuCdOBXPgUlDVw==
+      integrity: sha512-svv6vjiQNgDWkJwRryXdO/0XXclTeiSgG74M28/FI1H25f48q3z7I75Fa6dQAPe8WYtfBKI5h/Oq4xjasWbTDw==
       tarball: file:projects/vue.vue-compiler-dom.tgz
     version: 0.0.0
   file:projects/vue.vue-eslint-parser.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
       vue-eslint-parser: 7.11.0
     dev: false
     name: '@rush-temp/vue.vue-eslint-parser'
     resolution:
-      integrity: sha512-xQG/Gb/Fh5J9NkGpC+IxbPGvHcMvs2KdYNhqMJZWZA6Cx7JRr7fmSoQw+ciWI6agLMKXjz0eAF0bFMpmlvg9qQ==
+      integrity: sha512-LaWz62MqPr4BXpZpOkKyYgoyZ+Km7OT0sJmvS9RHfDynrO8OrnQvvfxFBOluZVr+4KqzogM4Y4c3cDnAeo4NNg==
       tarball: file:projects/vue.vue-eslint-parser.tgz
     version: 0.0.0
   file:projects/vue.vue-template-compiler.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
       vue-template-compiler: 2.6.14
     dev: false
     name: '@rush-temp/vue.vue-template-compiler'
     resolution:
-      integrity: sha512-3F/fD3jhKuVwW31qWg3ZEWkCsy4QLUQfMFhsUFsNJeJOCnY5fAOrvp3u6suNyAdnd9Aahbgh9G4+mVO0HytYtQ==
+      integrity: sha512-+lE1kVfRdlHRgYPe8Kv+UmZtZr1Ya1aMrumflUYCM5gersb1+OSfxkhwfm0yIwiWjYEuLrNMD/Hw52sjKBA7Zg==
       tarball: file:projects/vue.vue-template-compiler.tgz
     version: 0.0.0
   file:projects/wat.wat-parser.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       '@webassemblyjs/wast-parser': 1.11.1
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
     dev: false
     name: '@rush-temp/wat.wat-parser'
     resolution:
-      integrity: sha512-2PAqafFStTv8LTiUJJFmXcD5zT7wDFszRyt89xtVuaOL1UT+u2ZGc5gjK0JhyWH5vsfHDSEP/EG/nUQ3hKThcw==
+      integrity: sha512-RMrJ/9Mqyq+SRTV5m144TNcBRYB4q6jpvRp9xmKEQukNeI7HEcmZe+Hfq3+eC0FGohEBCd8ok+CGfSW2iz0C4g==
       tarball: file:projects/wat.wat-parser.tgz
     version: 0.0.0
   file:projects/webidl.webidl2.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
       webidl2: 23.13.1
     dev: false
     name: '@rush-temp/webidl.webidl2'
     resolution:
-      integrity: sha512-wiOncCdMGKcYaPRdnW9y80AEWSzjKHXhsO2yNrX86L0hfBS8LPXc0xCOXBr8HET9orTx9wJGkGiLC5twFmozMA==
+      integrity: sha512-gNp30VUfb03aIb9WRvihvKTDBASQybawvIfxWhS+D0EUGPZK1+na4wGALKZ+Vfnbe17PRh3awMeMEomL6cFKJA==
       tarball: file:projects/webidl.webidl2.tgz
     version: 0.0.0
   file:projects/yaml.yaml-ast-parser.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
       yaml-ast-parser: 0.0.43
     dev: false
     name: '@rush-temp/yaml.yaml-ast-parser'
     resolution:
-      integrity: sha512-hB7JMhzEIrlwMn1O3DEZm8QdyTPYgbJvpAoLe5EG3Rgo9a0zXeHrKlMNDTPOQviq7mjjTdVzqhwmBH/cKX2SIw==
+      integrity: sha512-odPqUd5smK7AMz4SaTYUjt/ajRFLMKtjNvbvtbWhZ8zldlBEVCYzmeQdbmpPUhx1CmWViw73aoporYtZcadM1A==
       tarball: file:projects/yaml.yaml-ast-parser.tgz
     version: 0.0.0
   file:projects/yaml.yaml.tgz:
     dependencies:
+      '@digigov/cli': 0.5.24
+      '@digigov/cli-build': 0.5.24_@digigov+cli@0.5.24+rimraf@3.0.2
       astql: 0.0.0
+      rimraf: 3.0.2
       typescript: 4.4.4
       yaml: 1.10.2
     dev: false
     name: '@rush-temp/yaml.yaml'
     resolution:
-      integrity: sha512-958DLP7byhWlZoyBmJorVF8ahgzX/BWntWte2xLpHDUTAcm24eo+jgxRE7x8S6fS38ASQs5FSGPM6Ven3wiAtA==
+      integrity: sha512-aKWWZB/mEsyPewfaepOgY+5DZqnA2+xfbWViH1by+a18YyJQxjhal6vNurdF5KbPaDP5pmijZY0WYyWgzF0UkA==
       tarball: file:projects/yaml.yaml.tgz
     version: 0.0.0
 specifiers:
@@ -12267,7 +12433,6 @@ specifiers:
   astexplorer-go: ^1.0.0
   astexplorer-refmt: ^1.0.1
   astexplorer-syn: ^1.0.48
-  astql: 0.0.2
   babylon5: npm:babylon@^5
   babylon6: npm:babylon@^6
   babylon7: npm:@babel/parser@^7

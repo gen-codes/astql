@@ -1,20 +1,17 @@
 {
   "name": "@astql/json.momoa",
   "main": "index.js",
-  "files": [
-    "index.js",
-    "utils/",
-    "codeExample.txt"
-  ],
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
-    "build": "echo \"build\""
+    "build": "digigov build --subpackages"
   },
   "peerDependencies": {
-    "astql": "0.0.6"
+    "astql": "0.0.9"
   },
   "devDependencies": {
-    "typescript": "^4.0.3"
+    "@digigov/cli": "~0.5.24",
+    "@digigov/cli-build": "0.5.24",
+    "rimraf": "~3.0.2"
   },
   "dependencies": {
     "@humanwhocodes/momoa": "^1.0.0"

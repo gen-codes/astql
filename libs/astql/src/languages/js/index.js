@@ -1,6 +1,6 @@
 
 
-export const id = 'js';
+export const id = 'javascript';
 export const displayName = 'JavaScript';
 export const mimeTypes = ['text/javascript'];
 export const fileExtensions = ['js', 'jsx', 'ts', 'tsx'];
@@ -14,5 +14,5 @@ export const decideParser = (filename, text) => {
     case 'tsx':
       return 'typescript';
   }
-};
-export const defaultParser = 'typescript';
+}
+export const defaultParser = 'babylon';
