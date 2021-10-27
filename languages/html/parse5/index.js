@@ -14,7 +14,7 @@ export default {
   typeProps: new Set(['type', 'name', 'nodeName', 'tagName']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')([
+    require('astql/utils/multiple-require')([
       'parse5/lib/parser',
       'parse5/lib/tree-adapters/default',
       'parse5-htmlparser2-tree-adapter',

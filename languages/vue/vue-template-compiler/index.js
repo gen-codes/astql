@@ -14,7 +14,7 @@ export default {
   typeProps: new Set(['tag']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['vue-template-compiler/browser'], callback);
+    require('astql/utils/multiple-require')(['vue-template-compiler/browser'], callback);
   },
 
   parse(parser, code, options) {

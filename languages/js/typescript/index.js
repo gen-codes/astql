@@ -1,4 +1,4 @@
-import defaultParserInterface from 'astql/src/utils/defaultParserInterface';
+import defaultParserInterface from 'astql';
 // import pkg from 'typescript/package.json';
 
 const ID = 'typescript';
@@ -23,7 +23,7 @@ export default {
   typeProps: new Set(['kind']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['typescript'], _ts => {
+    require('astql/utils/multiple-require')(['typescript'], _ts => {
         // workarounds issue described at https://github.com/Microsoft/TypeScript/issues/18062
         for (const name of Object.keys(_ts.SyntaxKind).filter(x => isNaN(parseInt(x)))) {
             const value = _ts.SyntaxKind[name];

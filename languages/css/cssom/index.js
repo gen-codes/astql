@@ -14,7 +14,7 @@ export default {
   typeProps: new Set(),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['cssom/lib/parse'], callback);
+    require('astql/utils/multiple-require')(['cssom/lib/parse'], callback);
   },
 
   parse(CSSOM, code) {

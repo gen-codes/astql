@@ -19,7 +19,7 @@ export default {
   typeProps: new Set(['name']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['@angular/compiler'], callback);
+    require('astql/utils/multiple-require')(['@angular/compiler'], callback);
   },
 
   parse(ng, code, options) {

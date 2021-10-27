@@ -13,7 +13,7 @@ export default {
   locationProps: new Set(['loc']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['css-tree'], callback);
+    require('astql/utils/multiple-require')(['css-tree'], callback);
   },
 
   parse(csstree, code, options) {

@@ -21,7 +21,7 @@ export default {
   typeProps: new Set(['name']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['java-parser'], callback);
+    require('astql/utils/multiple-require')(['java-parser'], callback);
   },
 
   parse(parser, code) {

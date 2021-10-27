@@ -14,7 +14,7 @@ export default {
   typeProps: new Set(['kind']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['graphql/language'], ({ parse }) => {
+    require('astql/utils/multiple-require')(['graphql/language'], ({ parse }) => {
       callback({ parse });
     });
   },

@@ -12,7 +12,7 @@ export default {
   homepage: pkg.homepage || 'https://github.com/federicobond/solidity-parser-antlr',
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['solidity-parser-antlr'], callback);
+    require('astql/utils/multiple-require')(['solidity-parser-antlr'], callback);
   },
 
   parse(parser, code, options) {

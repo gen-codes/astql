@@ -13,7 +13,7 @@ export default {
   locationProps: new Set(['range', 'loc', 'start', 'end']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['filbert'], (parser) => {
+    require('astql/utils/multiple-require')(['filbert'], (parser) => {
       callback({ parser });
     });
   },

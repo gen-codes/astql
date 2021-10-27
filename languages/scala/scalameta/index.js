@@ -24,7 +24,7 @@ export default {
   locationProps: new Set(['pos']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['scalameta-parsers'], callback);
+    require('astql/utils/multiple-require')(['scalameta-parsers'], callback);
   },
 
   parse(scalametaParser, code, options) {

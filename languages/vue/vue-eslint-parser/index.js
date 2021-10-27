@@ -14,7 +14,7 @@ export default {
   typeProps: new Set(['tag']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['vue-eslint-parser'], callback);
+    require('astql/utils/multiple-require')(['vue-eslint-parser'], callback);
   },
 
   parse(parser, code, options) {

@@ -13,7 +13,7 @@ export default {
   locationProps: new Set(['Loc']),
 
   async loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['astexplorer-go'], async parser => {
+    require('astql/utils/multiple-require')(['astexplorer-go'], async parser => {
       await parser.init()
       callback(parser)
     })

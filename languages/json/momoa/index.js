@@ -13,7 +13,7 @@ export default {
   locationProps: new Set(['loc']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['@humanwhocodes/momoa'], callback);
+    require('astql/utils/multiple-require')(['@humanwhocodes/momoa'], callback);
   },
 
   parse(momoa, code, options) {

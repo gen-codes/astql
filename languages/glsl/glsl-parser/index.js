@@ -18,7 +18,7 @@ export default {
   ]),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['glsl-tokenizer/string', 'glsl-parser/direct'], (
+    require('astql/utils/multiple-require')(['glsl-tokenizer/string', 'glsl-parser/direct'], (
       tokenize,
       parse,
     ) => {

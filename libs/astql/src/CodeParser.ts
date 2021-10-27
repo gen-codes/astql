@@ -1,4 +1,3 @@
-import { string } from "prop-types";
 import ParserConfig from "./ParserConfig";
 import astquery from "./query";
 import generateVisitorKeys from "./utils/generateVisitorKeys";
@@ -50,6 +49,9 @@ export interface CodeInterface {
     string[]>
 
 }
+export const importConfig = (packageName) => {
+  return require(packageName).default
+}
 export class Code implements CodeInterface {
   constructor(
     path: string,
@@ -66,7 +68,7 @@ export class Code implements CodeInterface {
     this.queryHook = this.queryHook
     if (options?.parser) {
       if (typeof options.parser === 'string') {
-        this.config = require(`@astql/${options.parser}`).default;
+        this.config = importConfig(`@astql/${options.parser}`);
       } else {
         this.config = options.parser;
       }
@@ -89,7 +91,7 @@ export class Code implements CodeInterface {
     if (languages[extension]) {
       const parser = languages[extension].defaultParser ||
         languages[extension]?.detectParser(path, text);
-      return require(`@astql/${extension}.${parser}`);
+      return importConfig(`@astql/${extension}.${parser}`);
     } else {
       const lang = Object.keys(languages).find(lang => {
         if (
@@ -101,7 +103,7 @@ export class Code implements CodeInterface {
       })
       const parser = languages[lang].defaultParser ||
         languages[lang]?.decideParser(path, text);
-      return require(`@astql/${lang}.${parser}`);
+      return importConfig(`@astql/${lang}.${parser}`);
     }
     return null;
   }
@@ -287,7 +289,7 @@ const queries: Query = {
     }
   }]
 };
-const code = new Code('something.tsx', 'function(){}', )
-code.query('FunctionDeclaration').then(r=>{
-  console.log(r)
-})
+// const code = new Code('something.tsx', 'function(){}', )
+// code.query('FunctionDeclaration').then(r=>{
+//   console.log(r)
+// })

@@ -13,7 +13,7 @@ export default {
   locationProps: new Set(['range', 'loc']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['esprima'], callback);
+    require('astql/utils/multiple-require')(['esprima'], callback);
   },
 
   parse(esprima, code, options) {

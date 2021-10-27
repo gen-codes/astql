@@ -13,7 +13,7 @@ export default {
   locationProps: new Set(['position']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['css/lib/parse'], callback);
+    require('astql/utils/multiple-require')(['css/lib/parse'], callback);
   },
 
   nodeToRange({ position: range }) {

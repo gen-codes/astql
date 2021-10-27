@@ -19,7 +19,7 @@ export default {
   locationProps: new Set(['end', 'start']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['regexpp'], callback);
+    require('astql/utils/multiple-require')(['regexpp'], callback);
   },
 
   parse(regexpp, code, options) {

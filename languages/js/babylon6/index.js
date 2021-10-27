@@ -69,7 +69,7 @@ export default {
   showInMenu: false,
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['babylon6'], callback);
+    require('astql/utils/multiple-require')(['babylon6'], callback);
   },
 
   parse(babylon, code, options) {

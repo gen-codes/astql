@@ -14,7 +14,7 @@ export default {
   locationProps: new Set(['line', 'column']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['pug-lexer', 'pug-parser'], (lex, parse) => {
+    require('astql/utils/multiple-require')(['pug-lexer', 'pug-parser'], (lex, parse) => {
       callback({ lex, parse });
     });
   },

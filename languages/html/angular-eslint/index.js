@@ -73,7 +73,7 @@ export default {
   locationProps: new Set(['loc', 'start', 'end', 'range', 'startSourceSpan', 'endSourceSpan', 'sourceSpan', 'handlerSpan', 'location']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['@angular-eslint/template-parser'], wrapParesr.bind(null, callback));
+    require('astql/utils/multiple-require')(['@angular-eslint/template-parser'], wrapParesr.bind(null, callback));
   },
 
   parse(parser, code, options) {

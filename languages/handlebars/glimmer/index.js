@@ -12,7 +12,7 @@ export default {
   homepage: pkg.homepage || 'https://github.com/glimmerjs/glimmer-vm',
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['@glimmer/syntax'], (glimmer) => callback(glimmer.preprocess));
+    require('astql/utils/multiple-require')(['@glimmer/syntax'], (glimmer) => callback(glimmer.preprocess));
   },
 
   opensByDefault(node, key) {

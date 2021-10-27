@@ -14,7 +14,7 @@ export default {
   showInMenu: false,
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['babylon5'], callback);
+    require('astql/utils/multiple-require')(['babylon5'], callback);
   },
 
   parse(babylon, code, parserSettings) {

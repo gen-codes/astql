@@ -40,7 +40,7 @@ export default {
   locationProps: new Set(locKeys),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['astexplorer-refmt'], callback);
+    require('astql/utils/multiple-require')(['astexplorer-refmt'], callback);
   },
 
   parse(parser, code) {

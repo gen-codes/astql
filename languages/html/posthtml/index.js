@@ -13,7 +13,7 @@ export default {
   homepage: pkg.homepage || 'https://github.com/fb55/htmlparser2',
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['posthtml-parser'], callback);
+    require('astql/utils/multiple-require')(['posthtml-parser'], callback);
   },
 
   parse(posthtmlParser, code, options) {

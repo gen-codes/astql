@@ -14,7 +14,7 @@ export default {
   locationProps: new Set(['range', 'loc']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['luaparse'], callback);
+    require('astql/utils/multiple-require')(['luaparse'], callback);
   },
 
   parse(luaparse, code, options={}) {

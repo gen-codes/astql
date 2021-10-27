@@ -12,7 +12,7 @@ export default {
   homepage: pkg.homepage,
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['ember-template-recast'], (recast) => callback(recast.parse));
+    require('astql/utils/multiple-require')(['ember-template-recast'], (recast) => callback(recast.parse));
   },
 
   opensByDefault(node, key) {

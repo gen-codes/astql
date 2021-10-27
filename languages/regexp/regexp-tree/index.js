@@ -13,7 +13,7 @@ export default {
   locationProps: new Set(['loc']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['regexp-tree'], (regexpTree) => {
+    require('astql/utils/multiple-require')(['regexp-tree'], (regexpTree) => {
       callback(regexpTree);
     });
   },

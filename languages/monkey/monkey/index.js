@@ -14,7 +14,7 @@ export default {
   locationProps: new Set(['span']),
 
   async loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['@gengjiawen/monkey-wasm/monkey_wasm.js'], callback);
+    require('astql/utils/multiple-require')(['@gengjiawen/monkey-wasm/monkey_wasm.js'], callback);
   },
 
   parse(parser, code) {

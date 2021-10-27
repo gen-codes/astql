@@ -27,7 +27,7 @@ export default {
   },
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['yaml-ast-parser'], function(yamlAstParser) {
+    require('astql/utils/multiple-require')(['yaml-ast-parser'], function(yamlAstParser) {
       Kind = yamlAstParser.Kind;
       callback(yamlAstParser);
     });

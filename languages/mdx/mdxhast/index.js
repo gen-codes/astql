@@ -20,7 +20,7 @@ export default {
   locationProps: new Set(['position']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['@mdx-js/mdx', '@mdx-js/mdx/mdx-ast-to-mdx-hast'], (mdx, mdxAstToMdxHast) => callback({mdx, mdxAstToMdxHast}));
+    require('astql/utils/multiple-require')(['@mdx-js/mdx', '@mdx-js/mdx/mdx-ast-to-mdx-hast'], (mdx, mdxAstToMdxHast) => callback({mdx, mdxAstToMdxHast}));
   },
 
   parse({mdx, mdxAstToMdxHast}, code) {

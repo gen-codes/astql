@@ -63,7 +63,7 @@ export default {
   locationProps: new Set(['startPosition', 'endPosition']),
 
   loadParser (callback) {
-    require('astql/src/utils/multiple-require')([
+    require('astql/utils/multiple-require')([
       'hyntax/lib-es5/tokenize',
       'hyntax/lib-es5/construct-tree',
     ], (tokenize, constructTree) => {

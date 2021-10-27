@@ -12,7 +12,7 @@ export default {
   homepage: pkg.homepage || 'https://github.com/consensys/solidity-parser-antlr',
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['solidity-parser-diligence'], callback);
+    require('astql/utils/multiple-require')(['solidity-parser-diligence'], callback);
   },
 
   parse(parser, code, options) {

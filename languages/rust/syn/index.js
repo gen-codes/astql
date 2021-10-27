@@ -14,7 +14,7 @@ export default {
   locationProps: new Set(['span']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['astexplorer-syn'], callback);
+    require('astql/utils/multiple-require')(['astexplorer-syn'], callback);
   },
 
   parse(parser, code) {

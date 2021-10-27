@@ -12,7 +12,7 @@ export default {
   homepage: pkg.homepage,
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['handlebars'], (handlebars) => callback(handlebars.parse));
+    require('astql/utils/multiple-require')(['handlebars'], (handlebars) => callback(handlebars.parse));
   },
 
   opensByDefault(node, key) {

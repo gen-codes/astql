@@ -13,7 +13,7 @@ export default {
   typeProps: new Set(['type']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['pbkit/core/parser/proto'], callback);
+    require('astql/utils/multiple-require')(['pbkit/core/parser/proto'], callback);
   },
 
   parse(parser, code) {

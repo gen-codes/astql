@@ -37,7 +37,7 @@ export default {
   locationProps: new Set(['range', 'loc']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['flow-parser'], callback);
+    require('astql/utils/multiple-require')(['flow-parser'], callback);
   },
 
   parse(flowParser, code, options) {

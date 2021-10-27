@@ -13,7 +13,7 @@ export default {
   locationProps: new Set(['loc']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['json-to-ast'], callback);
+    require('astql/utils/multiple-require')(['json-to-ast'], callback);
   },
 
   parse(jsonToAst, code) {

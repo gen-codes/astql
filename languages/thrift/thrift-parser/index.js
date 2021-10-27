@@ -13,7 +13,7 @@ export default {
   locationProps: new Set(['location']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['@creditkarma/thrift-parser'], callback);
+    require('astql/utils/multiple-require')(['@creditkarma/thrift-parser'], callback);
   },
 
   parse({parse}, code) {

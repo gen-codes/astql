@@ -14,7 +14,7 @@ export default {
   typeProps: new Set(['type', 'name']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['htmlparser2/lib/Parser', 'domhandler'], (Parser, {DomHandler}) => {
+    require('astql/utils/multiple-require')(['htmlparser2/lib/Parser', 'domhandler'], (Parser, {DomHandler}) => {
       class Handler extends DomHandler {
         constructor() {
           super({ withStartIndices: true, withEndIndices: true });

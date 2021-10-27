@@ -23,7 +23,7 @@ export default {
   },
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['@webassemblyjs/wast-parser'], function(parser) {
+    require('astql/utils/multiple-require')(['@webassemblyjs/wast-parser'], function(parser) {
       callback(parser);
     });
   },

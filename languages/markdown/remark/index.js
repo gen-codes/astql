@@ -14,7 +14,7 @@ export default {
   locationProps: new Set(['position']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')([
+    require('astql/utils/multiple-require')([
       'remark',
       'remark-gfm',
       'remark-directive',

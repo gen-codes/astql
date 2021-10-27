@@ -23,7 +23,7 @@ export default {
   typeProps: new Set(['kind']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['php-parser'], callback);
+    require('astql/utils/multiple-require')(['php-parser'], callback);
   },
 
   parse(Engine, code) {

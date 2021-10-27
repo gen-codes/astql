@@ -12,7 +12,7 @@ export default {
   homepage: pkg.homepage || 'https://github.com/codeschool/sqlite-parser',
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['sqlite-parser'], callback);
+    require('astql/utils/multiple-require')(['sqlite-parser'], callback);
   },
 
   parse(sqliteParser, code) {

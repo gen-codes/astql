@@ -13,7 +13,7 @@ export default {
   locationProps: new Set(['source']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['postcss/lib/parse', 'postcss-scss/lib/scss-parse', 'postcss-less/lib/', 'postcss-safe-parser'], (builtIn, scss, less, safe) => {
+    require('astql/utils/multiple-require')(['postcss/lib/parse', 'postcss-scss/lib/scss-parse', 'postcss-less/lib/', 'postcss-safe-parser'], (builtIn, scss, less, safe) => {
       callback({
         'built-in': builtIn,
         scss,

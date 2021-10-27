@@ -29,7 +29,7 @@ export default {
   locationProps: new Set(['location']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['intl-messageformat-parser'], (all) => {
+    require('astql/utils/multiple-require')(['intl-messageformat-parser'], (all) => {
       Object.keys(all.TYPE).forEach((k) => {
         TYPES[k] = all.TYPE[k];
       });

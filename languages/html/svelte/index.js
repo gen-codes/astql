@@ -14,7 +14,7 @@ export default {
   typeProps: new Set(['tag']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['svelte/compiler'], callback);
+    require('astql/utils/multiple-require')(['svelte/compiler'], callback);
   },
 
   parse(parser, code, options) {

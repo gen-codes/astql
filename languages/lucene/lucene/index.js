@@ -13,7 +13,7 @@ export default {
   locationProps: new Set(['fieldLocation', 'termLocation', 'location']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['lucene'], callback);
+    require('astql/utils/multiple-require')(['lucene'], callback);
   },
 
   parse({parse}, code) {

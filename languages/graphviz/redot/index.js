@@ -13,7 +13,7 @@ export default {
   locationProps: new Set(['position']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['redot'], callback);
+    require('astql/utils/multiple-require')(['redot'], callback);
   },
 
   parse(redot, code) {

@@ -23,7 +23,7 @@ export default {
   },
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['webidl2'], callback);
+    require('astql/utils/multiple-require')(['webidl2'], callback);
   },
 
   parse({ parse }, code, options) {

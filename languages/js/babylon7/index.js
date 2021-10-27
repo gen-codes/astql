@@ -95,7 +95,7 @@ export default {
   locationProps: new Set(['range', 'loc', 'start', 'end']),
 
   loadParser(callback) {
-    require('astql/src/utils/multiple-require')(['babylon7'], callback);
+    require('astql/utils/multiple-require')(['babylon7'], callback);
   },
 
   parse(babylon, code, options) {
