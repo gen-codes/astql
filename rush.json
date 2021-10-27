@@ -364,6 +364,7 @@
     {
       "packageName": "astql",
       "projectFolder": "libs/astql",
+      "publishFolder": "dist",
       "shouldPublish": true
     }
   ]

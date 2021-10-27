@@ -1,12 +1,11 @@
 {
   "name": "astql",
-  "version": "0.0.0",
+  "version": "0.0.6",
   "author": "Vasilis Kefallinos <vkefallinos@gmail.com>",
   "contributors": [],
   "description": "A query library for ECMAScript AST using a CSS selector like query language.",
   "main": "dist/index.js",
   "files": [
-    "dist/*.js",
     "license.txt",
     "README.md"
   ],
@@ -26,8 +25,7 @@
     ]
   },
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack serve --progress --color"
+    "build": "digigov build --subpackages"
   },
   "repository": {
     "type": "git",
@@ -53,6 +51,10 @@
   "engines": {
     "node": ">=0.10"
   },
-  "dependencies": {"glob":"~7.2.0"
+  "dependencies": {
+    "glob":"~7.2.0",
+    "@digigov/cli":"~0.5.24",
+    "@digigov/cli-build":"0.5.24",
+    "rimraf":"~3.0.2"
   }
 }
