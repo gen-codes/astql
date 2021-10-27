@@ -1,4 +1,4 @@
-const parser = require('../../query-parser');
+const parser = require('../../selector-parser');
 /**
  * Parse a selector string and return its AST.
  * @param {string} selector
