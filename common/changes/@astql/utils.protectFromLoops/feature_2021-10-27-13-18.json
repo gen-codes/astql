@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Publish astql ecosystem",
+      "type": "minor",
+      "packageName": "@astql/utils.protectFromLoops"
+    }
+  ],
+  "packageName": "@astql/utils.protectFromLoops",
+  "email": "vkefallinos@gmail.com"
+}
