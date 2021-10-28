@@ -11,8 +11,11 @@ export interface ASTNode {
   [key: string]: any;
 }
 export interface ComplexQueryConfig {
-  selector: Selector;
-  data: QuerySchema | QuerySchema[];
+  __anyOf?: ComplexQueryConfig[];
+  __allOf?: ComplexQueryConfig[];
+  selector?: Selector;
+  value?: Selector;
+  data?: QuerySchema | QuerySchema[];
   transform?: (values: any, node: ASTNode) => any;
 }
 export interface ComplexQueryConfigModifier {
@@ -21,13 +24,13 @@ export interface ComplexQueryConfigModifier {
 }
 export type Modifier = 'allOf' | 'anyOf';
 export type ComplexQuery = ComplexQueryConfig
-  //  {anyOf: ComplexQueryConfig[]} | 
-  // {allOf: ComplexQueryConfig[]};
+//  |  {__anyOf: ComplexQueryConfig[]} | 
+//   {__allOf: ComplexQueryConfig[]};
   ;
 export type Selector = string
   | ((values: any) => string)
-  | [(values: any, node: ASTNode) => any];
-
+  | [(values: any, node: ASTNode) => any]
+  | [string];
 export interface QuerySchema {
   [key: string]: ComplexQuery | [ComplexQuery] | Selector;
 }
@@ -53,6 +56,7 @@ export interface CodeInterface {
 export const importConfig = (packageName) => {
   return require(packageName).default
 }
+
 export class Code implements CodeInterface {
   constructor(
     path: string,
@@ -137,14 +141,14 @@ export class Code implements CodeInterface {
       this.ast = loadedParse(this.text, this.parseOptions);
       
       this.dirtyText = false;
-      if(!this.config.visitorKeys){
-        this.config.visitorKeys = generateVisitorKeys(
-          this.ast,
-          Array.from(this.config.typeProps)[0],
-          Array.from(this.config._ignoredProperties),
-          this.config.getNodeName 
-        )
-      }
+      
+      this.config.visitorKeys = generateVisitorKeys(
+        this.ast,
+        Array.from(this.config.typeProps)[0],
+        Array.from(this.config._ignoredProperties),
+        this.config.getNodeName,
+        this.config.forEachProperty.bind(this.config)
+      )
     }
     return this.ast;
   }
@@ -179,6 +183,7 @@ export class Code implements CodeInterface {
       let isObject = false;
       let selector;
       let data;
+      let transform;
       if (Array.isArray(objSelector)) {
         if (typeof objSelector[0] === 'function') {
           values[key] = objSelector[0](ast, values);
@@ -188,12 +193,39 @@ export class Code implements CodeInterface {
         } else {
           selector = objSelector[0].selector;
           data = objSelector[0].data;
+          transform = objSelector[0].transform
+
         }
         isArray = true;
       } else if (typeof objSelector === 'object') {
-        isObject = true;
-        selector = objSelector.selector;
-        data = objSelector.data;
+        if(objSelector.__anyOf){
+          for(const eachSelector of objSelector.__anyOf){
+            const result = this.traverseDataSelector(
+              {value: eachSelector},
+              ast,
+              root,
+              // ast?._type
+              );
+            if(result.value){
+              values[key] = result.value
+              break;
+            }
+          }
+          transform = objSelector.transform
+          if(values[key] && transform){
+            values[key] = transform(values[key])
+          }
+          continue
+        }
+        if(objSelector.value){
+          selector = objSelector.value
+          transform = objSelector.transform
+        }else{
+          isObject = true;
+          transform = objSelector.transform
+          selector = objSelector.selector;
+          data = objSelector.data;
+        }
       } else {
         selector = objSelector;
       }
@@ -213,7 +245,11 @@ export class Code implements CodeInterface {
         visitorKeys: this.config.visitorKeys
       });
       if (!isArray && !isObject) {
-        values[key] = result[0];
+        if(transform && result[0]){
+          values[key] = transform(result[0]);
+        }else{
+          values[key] = result[0];
+        }
         continue;
       }
       if (result.length) {
@@ -226,6 +262,9 @@ export class Code implements CodeInterface {
                 root,
                 r._type);
             });
+            if(transform && result){
+              values[key] = transform(values[key]);
+            }
           } else if (isObject) {
             values[key] = this.traverseDataSelector(
               data,
@@ -233,6 +272,9 @@ export class Code implements CodeInterface {
               root,
               result[0]._type
             );
+            if(transform && result){
+              values[key] = transform(values[key]);
+            }
           }
         } else {
           if (isArray) {

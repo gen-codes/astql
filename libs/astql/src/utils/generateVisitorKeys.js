@@ -2,13 +2,18 @@ export default function generateVisitorKeys(
   ast,
   typeKey,
   exclude,
-  getNodeName
+  getNodeName,
+  forEachProperty
 ) {
   const traverse = (node, result) => {
+    if(forEachProperty) {
+      for(const { key, value } of forEachProperty(node)) {
+        node[key] = value;
+      }
+    }
     for(const key in node) {
       if(key === typeKey && typeof node[key] !== 'object')  {
         if(getNodeName) {
-
           const name = getNodeName(node);
           if(name) {
             node._type = name;

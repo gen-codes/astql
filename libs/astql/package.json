@@ -4,9 +4,10 @@
   "author": "Vasilis Kefallinos <vkefallinos@gmail.com>",
   "contributors": [],
   "description": "A query library for ECMAScript AST using a CSS selector like query language.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "digigov build --subpackages"
+    "build": "digigov build --subpackages",
+    "test": "digigov test"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,8 @@
     "glob":"~7.2.0",
     "@digigov/cli":"~0.5.24",
     "@digigov/cli-build":"0.5.24",
-    "rimraf":"~3.0.2"
+    "@digigov/cli-test":"0.5.24",
+    "rimraf":"~3.0.2",
+    "@astql/js.typescript":"~0.0.1"
   }
 }
