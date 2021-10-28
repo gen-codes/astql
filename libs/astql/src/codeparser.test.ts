@@ -189,15 +189,17 @@ const queries: Query = {
     },
   ],
 };
+export async function test(){
+  await code.parse();
+  const result = await code.query(queries);
+  console.log('result,', result);
+  console.log(result);
 
+}
 
 // describe('match', function() {
 
 //   it('unknown selector type', async function() {
-//     await code.parse();
-//     const result = await code.query(queries);
-//     console.log('result,', result);
-//     console.log(result);
 //     expect(result).toMatchSnapshot();
 //   });
 // });
