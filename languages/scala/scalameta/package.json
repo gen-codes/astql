@@ -7,7 +7,7 @@
     "test": "digigov test"
   },
   "peerDependencies": {
-    "astql": "0.0.9"
+    "astql": "0.0.10"
   },
   "devDependencies": {
     "@digigov/cli": "~0.5.24",

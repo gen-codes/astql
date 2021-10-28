@@ -8,8 +8,8 @@ let getComments;
 const syntaxKind = {};
 
 // Typescript uses `process` somehow
-if (!global.process) {
-  global.process = {}
+if(!global.process) {
+  global.process = {};
 }
 
 export default {
@@ -24,15 +24,15 @@ export default {
 
   loadParser(callback) {
     require('astql/utils/multiple-require')(['typescript'], _ts => {
-        // workarounds issue described at https://github.com/Microsoft/TypeScript/issues/18062
-        for (const name of Object.keys(_ts.SyntaxKind).filter(x => isNaN(parseInt(x)))) {
-            const value = _ts.SyntaxKind[name];
-            if (!syntaxKind[value]) {
-                syntaxKind[value] = name;
-            }
+      // workarounds issue described at https://github.com/Microsoft/TypeScript/issues/18062
+      for(const name of Object.keys(_ts.SyntaxKind).filter(x => isNaN(parseInt(x)))) {
+        const value = _ts.SyntaxKind[name];
+        if(!syntaxKind[value]) {
+          syntaxKind[value] = name;
         }
+      }
 
-        callback(_ts);
+      callback(_ts);
     });
   },
 
@@ -64,32 +64,52 @@ export default {
     const sourceFile = program.getSourceFile(filename);
 
     getComments = (node, isTrailing) => {
-      if (node.parent) {
+      if(node.parent) {
         const nodePos = isTrailing ? node.end : node.pos;
         const parentPos = isTrailing ? node.parent.end : node.parent.pos;
 
-        if (node.parent.kind === ts.SyntaxKind.SourceFile || nodePos !== parentPos) {
-          let comments = isTrailing ?
-            ts.getTrailingCommentRanges(sourceFile.text, nodePos) :
-            ts.getLeadingCommentRanges(sourceFile.text, nodePos);
-
-          if (Array.isArray(comments)) {
-            comments.forEach((comment) => {
-              comment.type = syntaxKind[comment.kind];
+        if(
+          node.parent.kind === ts.SyntaxKind.SourceFile ||
+          nodePos !== parentPos
+        ) {
+          let comments = isTrailing
+            ? ts.getTrailingCommentRanges(sourceFile.text, nodePos)
+            : ts.getLeadingCommentRanges(sourceFile.text, nodePos);
+          if(Array.isArray(comments)) {
+            comments = comments.map((comment) => {
+              comment._type = syntaxKind[comment.kind];
               comment.text = sourceFile.text.substring(comment.pos, comment.end);
+              const jsdocs = ts.getJSDocCommentsAndTags(node)
+                .map((tag) => {
+                  if(tag.kind) {
+                    tag._type = syntaxKind[tag.kind];
+                  }
+                  return tag;
+                });
+              if(!jsdocs.length) {
+                const parsedComment = ts.parseIsolatedJSDocComment(comment.text,0);
+                if(parsedComment.jsDoc) {
+                  jsdocs.push(parsedComment.jsDoc);
+                } 
+              }
+              comment.jsDoc = jsdocs.map((tag) => {
+                if(tag.kind) {
+                  tag._type = syntaxKind[tag.kind];
+                }
+                return tag;
+              });
+              return comment
             });
-
-            return comments;
           }
+          return comments;
         }
       }
     };
-
     return sourceFile;
   },
 
   getNodeName(node) {
-    if (node.kind) {
+    if(node.kind) {
       return syntaxKind[node.kind];
     }
   },
@@ -100,9 +120,9 @@ export default {
   ]),
 
   *forEachProperty(node) {
-    if (node && typeof node === 'object') {
-      for (let prop in node) {
-        if (this._ignoredProperties.has(prop) || prop.charAt(0) === '_') {
+    if(node && typeof node === 'object') {
+      for(let prop in node) {
+        if(this._ignoredProperties.has(prop) || prop.charAt(0) === '_') {
           continue;
         }
         yield {
@@ -110,7 +130,7 @@ export default {
           key: prop,
         };
       }
-      if (node.parent) {
+      if(node.parent) {
         yield {
           value: getComments(node),
           key: 'leadingComments',
@@ -126,11 +146,11 @@ export default {
   },
 
   nodeToRange(node) {
-    if (typeof node.getStart === 'function' &&
-        typeof node.getEnd === 'function') {
+    if(typeof node.getStart === 'function' &&
+      typeof node.getEnd === 'function') {
       return [node.getStart(), node.getEnd()];
-    } else if (typeof node.pos !== 'undefined' &&
-        typeof node.end !== 'undefined') {
+    } else if(typeof node.pos !== 'undefined' &&
+      typeof node.end !== 'undefined') {
       return [node.pos, node.end];
     }
   },
