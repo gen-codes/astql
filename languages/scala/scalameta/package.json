@@ -1,13 +1,13 @@
 {
   "name": "@astql/scala.scalameta",
   "main": "index.js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "build": "digigov build --subpackages",
     "test": "digigov test"
   },
   "peerDependencies": {
-    "astql": "0.0.10"
+    "astql": "0.1.0"
   },
   "devDependencies": {
     "@digigov/cli": "~0.5.24",

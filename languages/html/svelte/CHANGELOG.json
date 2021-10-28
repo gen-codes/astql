@@ -1,0 +1,25 @@
+{
+  "name": "@astql/html.svelte",
+  "entries": [
+    {
+      "version": "0.1.0",
+      "tag": "@astql/html.svelte_v0.1.0",
+      "date": "Thu, 28 Oct 2021 00:58:13 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Restructure astql"
+          },
+          {
+            "comment": "add features"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"astql\" from `0.0.10` to `0.1.0`"
+          }
+        ]
+      }
+    }
+  ]
+}
