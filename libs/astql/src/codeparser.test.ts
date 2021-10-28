@@ -191,13 +191,13 @@ const queries: Query = {
 };
 
 
-describe('match', function() {
+// describe('match', function() {
 
-  it('unknown selector type', async function() {
-    await code.parse();
-    const result = await code.query(queries);
-    console.log('result,', result);
-    console.log(result);
-    expect(result).toMatchSnapshot();
-  });
-});
+//   it('unknown selector type', async function() {
+//     await code.parse();
+//     const result = await code.query(queries);
+//     console.log('result,', result);
+//     console.log(result);
+//     expect(result).toMatchSnapshot();
+//   });
+// });
