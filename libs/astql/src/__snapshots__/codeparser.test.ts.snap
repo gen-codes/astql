@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`match unknown selector type 1`] = `
+Object {
+  "interfaces": Array [
+    Object {
+      "description": "A common two-third/one-third page layout. [hello](/lala)",
+      "group": "Layout/Page",
+      "links": "https://devs.pages.grnet.gr/digigov/digigov-sdk/docs/styles/layout#common-layouts",
+      "name": "Test",
+      "position": undefined,
+      "props": Array [
+        Object {
+          "description": "the ratio of the main",
+          "name": "ratio",
+        },
+      ],
+      "skip": undefined,
+      "slots": Array [
+        Object {
+          "description": "The header section of the page.
+Do not place any logos here.",
+          "name": "header",
+        },
+        Object {
+          "description": "The main section of the page (2/3)",
+          "name": "main",
+        },
+      ],
+      "slots__fromChildrenClass": Object {
+        "footer": Object {
+          "components": Array [
+            Object {
+              "name": "H1",
+            },
+            Object {
+              "name": "Paragraph",
+            },
+          ],
+          "name": "footer",
+        },
+        "footer2": Object {
+          "components": Array [
+            Object {
+              "name": "H1",
+            },
+            Object {
+              "name": "Paragraph",
+            },
+          ],
+          "name": "footer2",
+        },
+        "footer3": Object {
+          "components": Array [
+            Object {
+              "name": "H1",
+            },
+            Object {
+              "name": "Paragraph",
+            },
+          ],
+          "name": "footer3",
+        },
+        "main": Object {
+          "components": Array [
+            Object {
+              "name": "MainCol",
+            },
+          ],
+          "name": "main",
+        },
+        "side": Object {
+          "components": Array [
+            Object {
+              "name": "SideCol",
+            },
+          ],
+          "name": "side",
+        },
+      },
+      "type": "molecule",
+    },
+    Object {
+      "description": "A common two-third/one-third page layout. [hello](/lala)",
+      "group": "Layout/Page",
+      "links": "https://devs.pages.grnet.gr/digigov/digigov-sdk/docs/styles/layout#common-layouts",
+      "name": "Test",
+      "position": undefined,
+      "props": Array [
+        Object {
+          "description": "the ratio of the main",
+          "name": "ratio",
+        },
+      ],
+      "skip": undefined,
+      "slots": Array [
+        Object {
+          "description": "The header section of the page.
+Do not place any logos here.",
+          "name": "header",
+        },
+        Object {
+          "description": "The main section of the page (2/3)",
+          "name": "main",
+        },
+      ],
+      "slots__fromChildrenClass": Object {
+        "footer": Object {
+          "components": Array [
+            Object {
+              "name": "H1",
+            },
+            Object {
+              "name": "Paragraph",
+            },
+          ],
+          "name": "footer",
+        },
+        "footer2": Object {
+          "components": Array [
+            Object {
+              "name": "H1",
+            },
+            Object {
+              "name": "Paragraph",
+            },
+          ],
+          "name": "footer2",
+        },
+        "footer3": Object {
+          "components": Array [
+            Object {
+              "name": "H1",
+            },
+            Object {
+              "name": "Paragraph",
+            },
+          ],
+          "name": "footer3",
+        },
+        "main": Object {
+          "components": Array [
+            Object {
+              "name": "MainCol",
+            },
+          ],
+          "name": "main",
+        },
+        "side": Object {
+          "components": Array [
+            Object {
+              "name": "SideCol",
+            },
+          ],
+          "name": "side",
+        },
+      },
+      "type": "molecule",
+    },
+  ],
+}
+`;

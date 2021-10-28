@@ -6,7 +6,7 @@ import {traverse} from './traverse';
  * match the selector.
  */
 export function match(ast, selector, options): ASTNode[] {
-  const results = [];
+  const results: any = [];
   let field;
   traverse(ast, selector, function(node) {
     if(field) {

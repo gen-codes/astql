@@ -106,10 +106,15 @@ export class Code implements CodeInterface {
         ) {
           return true
         }
+        return false
       })
-      const parser = languages[lang].defaultParser ||
-        languages[lang]?.decideParser(path, text);
-      return importConfig(`@astql/${lang}.${parser}`);
+      if(lang){
+        const parser = languages[lang].defaultParser ||
+          languages[lang]?.decideParser(path, text);
+        return importConfig(`@astql/${lang}.${parser}`);
+      }else{
+        console.error('No parser discovered for ', path)
+      }
     }
     return null;
   }
@@ -292,48 +297,48 @@ export class Code implements CodeInterface {
     return values;
   }
 }
-// export const simpleQuery: Query = {
-//   name: {
-//     allOf: [{
-//       selector: 'name.value',
-//       data: {
-//         class: 'Identifier',
-//       }
-//     }]
-//   },
-// }
-const queries: Query = {
-  components: [{
-    selector: 'VariableDeclaration:has(QualifiedName>Identifier[escapedText=FC])',
-    data: {
-      name: '>Identifier.escapedText',
-      parameters: [{
-        selector: 'Parameter BindingElement',
-        data: {
-          name: '>Identifier.escapedText'
-        }
-      }],
-      interface: {
-        // allOf: [
-        //   {
-        selector: (values) => `$>InterfaceDeclaration[name.escapedText=${values.name}Props]`,
-        data: {
-          name: '>Identifier.escapedText',
-          properties: [{
-            selector: '>PropertySignature',
-            data: {
-              name: '>Identifier.escapedText',
-              'type': [(values, property) => property.type.getText()]
-            }
-          }]
-        }
-        //   }
+// // export const simpleQuery: Query = {
+// //   name: {
+// //     allOf: [{
+// //       selector: 'name.value',
+// //       data: {
+// //         class: 'Identifier',
+// //       }
+// //     }]
+// //   },
+// // }
+// const queries: Query = {
+//   components: [{
+//     selector: 'VariableDeclaration:has(QualifiedName>Identifier[escapedText=FC])',
+//     data: {
+//       name: '>Identifier.escapedText',
+//       parameters: [{
+//         selector: 'Parameter BindingElement',
+//         data: {
+//           name: '>Identifier.escapedText'
+//         }
+//       }],
+//       interface: {
+//         // allOf: [
+//         //   {
+//         selector: (values) => `$>InterfaceDeclaration[name.escapedText=${values.name}Props]`,
+//         data: {
+//           name: '>Identifier.escapedText',
+//           properties: [{
+//             selector: '>PropertySignature',
+//             data: {
+//               name: '>Identifier.escapedText',
+//               'type': [(values, property) => property.type.getText()]
+//             }
+//           }]
+//         }
+//         //   }
 
-        // ]
-      }
-    }
-  }]
-};
+//         // ]
+//       }
+//     }
+//   }]
+// };
 // const code = new Code('something.tsx', 'function(){}', )
 // code.query('FunctionDeclaration').then(r=>{
 //   console.log(r)

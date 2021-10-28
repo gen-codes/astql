@@ -18,7 +18,7 @@ export default function generateASTAndVisitorKeys(
     visitorKeys: any
     ): [ASTNode | ASTNode[], Record<string, any>] => {
     if(Array.isArray(unparsedNode)){
-      const [ast, arrayResult] = unparsedNode.reduce(([nodes, visitorKeys],node, idx)=>{
+      const [ast, arrayResult] = unparsedNode.reduce(([nodes, visitorKeys],node)=>{
         const [newNode, newVisitorKeys] = traverse(node, visitorKeys)
         nodes.push(newNode)
         return [nodes, newVisitorKeys]
@@ -27,7 +27,7 @@ export default function generateASTAndVisitorKeys(
     }
 
     const getText = () => {
-      const range = config.nodeToRange(unparsedNode)
+      const range = nodeToRange(unparsedNode)
       if(!range){
         return text
       }

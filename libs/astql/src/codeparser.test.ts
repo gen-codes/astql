@@ -1,6 +1,5 @@
 import { Query } from '.';
 import { Code } from './CodeParser';
-const fs = require('fs');
 const text = `/**
 * @ui-type molecule
 * @ui-group Layout/Page
@@ -192,14 +191,12 @@ const queries: Query = {
 export async function test(){
   await code.parse();
   const result = await code.query(queries);
-  console.log('result,', result);
-  console.log(result);
-
+  return result
 }
 
-// describe('match', function() {
+describe('match', function() {
 
-//   it('unknown selector type', async function() {
-//     expect(result).toMatchSnapshot();
-//   });
-// });
+  it('unknown selector type', async function() {
+    expect(await test()).toMatchSnapshot();
+  });
+});
