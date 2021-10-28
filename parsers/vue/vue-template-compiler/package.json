@@ -4,7 +4,7 @@
   "version": "0.1.1",
   "scripts": {
     "build": "digigov build --subpackages",
-    "test": "digigov test -u src"
+    "test": "digigov test src"
   },
   "peerDependencies": {
     "astql": "0.1.2"
