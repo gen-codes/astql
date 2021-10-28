@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ast.getText() should match codeExample.txt 1`] = `
+exports[`ast.getFullText() should match codeExample.txt 1`] = `
 "// Game Of Life ( https://gl-react-cookbook.surge.sh/gol )
 precision highp float;
 varying vec2 uv;

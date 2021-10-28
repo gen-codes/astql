@@ -5,11 +5,14 @@ export default function generateASTAndVisitorKeys(
   text: string,
   config: ParserConfig
 ): [ASTNode, Record<string, string[]>] {
-  const typeKey = Array.from(config.typeProps)[0]
-  const exclude = Array.from(config._ignoredProperties)
-  const forEachProperty = config.forEachProperty.bind(config)
+  const typeKey = Array.from(config.typeProps)[0] || 'type';
+  const exclude = Array.from(config._ignoredProperties);
+  const forEachProperty = config.forEachProperty.bind(config);
   const getNodeName = config.getNodeName.bind(config);
   const nodeToRange = config.nodeToRange.bind(config);
+  if(!ast[typeKey]){
+    ast[typeKey] = '_Fragment';
+  }
   const traverse = (
     unparsedNode: ASTNode,
     visitorKeys: any
@@ -30,7 +33,7 @@ export default function generateASTAndVisitorKeys(
       }
       return text.slice(...range)
     }
-    const getWholeText = () => {
+    const getFullText = () => {
       return text;
     }
     const getFilePath = () => {
@@ -38,7 +41,7 @@ export default function generateASTAndVisitorKeys(
     }
     const node = {
       getText: getText.bind(unparsedNode),
-      getWholeText: getWholeText.bind(unparsedNode),
+      getFullText: getFullText.bind(unparsedNode),
       getFilePath: getFilePath.bind(unparsedNode),
     } as ASTNode;
     if (forEachProperty) {
@@ -85,7 +88,7 @@ export default function generateASTAndVisitorKeys(
       children: newAst,
       getFilePath: ()=>filePath,
       getText: ()=>text,
-      getWholeText: ()=>text
+      getFullText: ()=>text
     }, visitorKeys]
   }
   return [newAst, visitorKeys];

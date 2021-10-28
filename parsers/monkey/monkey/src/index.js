@@ -1,7 +1,7 @@
 import {multipleRequire} from 'astql';
 import pkg from '@gengjiawen/monkey-wasm/package.json';
 
-import defaultParserInterface from 'astql/languages/monkey/utils/defaultParserInterface'
+import defaultParserInterface from 'astql/utils/defaultParserInterface'
 
 const ID = 'monkey'
 

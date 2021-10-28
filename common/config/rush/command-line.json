@@ -24,7 +24,12 @@
       "name": "test",
       "summary": "Test each project.",
       "description": "Runs jest test for each project.",
-      "enableParallelism": false
+      "enableParallelism": false,
+      "allowWarningsInSuccessfulBuild": true,
+      "incremental": true,
+      "watchForChanges": true,
+
+
     },
     // {
     //   /**
@@ -188,6 +193,13 @@
    * For example, you might define a "--production" parameter for the "rush build" command.
    */
   "parameters": [
+    {
+      "parameterKind": "flag",
+      "shortName": "-u",
+      "longName": "--update",
+      "description": "update snapshots",
+      "associatedCommands": ["test"]
+    }
     // {
     //   /**
     //    * (Required) Determines the type of custom parameter.

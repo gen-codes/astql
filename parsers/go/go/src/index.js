@@ -1,5 +1,5 @@
 import {multipleRequire} from 'astql';
-import defaultParserInterface from 'astql/languages/go/utils/defaultParserInterface'
+import defaultParserInterface from 'astql/utils/defaultParserInterface'
 
 const ID = 'go'
 

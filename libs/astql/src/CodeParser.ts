@@ -5,7 +5,7 @@ import * as languages from './languages';
 export interface ASTNode {
   _type: string;
   getText: () => string;
-  getWholeText: () => string;
+  getFullText: () => string;
   getFilePath: () => string;
   getLeadingComments?: () => string[];
   getTrailingComments?: () => string[];

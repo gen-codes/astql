@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ast.getText() should match codeExample.txt 1`] = `""`;
+exports[`ast.getFullText() should match codeExample.txt 1`] = `
+"package example;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Example {
+  private ArrayList<String> names;
+
+  public Example() {
+    names = new ArrayList<>();
+  }
+
+  public void addName(String name) {
+    names.add(name);
+  }
+
+  public List<String> getNames() {
+    return new ArrayList<>(names);
+  }
+}
+"
+`;
 
 exports[`should query generated ast 1`] = `1`;

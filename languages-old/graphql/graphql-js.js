@@ -12,6 +12,7 @@ export default {
   homepage: pkg.homepage,
   locationProps: new Set(['loc']),
   typeProps: new Set(['kind']),
+  _ignoredProperties: new Set(['parent', 'next', 'prev']),
 
   loadParser(callback) {
     require('../multiple-require')(['graphql/language'], ({ parse }) => {

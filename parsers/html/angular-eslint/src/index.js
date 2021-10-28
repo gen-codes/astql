@@ -1,5 +1,5 @@
 import {multipleRequire} from 'astql';
-import defaultParserInterface from 'astql/languages/html/utils/defaultESTreeParserInterface';
+import defaultParserInterface from 'astql/languages/js/utils/defaultESTreeParserInterface';
 import pkg from '@angular-eslint/template-parser/package.json';
 
 const ID = '@angular-eslint/template-parser';

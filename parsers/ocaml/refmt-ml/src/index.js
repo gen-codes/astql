@@ -1,5 +1,5 @@
 import {multipleRequire} from 'astql';
-import config from '../reason/refmt';
+import config from '@astql/reason.refmt';
 
 const ID = 'refmt-ml';
 

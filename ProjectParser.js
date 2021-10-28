@@ -245,22 +245,29 @@ import codeExample from './codeExample.js';
 const code = new Code('file.${lang}', codeExample, {
   parser: require('../index.js').default,
 });
-// it('code should parse without error', async () => {
-//   expect(code.ast).toHaveProperty('_type');
-// });
-it('ast.getText() should match codeExample.txt', async () => {
+it('code should parse without error', async () => {
   await code.parse()
+  expect(code.ast).toHaveProperty('_type');
+});
+it('ast.getFullText() should match codeExample.txt', async () => {
   expect(code.ast.getFullText()).toMatchSnapshot();
 });
 it('should query generated ast', async () => {
   const result = await code.query('*')
+  expect(result.length).not.toBe(0);
   expect(result.length).toMatchSnapshot();
 });
 `,
         'src/index.js': `import {multipleRequire} from 'astql';\n` + content.replace(
-          `import defaultParserInterface from '../utils/defaultParserInterface';`
-          , `import defaultParserInterface from 'astql/utils/defaultParserInterface';`
+          `import defaultParserInterface from '../utils/defaultParserInterface'`
+          , `import defaultParserInterface from 'astql/utils/defaultParserInterface'`
         ).replace(
+          '../js/utils/defaultESTreeParserInterface', `astql/languages/js/utils/defaultESTreeParserInterface`
+        )
+        .replace(
+          './utils/defaultESTreeParserInterface', `astql/languages/js/utils/defaultESTreeParserInterface`
+        )
+        .replace(
           '../utils', `astql/languages/${lang}/utils`
         ).replace(
           './utils', `astql/languages/${lang}/utils`
@@ -281,7 +288,7 @@ it('should query generated ast', async () => {
           version: '0.1.0',
           scripts: {
             build: 'digigov build --subpackages',
-            test: 'digigov test'
+            test: 'digigov test src'
           },
           peerDependencies: {
             astql: '0.1.1',

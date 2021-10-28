@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ast.getText() should match codeExample.txt 1`] = `
-"function allwords ()
+exports[`ast.getFullText() should match codeExample.txt 1`] = `
+"--[[
+    Paste or drop some Lua here and explore
+    the syntax tree created by chosen parser.
+    Enjoy!
+--]]
+
+function allwords ()
     local line = io.read()    -- current line
     local pos = 1             -- current position in the line
     return function ()        -- iterator function

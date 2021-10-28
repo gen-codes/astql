@@ -1,3 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ast.getFullText() should match codeExample.txt 1`] = `
+"<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+</body>
+
+</html>
+"
+`;
+
 exports[`should query generated ast 1`] = `1`;

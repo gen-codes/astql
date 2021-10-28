@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ast.getFullText() should match codeExample.txt 1`] = `
+"<template>
+  <p>{{ greeting }} World!</p>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      greeting: \\"Hello\\"
+    };
+  }
+};
+</script>
+
+<style scoped>
+p {
+  font-size: 2em;
+  text-align: center;
+}
+</style>
+"
+`;
+
+exports[`should query generated ast 1`] = `5`;

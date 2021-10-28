@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ast.getFullText() should match codeExample.txt 1`] = `
+"namespace js test
+
+const string test = 'test'
+
+struct MyStruct {
+	1: optional string test
+}
+
+service MyService {
+	void ping()
+}
+"
+`;
+
+exports[`should query generated ast 1`] = `19`;
