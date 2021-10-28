@@ -1,6 +1,13 @@
 # Change Log - astql
 
-This log was last generated on Thu, 28 Oct 2021 01:08:42 GMT and should not be manually modified.
+This log was last generated on Thu, 28 Oct 2021 20:24:02 GMT and should not be manually modified.
+
+## 0.1.2
+Thu, 28 Oct 2021 20:24:02 GMT
+
+### Patches
+
+- add tests
 
 ## 0.1.1
 Thu, 28 Oct 2021 01:08:42 GMT

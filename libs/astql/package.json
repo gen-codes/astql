@@ -1,6 +1,6 @@
 {
   "name": "astql",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Vasilis Kefallinos <vkefallinos@gmail.com>",
   "contributors": [],
   "description": "A query library for ECMAScript AST using a CSS selector like query language.",
@@ -22,7 +22,7 @@
     "query"
   ],
   "dependencies": {
-    "@astql/js.typescript":"~0.1.0"
+    "@astql/js.typescript":"~0.1.1"
   },
   "devDependencies": {
     "pegjs": "~0.10.0",

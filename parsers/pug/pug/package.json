@@ -1,13 +1,13 @@
 {
   "name": "@astql/pug.pug",
   "main": "index.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "build": "digigov build --subpackages",
     "test": "digigov test -u src"
   },
   "peerDependencies": {
-    "astql": "0.1.1"
+    "astql": "0.1.2"
   },
   "devDependencies": {
     "@digigov/cli": "~0.5.24",

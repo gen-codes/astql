@@ -1,0 +1,22 @@
+{
+  "name": "@astql/regexp.regexp-tree",
+  "entries": [
+    {
+      "version": "0.1.1",
+      "tag": "@astql/regexp.regexp-tree_v0.1.1",
+      "date": "Thu, 28 Oct 2021 20:24:02 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add tests"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"astql\" from `0.1.1` to `0.1.2`"
+          }
+        ]
+      }
+    }
+  ]
+}
