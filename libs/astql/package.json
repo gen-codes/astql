@@ -1,6 +1,6 @@
 {
   "name": "astql",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Vasilis Kefallinos <vkefallinos@gmail.com>",
   "contributors": [],
   "description": "A query library for ECMAScript AST using a CSS selector like query language.",
