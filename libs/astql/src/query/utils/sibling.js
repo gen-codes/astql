@@ -6,11 +6,6 @@ import { LEFT_SIDE } from '../index';
 /**
  * Determines if the given node has a sibling that matches the
  * given selector.
- * @param {external:AST} node
- * @param {SelectorSequenceAST} selector
- * @param {external:AST[]} ancestry
- * @param {Side} side
- * @param {ESQueryOptions|undefined} options
  * @returns {boolean}
  */
 

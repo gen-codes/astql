@@ -1,13 +1,15 @@
 import ParserConfig from "./ParserConfig";
 import astquery from "./query";
-import generateVisitorKeys from "./utils/generateVisitorKeys";
+import generateASTAndVisitorKeys from "./utils/generateVisitorKeys";
 import * as languages from './languages';
 export interface ASTNode {
   _type: string;
   getText: () => string;
-  getLeadingComments: () => string[];
-  getTrailingComments: () => string[];
-  replaceWith: (newNode: ASTNode) => void;
+  getWholeText: () => string;
+  getFilePath: () => string;
+  getLeadingComments?: () => string[];
+  getTrailingComments?: () => string[];
+  replaceWith?: (newNode: ASTNode) => void;
   [key: string]: any;
 }
 export interface ComplexQueryConfig {
@@ -38,15 +40,15 @@ export type Query = string | QuerySchema | [QuerySchema];
 export interface CodeInterface {
   loadParserConfig(path, text): ParserConfig | null;
   text: string;
-  ast: ASTNode | ASTNode[];
+  ast: ASTNode;
   path: string;
   parseOptions: any;
   setText: (text: string) => void;
   getText: () => string;
   dirtyText: boolean;
   config: ParserConfig;
-  parse: (options?: any) => Promise<ASTNode | ASTNode[]>;
-  transform?: (query: Query) => ASTNode | ASTNode[]
+  parse: (options?: any) => Promise<ASTNode >;
+  transform?: (query: Query) => ASTNode 
   query: (query: Query) => Promise<ASTNode |
     ASTNode[] |
     string |
@@ -83,7 +85,7 @@ export class Code implements CodeInterface {
   }
   text: string;
 
-  ast: ASTNode | ASTNode[];
+  ast: ASTNode;
   path: string;
   config: ParserConfig;
   _parse: any;
@@ -142,13 +144,14 @@ export class Code implements CodeInterface {
       
       this.dirtyText = false;
       
-      this.config.visitorKeys = generateVisitorKeys(
+      const [newAst, newVisitorKeys] = generateASTAndVisitorKeys(
         this.ast,
-        Array.from(this.config.typeProps)[0],
-        Array.from(this.config._ignoredProperties),
-        this.config.getNodeName,
-        this.config.forEachProperty.bind(this.config)
+        this.path,
+        this.text,
+        this.config
       )
+      this.config.visitorKeys = newVisitorKeys;
+      this.ast = newAst
     }
     return this.ast;
   }

@@ -1,5 +1,5 @@
 export * from './CodeParser';
 export { default as ParserConfig } from './ParserConfig';
 export { default as query } from './query';
-// const parseSelector = require('../../query-parser');
-// export {parseSelector}
+export { default as defaultParserInterface } from './utils/defaultParserInterface';
+export { default as multipleRequire } from './utils/multiple-require';

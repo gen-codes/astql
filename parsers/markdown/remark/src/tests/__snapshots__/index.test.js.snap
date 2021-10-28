@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ast.getText() should match codeExample.txt 1`] = `
+"# Hello
+
+Some *emphasis*, **importance**, and \`code\`.
+
+---
+
+\`\`\`javascript
+console.log('!');
+\`\`\`
+
+* foo
+* bar
+* baz
+"
+`;
+
+exports[`should query generated ast 1`] = `25`;

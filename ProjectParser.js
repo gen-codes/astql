@@ -169,10 +169,9 @@ const search = project
 // .map(f => ({...f,result:f.result.map(r => r)}));
 // console.log(search);
 const tsconfig = {
-  "include": [
-    "./index.ts",
-    "./utils/*",
-  ],
+  "extends": "@digigov/cli-build/tsconfig.base",
+  "include": ["./src/**/*.ts","./src/**/*.js"],
+  
   "exclude": [
     "node_modules",
   ],
@@ -182,19 +181,19 @@ const tsconfig = {
     },
     "skipLibCheck": true,
     "strict": false,
-    "noEmit": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "outDir": "dist"
+
   }
 };
 const filetree = {};
 const pkg = require('./package.json');
 const projects = [];
 search.forEach(({file, content, result}) => {
-  if(file.match(/\.\/languages-old\/utils/)){
-    return 
+  if(file.match(/\.\/languages-old\/utils/)) {
+    return;
   }
   const [_, lang] = file.match(/\.\/languages-old\/(.*?)\/.*?.js/);
   if(!filetree[lang]) {
@@ -202,66 +201,76 @@ search.forEach(({file, content, result}) => {
       parsers: []
     };
   }
-  if(file.endsWith('index.js')) {
+  const codeExample = fs.readFileSync(`languages-old/${lang}/codeExample.txt`, 'utf8');
 
-    // projects.push({
-    //   packageName: `@astql/${lang}`,
-    //   projectFolder: `languages/${lang}`,
-    //   reviewCategory: 'language',
-    //   shouldPublish: true,
-    // });
-    fs.outputFileSync(`libs/astql/src/languages/${lang}/index.js`, content +`
-export const defaultParser = '${filetree[lang].parsers[0]?.parser}';
-`);
-    // filetree[lang].package = {
-    //   files: {
-    //     'index.js': content,
-    //     'package.json': JSON.stringify({
-    //       name: `@astql/${lang}`,
-    //       "main": "index.js",
-    //       "files": [
-    //         "index.js",
-    //         "utils/"
-    //       ],
-    //       scripts: {
-    //         build: "echo 'build'"
-    //       },
-    //       version: '0.0.1',
-    //     }, null, 2)
-    //   },
-    //   lang
-    // };
+  if(file.endsWith('index.js')) {
+    fs.outputFileSync(`libs/astql/src/languages/${lang}/index.js`, 
+      content + `\nexport const defaultParser = '${filetree[lang].parsers[0]?.parser}';`
+    );
   } else {
     const [_, parser] = file.match(/\.\/languages-old\/.*?\/(.*?)\.js/);
     projects.push({
       packageName: `@astql/${lang}.${parser}`,
-      projectFolder: `languages/${lang}/${parser}`,
+      projectFolder: `parsers/${lang}/${parser}`,
       reviewCategory: 'parser',
       shouldPublish: true,
-      publishFolder: 'dist'
+      publishFolder: 'dist',
     });
     try {
-      fs.copySync(`languages-old/${lang}/codeExample.txt`, `libs/astql/src/languages/${lang}/codeExample.txt`);
-      fs.copySync(`languages-old/${lang}/utils`, `libs/astql/src/languages/${lang}/utils`);
-      
+      glob.sync(`languages-old/${lang}/utils/*`).forEach(f => {
+        const filename = f.replace(`languages-old/${lang}/utils/`, '')
+        fs.outputFileSync(
+          `libs/astql/src/languages/${lang}/utils/${filename}`,
+          fs.readFileSync(f, 'utf8')
+           .replace('../../utils/defaultParserInterface', `../../../utils/defaultParserInterface`)
+        );
 
-    } catch(e) {console.log();}
-
+      })
+    } catch(e) {
+    }
     filetree[lang].parsers.push({
       files: {
-        'tests/index.js': `
-it('should parse codeExample.txt', () => {
-  expect(true).toBe(true);
-})`,
-        'src/index.js': content.replace(
+        'tsconfig.json': JSON.stringify(tsconfig, null, 2),
+        'src/tests/codeExample.js': `export default \`${codeExample
+          .replace(/`/g, '\\\`')
+          .replace(/\$/g, '\\\$')
+        }\``,
+        'CHANGELOG.md': ' ',
+        'src/tests/index.test.js': `
+import {Code} from 'astql';
+import fs from 'fs';
+import path from 'path';
+import codeExample from './codeExample.js';
+
+const code = new Code('file.${lang}', codeExample, {
+  parser: require('../index.js').default,
+});
+// it('code should parse without error', async () => {
+//   expect(code.ast).toHaveProperty('_type');
+// });
+it('ast.getText() should match codeExample.txt', async () => {
+  await code.parse()
+  expect(code.ast.getFullText()).toMatchSnapshot();
+});
+it('should query generated ast', async () => {
+  const result = await code.query('*')
+  expect(result.length).toMatchSnapshot();
+});
+`,
+        'src/index.js': `import {multipleRequire} from 'astql';\n` + content.replace(
           `import defaultParserInterface from '../utils/defaultParserInterface';`
           , `import defaultParserInterface from 'astql/utils/defaultParserInterface';`
         ).replace(
-          /\.\/utils/, `astql/languages/${lang}/utils`
+          '../utils', `astql/languages/${lang}/utils`
+        ).replace(
+          './utils', `astql/languages/${lang}/utils`
         )
         .replace(
-          '../multiple-require', `astql/utils/multiple-require`
-        ),
+          '../js/utils', `astql/languages/${lang}/utils`
+        )
+          .replace(
+            `require('../multiple-require')`, `multipleRequire`
+          ),
         'README.md': `
 # ASTQL Parser ${parser} for ${lang}
 `,
@@ -269,19 +278,20 @@ it('should parse codeExample.txt', () => {
         'package.json': JSON.stringify({
           name: `@astql/${lang}.${parser}`,
           "main": "index.js",
-          version: '0.0.1',
+          version: '0.1.0',
           scripts: {
             build: 'digigov build --subpackages',
             test: 'digigov test'
           },
           peerDependencies: {
-            astql: '0.0.9',
+            astql: '0.1.1',
           },
           devDependencies: {
-            "@digigov/cli":"~0.5.24",
-            "@digigov/cli-build":"0.5.24",
-            "@digigov/cli-test":"0.5.24",
-            "rimraf":"~3.0.2"
+            "@digigov/cli": "~0.5.24",
+            "@digigov/cli-build": "0.5.24",
+            "@digigov/cli-test": "0.5.24",
+            "rimraf": "~3.0.2",
+            "typescript": "4.4.4"
           },
           dependencies: result.parse?.map(imp => {
             if(imp.startsWith('@')) {
@@ -305,17 +315,25 @@ projects.push({
   packageName: 'astql',
   projectFolder: 'libs/astql',
   shouldPublish: true,
+  reviewCategory: 'library',
+  publishFolder: 'dist',
 });
 rush.projects = projects;
 fs.outputFileSync('rush.json', JSON.stringify(rush, null, 2));
+fs.outputFileSync('./parsers/CHANGELOG.md', ' ');
+fs.outputFileSync('./parsers/LICENCE', 'TBD');
+const exportLangIndex = Object.keys(filetree).map(lang => 
+  `import * as ${lang} from './${lang}';
+export {${lang}};`).join('\n')
+fs.outputFileSync(
+  './libs/astql/src/languages/index.ts',
+  exportLangIndex 
+);
 for(const lang in filetree) {
-  // for(const file in filetree[lang].package.files) {
-  //   fs.outputFileSync('./languages/' + lang + '/' + file, filetree[lang].package.files[file]);
-  // }
 
   filetree[lang].parsers.forEach(p => {
     for(const file in p.files) {
-      fs.outputFileSync('./languages/' + lang + '/' + p.parser + '/' + file, p.files[file]);
+      fs.outputFileSync('./parsers/' + lang + '/' + p.parser + '/' + file, p.files[file]);
     }
   });
 
