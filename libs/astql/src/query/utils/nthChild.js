@@ -1,17 +1,7 @@
-import {getVisitorKeys} from './getVisitorKeys';
-
-/**
-* @callback IndexFunction
-* @param {Integer} len Containing list's length
-* @returns {Integer}
-*/
+import { getVisitorKeys } from './getVisitorKeys';
 /**
  * Determines if the given node is the nth child, determined by
  * `idxFn`, which is given the containing list's length.
- * @param {external:AST} node
- * @param {external:AST[]} ancestry
- * @param {IndexFunction} idxFn
- * @param {ESQueryOptions|undefined} options
  * @returns {boolean}
  */
 
