@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/markdown.remark"
+    }
+  ],
+  "packageName": "@astql/markdown.remark",
+  "email": "vkefallinos@gmail.com"
+}

@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/mdx.mdxhast"
+    }
+  ],
+  "packageName": "@astql/mdx.mdxhast",
+  "email": "vkefallinos@gmail.com"
+}

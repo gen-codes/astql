@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/vue.vue-compiler-dom"
+    }
+  ],
+  "packageName": "@astql/vue.vue-compiler-dom",
+  "email": "vkefallinos@gmail.com"
+}

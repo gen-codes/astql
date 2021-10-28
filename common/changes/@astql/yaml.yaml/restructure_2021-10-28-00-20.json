@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/yaml.yaml"
+    }
+  ],
+  "packageName": "@astql/yaml.yaml",
+  "email": "vkefallinos@gmail.com"
+}

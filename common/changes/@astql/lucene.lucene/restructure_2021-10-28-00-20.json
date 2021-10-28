@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/lucene.lucene"
+    }
+  ],
+  "packageName": "@astql/lucene.lucene",
+  "email": "vkefallinos@gmail.com"
+}

@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/js.flow"
+    }
+  ],
+  "packageName": "@astql/js.flow",
+  "email": "vkefallinos@gmail.com"
+}

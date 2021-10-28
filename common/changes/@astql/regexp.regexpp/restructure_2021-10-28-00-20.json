@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/regexp.regexpp"
+    }
+  ],
+  "packageName": "@astql/regexp.regexpp",
+  "email": "vkefallinos@gmail.com"
+}

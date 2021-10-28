@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/css.csstree"
+    }
+  ],
+  "packageName": "@astql/css.csstree",
+  "email": "vkefallinos@gmail.com"
+}

@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/wat.wat-parser"
+    }
+  ],
+  "packageName": "@astql/wat.wat-parser",
+  "email": "vkefallinos@gmail.com"
+}

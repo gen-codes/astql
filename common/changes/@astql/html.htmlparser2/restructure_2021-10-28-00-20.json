@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/html.htmlparser2"
+    }
+  ],
+  "packageName": "@astql/html.htmlparser2",
+  "email": "vkefallinos@gmail.com"
+}

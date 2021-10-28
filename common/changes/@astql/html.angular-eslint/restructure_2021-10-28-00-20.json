@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/html.angular-eslint"
+    }
+  ],
+  "packageName": "@astql/html.angular-eslint",
+  "email": "vkefallinos@gmail.com"
+}

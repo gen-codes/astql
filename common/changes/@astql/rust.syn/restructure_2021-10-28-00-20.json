@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/rust.syn"
+    }
+  ],
+  "packageName": "@astql/rust.syn",
+  "email": "vkefallinos@gmail.com"
+}

@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/json.json-to-ast"
+    }
+  ],
+  "packageName": "@astql/json.json-to-ast",
+  "email": "vkefallinos@gmail.com"
+}

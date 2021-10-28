@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/webidl.webidl2"
+    }
+  ],
+  "packageName": "@astql/webidl.webidl2",
+  "email": "vkefallinos@gmail.com"
+}

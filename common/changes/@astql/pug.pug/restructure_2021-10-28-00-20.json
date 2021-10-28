@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/pug.pug"
+    }
+  ],
+  "packageName": "@astql/pug.pug",
+  "email": "vkefallinos@gmail.com"
+}

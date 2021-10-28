@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/js.typescript"
+    }
+  ],
+  "packageName": "@astql/js.typescript",
+  "email": "vkefallinos@gmail.com"
+}

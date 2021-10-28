@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "add features",
+      "type": "minor",
+      "packageName": "@astql/js.babylon7"
+    }
+  ],
+  "packageName": "@astql/js.babylon7",
+  "email": "vkefallinos@gmail.com"
+}
