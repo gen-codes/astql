@@ -1,4 +1,4 @@
-// 
+//
 
 export const id = 'icu';
 export const displayName = 'ICU';

@@ -1,4 +1,4 @@
-import { ASTNode, ParserConfig } from "..";
+import { ASTNode, ParserConfig } from '..';
 export default function generateASTAndVisitorKeys(
   ast: ASTNode,
   filePath: string,
@@ -10,35 +10,38 @@ export default function generateASTAndVisitorKeys(
   const forEachProperty = config.forEachProperty.bind(config);
   const getNodeName = config.getNodeName.bind(config);
   const nodeToRange = config.nodeToRange.bind(config);
-  if(!ast[typeKey]){
+  if (!ast[typeKey]) {
     ast[typeKey] = '_Fragment';
   }
   const traverse = (
     unparsedNode: ASTNode,
     visitorKeys: any
-    ): [ASTNode | ASTNode[], Record<string, any>] => {
-    if(Array.isArray(unparsedNode)){
-      const [ast, arrayResult] = unparsedNode.reduce(([nodes, visitorKeys],node)=>{
-        const [newNode, newVisitorKeys] = traverse(node, visitorKeys)
-        nodes.push(newNode)
-        return [nodes, newVisitorKeys]
-      }, [[], visitorKeys])
-      return [ast, arrayResult]
+  ): [ASTNode | ASTNode[], Record<string, any>] => {
+    if (Array.isArray(unparsedNode)) {
+      const [ast, arrayResult] = unparsedNode.reduce(
+        ([nodes, visitorKeys], node) => {
+          const [newNode, newVisitorKeys] = traverse(node, visitorKeys);
+          nodes.push(newNode);
+          return [nodes, newVisitorKeys];
+        },
+        [[], visitorKeys]
+      );
+      return [ast, arrayResult];
     }
 
     const getText = () => {
-      const range = nodeToRange(unparsedNode)
-      if(!range){
-        return text
+      const range = nodeToRange(unparsedNode);
+      if (!range) {
+        return text;
       }
-      return text.slice(...range)
-    }
+      return text.slice(...range);
+    };
     const getFullText = () => {
       return text;
-    }
+    };
     const getFilePath = () => {
       return filePath;
-    }
+    };
     const node = {
       getText: getText.bind(unparsedNode),
       getFullText: getFullText.bind(unparsedNode),
@@ -76,20 +79,23 @@ export default function generateASTAndVisitorKeys(
     }
     return [node, visitorKeys];
   };
-  const [newAst, allVisitorKeysArray,] = traverse(ast, {});
+  const [newAst, allVisitorKeysArray] = traverse(ast, {});
   const visitorKeys = Object.keys(allVisitorKeysArray).reduce((acc, key) => {
     acc[key] = Array.from(allVisitorKeysArray[key]);
     return acc;
   }, {});
-  if(Array.isArray(newAst)){
-    visitorKeys['_Fragment'] = ['children']
-    return [{
-      _type: '_Fragment',
-      children: newAst,
-      getFilePath: ()=>filePath,
-      getText: ()=>text,
-      getFullText: ()=>text
-    }, visitorKeys]
+  if (Array.isArray(newAst)) {
+    visitorKeys['_Fragment'] = ['children'];
+    return [
+      {
+        _type: '_Fragment',
+        children: newAst,
+        getFilePath: () => filePath,
+        getText: () => text,
+        getFullText: () => text,
+      },
+      visitorKeys,
+    ];
   }
   return [newAst, visitorKeys];
 }

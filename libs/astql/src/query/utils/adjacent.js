@@ -11,17 +11,31 @@ import { LEFT_SIDE, RIGHT_SIDE } from '../index';
 
 export function adjacent(node, selector, ancestry, side, options) {
   const [parent] = ancestry;
-  if(!parent) {return false;}
+  if (!parent) {
+    return false;
+  }
   const keys = getVisitorKeys(parent, options);
-  for(const key of keys) {
+  for (const key of keys) {
     const listProp = parent[key];
-    if(Array.isArray(listProp)) {
+    if (Array.isArray(listProp)) {
       const idx = listProp.indexOf(node);
-      if(idx < 0) {continue;}
-      if(side === LEFT_SIDE && idx > 0 && isNode(listProp[idx - 1]) && matches(listProp[idx - 1], selector, ancestry, options)) {
+      if (idx < 0) {
+        continue;
+      }
+      if (
+        side === LEFT_SIDE &&
+        idx > 0 &&
+        isNode(listProp[idx - 1]) &&
+        matches(listProp[idx - 1], selector, ancestry, options)
+      ) {
         return true;
       }
-      if(side === RIGHT_SIDE && idx < listProp.length - 1 && isNode(listProp[idx + 1]) && matches(listProp[idx + 1], selector, ancestry, options)) {
+      if (
+        side === RIGHT_SIDE &&
+        idx < listProp.length - 1 &&
+        isNode(listProp[idx + 1]) &&
+        matches(listProp[idx + 1], selector, ancestry, options)
+      ) {
         return true;
       }
     }

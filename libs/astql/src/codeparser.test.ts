@@ -50,27 +50,26 @@ export interface Test extends Component {
    Slot<'footer3', [H1 , Paragraph]>,
    Slot<'footer3', [H1 , Paragraph][]>,
 }
-`
+`;
 const code = new Code('src/types.ts', text, {
   parser: 'js.typescript',
 });
-const objectKey = (key)=>{
-  return (arr)=>{
+const objectKey = (key) => {
+  return (arr) => {
     return arr.reduce((acc, obj) => {
       const objKey = obj[key];
       return {
         ...acc,
         [objKey]: obj,
       };
-    },{});
-
+    }, {});
   };
 };
 const jsDocTagName = (slot) => slot.comment.split('\n')[0].trim();
-const jsDocTagDescription = (slot) => slot.comment.split('\n').slice(1).join('\n').trim();
+const jsDocTagDescription = (slot) =>
+  slot.comment.split('\n').slice(1).join('\n').trim();
 
 const queries: Query = {
-
   interfaces: [
     {
       selector: 'InterfaceDeclaration:has(ExportKeyword)',
@@ -120,64 +119,74 @@ const queries: Query = {
         //         },
         //       },
         //     ],
-        slots: [{
-          selector: 'JSDocTag[tagName.escapedText=slot]',
-          data: {
-            name: [jsDocTagName],
-            description: [jsDocTagDescription],
-          }
-        }],
-        slots__fromChildrenClass: [{
-          selector: `PropertySignature[name.escapedText=children]
+        slots: [
+          {
+            selector: 'JSDocTag[tagName.escapedText=slot]',
+            data: {
+              name: [jsDocTagName],
+              description: [jsDocTagDescription],
+            },
+          },
+        ],
+        slots__fromChildrenClass: [
+          {
+            selector: `PropertySignature[name.escapedText=children]
            TypeReference:has(Identifier[escapedText=Slot])
           `,
-          data: {
-            name: 'LiteralType StringLiteral.text',
-            description: {
-              __anyOf: [
+            data: {
+              name: 'LiteralType StringLiteral.text',
+              description: {
+                __anyOf: [
+                  {
+                    value: 'JSDocTag[tagName.escapedText=slot]',
+                    transform: jsDocTagDescription,
+                  },
+                  {
+                    value: 'JSDocComment.comment',
+                    // transform: (value) => value.comment,
+                  },
+                ],
+              },
+              components: [
                 {
-                  value: 'JSDocTag[tagName.escapedText=slot]',
-                  transform: jsDocTagDescription,    
+                  selector: 'TypeReference',
+                  data: {
+                    name: '>Identifier.escapedText',
+                  },
                 },
-                {
-                  value: 'JSDocComment.comment',
-                  // transform: (value) => value.comment,
-                },
-              ]
+              ],
             },
-            components: [{
-              selector: 'TypeReference',
-              data: {
-                name: '>Identifier.escapedText',
-              }
-            }]
+            transform: objectKey('name'),
           },
-          transform: objectKey('name'),
-        }],
-      
-        slots__fromChildrenJSDoc: [{
-          selector: `PropertySignature[name.escapedText=children]
+        ],
+
+        slots__fromChildrenJSDoc: [
+          {
+            selector: `PropertySignature[name.escapedText=children]
            TypeReference:has(JSDocTag[tagName.escapedText=slot])
           `,
-          data: {
-            name: {
-              value: 'JSDocTag[tagName.escapedText=slot]',
-              transform: jsDocTagName,
-            },
-            description: {
-              value: 'JSDocTag[tagName.escapedText=slot]',
-              transform: jsDocTagDescription,
-            },
+            data: {
+              name: {
+                value: 'JSDocTag[tagName.escapedText=slot]',
+                transform: jsDocTagName,
+              },
+              description: {
+                value: 'JSDocTag[tagName.escapedText=slot]',
+                transform: jsDocTagDescription,
+              },
 
-            components: [{
-              selector: 'TypeReference',
-              data: {
-                name: 'JSDocTag[tagName.escapedText=slot]',
-                components: '>Identifier.escapedText',
-              }
-            }]
-          }
-        }],
+              components: [
+                {
+                  selector: 'TypeReference',
+                  data: {
+                    name: 'JSDocTag[tagName.escapedText=slot]',
+                    components: '>Identifier.escapedText',
+                  },
+                },
+              ],
+            },
+          },
+        ],
         type: 'JSDocTag[tagName.escapedText=ui-type].comment',
         skip: 'JSDocTag[tagName.escapedText=doc-skip]',
         links: 'JSDocTag[tagName.escapedText=link].comment',
@@ -188,15 +197,14 @@ const queries: Query = {
     },
   ],
 };
-export async function test(){
+export async function test() {
   await code.parse();
   const result = await code.query(queries);
-  return result
+  return result;
 }
 
-describe('match', function() {
-
-  it('unknown selector type', async function() {
+describe('match', function () {
+  it('unknown selector type', async function () {
     expect(await test()).toMatchSnapshot();
   });
 });

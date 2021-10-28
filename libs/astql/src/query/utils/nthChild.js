@@ -7,13 +7,17 @@ import { getVisitorKeys } from './getVisitorKeys';
 
 export function nthChild(node, ancestry, idxFn, options) {
   const [parent] = ancestry;
-  if(!parent) {return false;}
+  if (!parent) {
+    return false;
+  }
   const keys = getVisitorKeys(parent, options);
-  for(const key of keys) {
+  for (const key of keys) {
     const listProp = parent[key];
-    if(Array.isArray(listProp)) {
+    if (Array.isArray(listProp)) {
       const idx = listProp.indexOf(node);
-      if(idx >= 0 && idx === idxFn(listProp.length)) {return true;}
+      if (idx >= 0 && idx === idxFn(listProp.length)) {
+        return true;
+      }
     }
   }
   return false;

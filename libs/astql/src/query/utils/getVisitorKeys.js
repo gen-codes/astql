@@ -7,19 +7,18 @@ import estraverse from '../../traverse';
 export function getVisitorKeys(node, options) {
   const nodeType = node._type;
 
-  if(options && options.visitorKeys && options.visitorKeys[nodeType]) {
+  if (options && options.visitorKeys && options.visitorKeys[nodeType]) {
     return options.visitorKeys[nodeType];
   }
 
-  if(estraverse.VisitorKeys[nodeType]) {
+  if (estraverse.VisitorKeys[nodeType]) {
     return estraverse.VisitorKeys[nodeType];
   }
-  if(options && typeof options.fallback === 'function') {
-
+  if (options && typeof options.fallback === 'function') {
     return options.fallback(node);
   }
   // 'iteration' fallback
-  return Object.keys(node).filter(function(key) {
+  return Object.keys(node).filter(function (key) {
     return key !== 'type';
   });
 }

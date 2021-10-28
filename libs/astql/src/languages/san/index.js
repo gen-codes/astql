@@ -1,5 +1,3 @@
-
-
 export const id = 'san';
 export const displayName = 'San';
 export const mimeTypes = ['text/html'];

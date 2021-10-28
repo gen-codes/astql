@@ -1,12 +1,12 @@
-import { ASTNode } from "./CodeParser";
+import { ASTNode } from './CodeParser';
 
 export default interface ParserConfig {
   showInMenu: boolean;
   _ignoredProperties: Set<any>;
   locationProps: Set<any>;
   typeProps: Set<string>;
-  loadParser(callback: (parser: any)=>void): void
-  parse(parser: any, code: string,options?: any): ASTNode | ASTNode[];
+  loadParser(callback: (parser: any) => void): void;
+  parse(parser: any, code: string, options?: any): ASTNode | ASTNode[];
   visitorKeys: Record<string, string[]>;
   /**
    * Whether or not the provided node should be automatically expanded.
@@ -27,11 +27,17 @@ export default interface ParserConfig {
    * function allows a parser to expose information from a node if the node
    * is not implemented as plain JavaScript object.
    */
-  forEachProperty(node: any): Generator<{
-    value: any;
-    key: string;
-    computed: boolean;
-  }, void, unknown>;
+  forEachProperty(
+    node: any
+  ): Generator<
+    {
+      value: any;
+      key: string;
+      computed: boolean;
+    },
+    void,
+    unknown
+  >;
   /**
    * Many parsers accept settings, usually as plain JavaScript
    * objects, with simple values (boolean, string, number) assigned to
@@ -73,7 +79,9 @@ export default interface ParserConfig {
    *                                      used to describe nested options.
    *
    */
-  _getSettingsConfiguration(defaultOptions: any): {
+  _getSettingsConfiguration(
+    defaultOptions: any
+  ): {
     fields: string[];
   };
   hasSettings(): boolean;

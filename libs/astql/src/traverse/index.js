@@ -23,15 +23,12 @@
   THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-let Syntax,
-  VisitorOption,
-  VisitorKeys,
-  BREAK,
-  SKIP,
-  REMOVE;
+let Syntax, VisitorOption, VisitorKeys, BREAK, SKIP, REMOVE;
 
 function deepCopy(obj) {
-  let ret = {}, key, val;
+  let ret = {},
+    key,
+    val;
   for (key in obj) {
     if (obj.hasOwnProperty(key)) {
       val = obj[key];
@@ -83,8 +80,8 @@ Syntax = {
   ClassBody: 'ClassBody',
   ClassDeclaration: 'ClassDeclaration',
   ClassExpression: 'ClassExpression',
-  ComprehensionBlock: 'ComprehensionBlock',  // CAUTION: It's deferred to ES7.
-  ComprehensionExpression: 'ComprehensionExpression',  // CAUTION: It's deferred to ES7.
+  ComprehensionBlock: 'ComprehensionBlock', // CAUTION: It's deferred to ES7.
+  ComprehensionExpression: 'ComprehensionExpression', // CAUTION: It's deferred to ES7.
   ConditionalExpression: 'ConditionalExpression',
   ContinueStatement: 'ContinueStatement',
   DebuggerStatement: 'DebuggerStatement',
@@ -101,7 +98,7 @@ Syntax = {
   ForOfStatement: 'ForOfStatement',
   FunctionDeclaration: 'FunctionDeclaration',
   FunctionExpression: 'FunctionExpression',
-  GeneratorExpression: 'GeneratorExpression',  // CAUTION: It's deferred to ES7.
+  GeneratorExpression: 'GeneratorExpression', // CAUTION: It's deferred to ES7.
   Identifier: 'Identifier',
   IfStatement: 'IfStatement',
   ImportExpression: 'ImportExpression',
@@ -140,7 +137,7 @@ Syntax = {
   VariableDeclarator: 'VariableDeclarator',
   WhileStatement: 'WhileStatement',
   WithStatement: 'WithStatement',
-  YieldExpression: 'YieldExpression'
+  YieldExpression: 'YieldExpression',
 };
 
 VisitorKeys = {
@@ -159,8 +156,8 @@ VisitorKeys = {
   ClassBody: ['body'],
   ClassDeclaration: ['id', 'superClass', 'body'],
   ClassExpression: ['id', 'superClass', 'body'],
-  ComprehensionBlock: ['left', 'right'],  // CAUTION: It's deferred to ES7.
-  ComprehensionExpression: ['blocks', 'filter', 'body'],  // CAUTION: It's deferred to ES7.
+  ComprehensionBlock: ['left', 'right'], // CAUTION: It's deferred to ES7.
+  ComprehensionExpression: ['blocks', 'filter', 'body'], // CAUTION: It's deferred to ES7.
   ConditionalExpression: ['test', 'consequent', 'alternate'],
   ContinueStatement: ['label'],
   DebuggerStatement: [],
@@ -177,7 +174,7 @@ VisitorKeys = {
   ForOfStatement: ['left', 'right', 'body'],
   FunctionDeclaration: ['id', 'params', 'body'],
   FunctionExpression: ['id', 'params', 'body'],
-  GeneratorExpression: ['blocks', 'filter', 'body'],  // CAUTION: It's deferred to ES7.
+  GeneratorExpression: ['blocks', 'filter', 'body'], // CAUTION: It's deferred to ES7.
   Identifier: [],
   IfStatement: ['test', 'consequent', 'alternate'],
   ImportExpression: ['source'],
@@ -197,7 +194,7 @@ VisitorKeys = {
   ObjectPattern: ['properties'],
   Program: ['body'],
   Property: ['key', 'value'],
-  RestElement: [ 'argument' ],
+  RestElement: ['argument'],
   ReturnStatement: ['argument'],
   SequenceExpression: ['expressions'],
   SpreadElement: ['argument'],
@@ -216,7 +213,7 @@ VisitorKeys = {
   VariableDeclarator: ['id', 'init'],
   WhileStatement: ['test', 'body'],
   WithStatement: ['object', 'body'],
-  YieldExpression: ['argument']
+  YieldExpression: ['argument'],
 };
 
 // unique id
@@ -227,7 +224,7 @@ REMOVE = {};
 VisitorOption = {
   Break: BREAK,
   Skip: SKIP,
-  Remove: REMOVE
+  Remove: REMOVE,
 };
 
 function Reference(parent, key) {
@@ -256,7 +253,7 @@ function Element(node, path, wrap, ref) {
   this.ref = ref;
 }
 
-function Controller() { }
+function Controller() {}
 
 // API:
 // return property path array from root to current node
@@ -320,11 +317,15 @@ Controller.prototype.__execute = function __execute(callback, element) {
 
   result = undefined;
 
-  previous  = this.__current;
+  previous = this.__current;
   this.__current = element;
   this.__state = null;
   if (callback) {
-    result = callback.call(this, element.node, this.__leavelist[this.__leavelist.length - 1].node);
+    result = callback.call(
+      this,
+      element.node,
+      this.__leavelist[this.__leavelist.length - 1].node
+    );
   }
   this.__current = previous;
 
@@ -355,7 +356,7 @@ Controller.prototype.remove = function () {
   this.notify(REMOVE);
 };
 
-Controller.prototype.__initialize = function(root, visitor) {
+Controller.prototype.__initialize = function (root, visitor) {
   this.visitor = visitor;
   this.root = root;
   this.__worklist = [];
@@ -383,7 +384,11 @@ function isNode(node) {
 }
 
 function isProperty(nodeType, key) {
-  return (nodeType === Syntax.ObjectExpression || nodeType === Syntax.ObjectPattern) && 'properties' === key;
+  return (
+    (nodeType === Syntax.ObjectExpression ||
+      nodeType === Syntax.ObjectPattern) &&
+    'properties' === key
+  );
 }
 
 function candidateExistsInLeaveList(leavelist, candidate) {
@@ -436,7 +441,6 @@ Controller.prototype.traverse = function traverse(root, visitor) {
     }
 
     if (element.node) {
-
       ret = this.__execute(visitor.enter, element);
 
       if (this.__state === BREAK || ret === BREAK) {
@@ -457,7 +461,7 @@ Controller.prototype.traverse = function traverse(root, visitor) {
         if (this.__fallback) {
           candidates = this.__fallback(node);
         } else {
-          throw new Error(`Unknown node type ${  nodeType  }.`);
+          throw new Error(`Unknown node type ${nodeType}.`);
         }
       }
 
@@ -481,9 +485,19 @@ Controller.prototype.traverse = function traverse(root, visitor) {
             }
 
             if (isProperty(nodeType, candidates[current])) {
-              element = new Element(candidate[current2], [key, current2], 'Property', null);
+              element = new Element(
+                candidate[current2],
+                [key, current2],
+                'Property',
+                null
+              );
             } else if (isNode(candidate[current2])) {
-              element = new Element(candidate[current2], [key, current2], null, null);
+              element = new Element(
+                candidate[current2],
+                [key, current2],
+                null,
+                null
+              );
             } else {
               continue;
             }
@@ -517,10 +531,7 @@ Controller.prototype.replace = function replace(root, visitor) {
     key;
 
   function removeElem(element) {
-    let i,
-      key,
-      nextElem,
-      parent;
+    let i, key, nextElem, parent;
 
     if (element.ref.remove()) {
       // When the reference is an element of an array.
@@ -532,7 +543,7 @@ Controller.prototype.replace = function replace(root, visitor) {
       while (i--) {
         nextElem = worklist[i];
         if (nextElem.ref && nextElem.ref.parent === parent) {
-          if  (nextElem.ref.key < key) {
+          if (nextElem.ref.key < key) {
             break;
           }
           --nextElem.ref.key;
@@ -551,7 +562,7 @@ Controller.prototype.replace = function replace(root, visitor) {
 
   // initialize
   outer = {
-    root
+    root,
   };
   element = new Element(root, null, null, new Reference(outer, 'root'));
   worklist.push(element);
@@ -567,7 +578,12 @@ Controller.prototype.replace = function replace(root, visitor) {
 
       // node may be replaced with null,
       // so distinguish between undefined and null in this place
-      if (target !== undefined && target !== BREAK && target !== SKIP && target !== REMOVE) {
+      if (
+        target !== undefined &&
+        target !== BREAK &&
+        target !== SKIP &&
+        target !== REMOVE
+      ) {
         // replace
         element.ref.replace(target);
       }
@@ -586,7 +602,12 @@ Controller.prototype.replace = function replace(root, visitor) {
 
     // node may be replaced with null,
     // so distinguish between undefined and null in this place
-    if (target !== undefined && target !== BREAK && target !== SKIP && target !== REMOVE) {
+    if (
+      target !== undefined &&
+      target !== BREAK &&
+      target !== SKIP &&
+      target !== REMOVE
+    ) {
       // replace
       element.ref.replace(target);
       element.node = target;
@@ -620,7 +641,7 @@ Controller.prototype.replace = function replace(root, visitor) {
       if (this.__fallback) {
         candidates = this.__fallback(node);
       } else {
-        throw new Error(`Unknown node type ${  nodeType  }.`);
+        throw new Error(`Unknown node type ${nodeType}.`);
       }
     }
 
@@ -639,16 +660,28 @@ Controller.prototype.replace = function replace(root, visitor) {
             continue;
           }
           if (isProperty(nodeType, candidates[current])) {
-            element = new Element(candidate[current2], [key, current2], 'Property', new Reference(candidate, current2));
+            element = new Element(
+              candidate[current2],
+              [key, current2],
+              'Property',
+              new Reference(candidate, current2)
+            );
           } else if (isNode(candidate[current2])) {
-            element = new Element(candidate[current2], [key, current2], null, new Reference(candidate, current2));
+            element = new Element(
+              candidate[current2],
+              [key, current2],
+              null,
+              new Reference(candidate, current2)
+            );
           } else {
             continue;
           }
           worklist.push(element);
         }
       } else if (isNode(candidate)) {
-        worklist.push(new Element(candidate, key, null, new Reference(node, key)));
+        worklist.push(
+          new Element(candidate, key, null, new Reference(node, key))
+        );
       }
     }
   }
@@ -689,7 +722,11 @@ function extendCommentRange(comment, tokens) {
 
 function attachComments(tree, providedComments, tokens) {
   // At first, we should calculate extended comment ranges.
-  let comments = [], comment, len, i, cursor;
+  let comments = [],
+    comment,
+    len,
+    i,
+    cursor;
 
   if (!tree.range) {
     throw new Error('attachComments needs range information');
@@ -715,7 +752,7 @@ function attachComments(tree, providedComments, tokens) {
   // This is based on John Freeman's implementation.
   cursor = 0;
   traverse(tree, {
-    enter (node) {
+    enter(node) {
       let comment;
 
       while (cursor < comments.length) {
@@ -743,12 +780,12 @@ function attachComments(tree, providedComments, tokens) {
       if (comments[cursor].extendedRange[0] > node.range[1]) {
         return VisitorOption.Skip;
       }
-    }
+    },
   });
 
   cursor = 0;
   traverse(tree, {
-    leave (node) {
+    leave(node) {
       let comment;
 
       while (cursor < comments.length) {
@@ -776,7 +813,7 @@ function attachComments(tree, providedComments, tokens) {
       if (comments[cursor].extendedRange[0] > node.range[1]) {
         return VisitorOption.Skip;
       }
-    }
+    },
   });
 
   return tree;
@@ -789,4 +826,6 @@ exports.attachComments = attachComments;
 exports.VisitorKeys = VisitorKeys;
 exports.VisitorOption = VisitorOption;
 exports.Controller = Controller;
-exports.cloneEnvironment = function () { return clone({}); };
+exports.cloneEnvironment = function () {
+  return clone({});
+};
