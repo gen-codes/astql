@@ -1,0 +1,46 @@
+{
+  "name": "@astql/query",
+  "version": "0.1.3",
+  "author": "Vasilis Kefallinos <vkefallinos@gmail.com>",
+  "contributors": [],
+  "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "digigov build --subpackages",
+    "test": "digigov test",
+    "lint": "digigov lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gencodes/astql.git"
+  },
+  "bugs": "https://github.com/gencodes/astql/issues",
+  "homepage": "https://github.com/gencodes/astql/",
+  "keywords": [
+    "ast",
+    "ecmascript",
+    "javascript",
+    "query",
+    "astql",
+    "gen-codes"
+  ],
+  "dependencies": {
+    "@astql/traverse": "0.1.3",
+    "@astql/parser": "0.1.3"
+  },
+  "devDependencies": {
+    "eslint": "~7.24.0",
+    "@types/jest": "27.0.2",
+    "@types/node": "~16.11.6",
+    "@digigov/cli": "~0.5.24",
+    "@digigov/cli-build": "0.5.24",
+    "rimraf": "~3.0.2",
+    "@digigov/cli-test": "0.5.24",
+    "typescript": "4.4.4",
+    "@digigov/cli-lint": "~0.5.25"
+  },
+  "license": "BSD-3-Clause",
+  "engines": {
+    "node": ">=0.10"
+  }
+}

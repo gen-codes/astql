@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ast.getFullText() should match codeExample.txt 1`] = `
+"/**
+ * Copy paste in a GraphViz dot file to explore the syntax tree
+ */
+
+digraph {
+  rankdir=LR
+  a [fillcolor=green]
+  c [fillcolor=red]
+  a -> b
+  c -> a [dir=\\"back\\"]
+}
+"
+`;
+
+exports[`should query generated ast 1`] = `20`;

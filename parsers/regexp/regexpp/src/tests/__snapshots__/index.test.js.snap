@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ast.getFullText() should match codeExample.txt 1`] = `"/[a-z]/i"`;
+
+exports[`should query generated ast 1`] = `9`;

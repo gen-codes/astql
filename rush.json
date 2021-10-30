@@ -1,0 +1,449 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+  "rushVersion": "5.46.1",
+  "pnpmVersion": "5.15.2",
+  "pnpmOptions": {},
+  "nodeSupportedVersionRange": ">=12.13.0 <13.0.0 || >=14.15.0 <15.0.0",
+  "ensureConsistentVersions": true,
+  "projectFolderMinDepth": 2,
+  "projectFolderMaxDepth": 5,
+  "gitPolicy": {},
+  "repository": {
+    "url": "https://github.com/gen-codes/astql",
+    "defaultBranch": "main",
+    "defaultRemote": "origin"
+  },
+  "eventHooks": {
+    "preRushInstall": [
+      "common/scripts/pre-rush-install.js"
+    ],
+    "postRushInstall": [],
+    "preRushBuild": [],
+    "postRushBuild": []
+  },
+  "variants": [],
+  "telemetryEnabled": false,
+  "hotfixChangeEnabled": false,
+  "projects": [
+    {
+      "packageName": "@astql/css.cssom",
+      "projectFolder": "parsers/css/cssom",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/css.csstree",
+      "projectFolder": "parsers/css/csstree",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/css.postcss",
+      "projectFolder": "parsers/css/postcss",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/css.rework",
+      "projectFolder": "parsers/css/rework",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/glsl.glsl-parser",
+      "projectFolder": "parsers/glsl/glsl-parser",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/go.go",
+      "projectFolder": "parsers/go/go",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/graphql.graphql-js",
+      "projectFolder": "parsers/graphql/graphql-js",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/graphviz.redot",
+      "projectFolder": "parsers/graphviz/redot",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/handlebars.ember-template-recast",
+      "projectFolder": "parsers/handlebars/ember-template-recast",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/handlebars.glimmer",
+      "projectFolder": "parsers/handlebars/glimmer",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/handlebars.handlebars",
+      "projectFolder": "parsers/handlebars/handlebars",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/html.angular-eslint",
+      "projectFolder": "parsers/html/angular-eslint",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/html.angular",
+      "projectFolder": "parsers/html/angular",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/html.htmlparser2",
+      "projectFolder": "parsers/html/htmlparser2",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/html.hyntax",
+      "projectFolder": "parsers/html/hyntax",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/html.parse5",
+      "projectFolder": "parsers/html/parse5",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/html.posthtml",
+      "projectFolder": "parsers/html/posthtml",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/html.svelte",
+      "projectFolder": "parsers/html/svelte",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/icu.intl-messageformat-parser",
+      "projectFolder": "parsers/icu/intl-messageformat-parser",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/java.java-parser",
+      "projectFolder": "parsers/java/java-parser",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/js.babel",
+      "projectFolder": "parsers/js/babel",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/js.esprima",
+      "projectFolder": "parsers/js/esprima",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/js.flow",
+      "projectFolder": "parsers/js/flow",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/js.typescript",
+      "projectFolder": "parsers/js/typescript",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/json.json-to-ast",
+      "projectFolder": "parsers/json/json-to-ast",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/json.momoa",
+      "projectFolder": "parsers/json/momoa",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/lua.luaparse",
+      "projectFolder": "parsers/lua/luaparse",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/lucene.lucene",
+      "projectFolder": "parsers/lucene/lucene",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/markdown.remark",
+      "projectFolder": "parsers/markdown/remark",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/mdx.mdxhast",
+      "projectFolder": "parsers/mdx/mdxhast",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/monkey.monkey",
+      "projectFolder": "parsers/monkey/monkey",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/ocaml.refmt-ml",
+      "projectFolder": "parsers/ocaml/refmt-ml",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/php.php-parser",
+      "projectFolder": "parsers/php/php-parser",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/protobuf.pbkit",
+      "projectFolder": "parsers/protobuf/pbkit",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/pug.pug",
+      "projectFolder": "parsers/pug/pug",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/python.python",
+      "projectFolder": "parsers/python/python",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/reason.refmt",
+      "projectFolder": "parsers/reason/refmt",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/regexp.regexp-tree",
+      "projectFolder": "parsers/regexp/regexp-tree",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/regexp.regexpp",
+      "projectFolder": "parsers/regexp/regexpp",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/regexp.regjsparser",
+      "projectFolder": "parsers/regexp/regjsparser",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/rust.syn",
+      "projectFolder": "parsers/rust/syn",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/san.san-template-parser",
+      "projectFolder": "parsers/san/san-template-parser",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/scala.scalameta",
+      "projectFolder": "parsers/scala/scalameta",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/solidity.solidity-parser-antlr",
+      "projectFolder": "parsers/solidity/solidity-parser-antlr",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/solidity.solidity-parser-diligence",
+      "projectFolder": "parsers/solidity/solidity-parser-diligence",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/sql.sqlite-parser",
+      "projectFolder": "parsers/sql/sqlite-parser",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/thrift.thrift-parser",
+      "projectFolder": "parsers/thrift/thrift-parser",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/vue.vue-compiler-dom",
+      "projectFolder": "parsers/vue/vue-compiler-dom",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/vue.vue-eslint-parser",
+      "projectFolder": "parsers/vue/vue-eslint-parser",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/vue.vue-template-compiler",
+      "projectFolder": "parsers/vue/vue-template-compiler",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/wat.wat-parser",
+      "projectFolder": "parsers/wat/wat-parser",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/webidl.webidl2",
+      "projectFolder": "parsers/webidl/webidl2",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/yaml.yaml-ast-parser",
+      "projectFolder": "parsers/yaml/yaml-ast-parser",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/yaml.yaml",
+      "projectFolder": "parsers/yaml/yaml",
+      "reviewCategory": "parser",
+      "shouldPublish": true,
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/parser",
+      "projectFolder": "libs/parser",
+      "shouldPublish": true,
+      "reviewCategory": "library",
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/query",
+      "projectFolder": "libs/query",
+      "shouldPublish": true,
+      "reviewCategory": "library",
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/traverse",
+      "projectFolder": "libs/traverse",
+      "shouldPublish": true,
+      "reviewCategory": "library",
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/languages",
+      "projectFolder": "libs/languages",
+      "shouldPublish": true,
+      "reviewCategory": "library",
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "@astql/core",
+      "projectFolder": "libs/core",
+      "shouldPublish": true,
+      "reviewCategory": "library",
+      "publishFolder": "dist"
+    },
+    {
+      "packageName": "astql",
+      "projectFolder": "tooling/cli",
+      "shouldPublish": true,
+      "reviewCategory": "cli",
+      "publishFolder": "dist"
+    }
+  ]
+}

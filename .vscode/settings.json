@@ -1,0 +1,33 @@
+{
+  "eslint.options": {
+    "debug" : true,
+  },
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.packageManager": "pnpm",
+  "eslint.nodePath": "./common/temp/node_modules",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json"
+  ],
+  "eslint.onIgnoredFiles": "off",
+  "eslint.workingDirectories": [
+    {
+      "pattern": "./libs/*",
+      "!cwd": false
+    },
+    {
+      "pattern": "./parsers/*/*",
+      "!cwd": false
+    },
+    {
+      "pattern": "./tooling/*",
+      "!cwd": false
+    }
+  ]
+}

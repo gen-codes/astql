@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ast.getFullText() should match codeExample.txt 1`] = `
+"object Main {
+  def main(args: Array[String]): Unit = {
+    println(\\"Hello, World!\\")
+  }
+}
+"
+`;
+
+exports[`should query generated ast 1`] = `14`;

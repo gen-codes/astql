@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ast.getFullText() should match codeExample.txt 1`] = `
+"--
+-- This is an example query
+--
+SELECT
+	foo, bar as baz
+FROM
+	mytable
+WHERE
+	foo LIKE '%neat%'
+ORDER BY
+	foo DESC
+"
+`;
+
+exports[`should query generated ast 1`] = `11`;

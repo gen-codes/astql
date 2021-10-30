@@ -1,0 +1,26 @@
+{
+  "extends": "@digigov/cli-build/tsconfig.base",
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.jsx",
+    "./src/**/*.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "astql/*": ["./src/*"],
+      "@astql/core/": ["../../libs/core/*"],
+      "@astql/core": ["../../libs/core"]
+    },
+    "skipLibCheck": true,
+    "strict": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "outDir": "dist"
+  }
+}

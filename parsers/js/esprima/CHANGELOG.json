@@ -1,0 +1,39 @@
+{
+  "name": "@astql/js.esprima",
+  "entries": [
+    {
+      "version": "0.1.2",
+      "tag": "@astql/js.esprima_v0.1.2",
+      "date": "Sat, 30 Oct 2021 06:49:29 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add features"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@astql/core\" from `0.1.2` to `0.1.3`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.1.1",
+      "tag": "@astql/js.esprima_v0.1.1",
+      "date": "Thu, 28 Oct 2021 20:24:02 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add tests"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@astql/core\" from `0.1.1` to `0.1.2`"
+          }
+        ]
+      }
+    }
+  ]
+}

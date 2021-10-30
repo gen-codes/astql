@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ast.getFullText() should match codeExample.txt 1`] = `
+"On {takenDate, date, short} {name} took {numPhotos, plural,
+    =0 {no photos.}
+    =1 {one photo.}
+    other {# photos.}
+}"
+`;
+
+exports[`should query generated ast 1`] = `7`;

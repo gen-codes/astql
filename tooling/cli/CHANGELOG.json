@@ -1,0 +1,22 @@
+{
+  "name": "astql",
+  "entries": [
+    {
+      "version": "0.1.3",
+      "tag": "astql_v0.1.3",
+      "date": "Sat, 30 Oct 2021 06:49:29 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add features"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@astql/core\" from `0.1.2` to `0.1.3`"
+          }
+        ]
+      }
+    }
+  ]
+}
