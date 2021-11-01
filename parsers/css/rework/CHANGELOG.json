@@ -2,6 +2,26 @@
   "name": "@astql/css.rework",
   "entries": [
     {
+      "version": "0.1.3",
+      "tag": "@astql/css.rework_v0.1.3",
+      "date": "Mon, 01 Nov 2021 13:02:58 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add info"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@astql/core\" from `0.1.3` to `0.1.4`"
+          },
+          {
+            "comment": "Updating dependency \"@astql/languages\" from `0.1.3` to `0.1.4`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.1.2",
       "tag": "@astql/css.rework_v0.1.2",
       "date": "Sat, 30 Oct 2021 06:49:29 GMT",

@@ -2,6 +2,26 @@
   "name": "@astql/handlebars.ember-template-recast",
   "entries": [
     {
+      "version": "0.1.2",
+      "tag": "@astql/handlebars.ember-template-recast_v0.1.2",
+      "date": "Mon, 01 Nov 2021 13:02:58 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add info"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@astql/core\" from `0.1.3` to `0.1.4`"
+          },
+          {
+            "comment": "Updating dependency \"@astql/languages\" from `0.1.3` to `0.1.4`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.1.1",
       "tag": "@astql/handlebars.ember-template-recast_v0.1.1",
       "date": "Thu, 28 Oct 2021 20:24:02 GMT",

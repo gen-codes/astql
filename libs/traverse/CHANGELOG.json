@@ -2,6 +2,18 @@
   "name": "@astql/traverse",
   "entries": [
     {
+      "version": "0.1.4",
+      "tag": "@astql/traverse_v0.1.4",
+      "date": "Mon, 01 Nov 2021 13:02:58 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add info"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.1.3",
       "tag": "@astql/traverse_v0.1.3",
       "date": "Sat, 30 Oct 2021 06:49:29 GMT",

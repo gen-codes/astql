@@ -2,6 +2,35 @@
   "name": "@astql/core",
   "entries": [
     {
+      "version": "0.1.4",
+      "tag": "@astql/core_v0.1.4",
+      "date": "Mon, 01 Nov 2021 13:02:58 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add info"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@astql/languages\" from `0.1.3` to `0.1.4`"
+          },
+          {
+            "comment": "Updating dependency \"@astql/query\" from `0.1.3` to `0.1.4`"
+          },
+          {
+            "comment": "Updating dependency \"@astql/parser\" from `0.1.3` to `0.1.4`"
+          },
+          {
+            "comment": "Updating dependency \"@astql/traverse\" from `0.1.3` to `0.1.4`"
+          },
+          {
+            "comment": "Updating dependency \"@astql/js.typescript\" from `~0.1.1` to `~0.1.2`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.1.3",
       "tag": "@astql/core_v0.1.3",
       "date": "Sat, 30 Oct 2021 06:49:29 GMT",
