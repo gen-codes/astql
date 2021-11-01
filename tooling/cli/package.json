@@ -1,6 +1,6 @@
 {
   "name": "astql",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Vasilis Kefallinos <vkefallinos@gmail.com>",
   "contributors": [],
   "description": "AstQL cli tool",
