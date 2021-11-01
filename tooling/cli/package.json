@@ -1,6 +1,6 @@
 {
   "name": "astql",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "author": "Vasilis Kefallinos <vkefallinos@gmail.com>",
   "contributors": [],
   "description": "AstQL cli tool",
@@ -30,9 +30,6 @@
     "lint": "digigov lint",
     "start": "npm run build && node dist/cli.js"
   },
-  "files": [
-    "dist/cli.js"
-  ],
   "dependencies": {
     "ink": "^3.2.0",
     "meow": "^9.0.0",

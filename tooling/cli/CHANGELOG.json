@@ -2,8 +2,8 @@
   "name": "astql",
   "entries": [
     {
-      "version": "0.1.0",
-      "tag": "astql_v0.1.0",
+      "version": "0.1.5",
+      "tag": "astql_v0.1.5",
       "date": "Mon, 01 Nov 2021 13:28:52 GMT",
       "comments": {
         "minor": [

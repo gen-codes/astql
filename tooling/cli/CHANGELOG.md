@@ -2,7 +2,7 @@
 
 This log was last generated on Mon, 01 Nov 2021 13:28:52 GMT and should not be manually modified.
 
-## 0.1.0
+## 0.1.5
 Mon, 01 Nov 2021 13:28:52 GMT
 
 ### Minor changes
