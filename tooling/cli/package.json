@@ -54,6 +54,7 @@
     "@digigov/cli": "~0.5.24",
     "@digigov/cli-build": "0.5.24",
     "@digigov/cli-test": "0.5.24",
-    "@digigov/cli-lint": "~0.5.25"
+    "@digigov/cli-lint": "~0.5.25",
+    "@types/prop-types": "~15.7.4"
   }
 }
