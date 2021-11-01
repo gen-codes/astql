@@ -34,5 +34,7 @@
     "@types/react": "^17.0.33",
     "eslint": "~7.24.0",
     "eslint-config-next": "12.0.2"
-  }
+  },
+  "homepage": "https://github.com/gen-codes/astql/tree/main/libs/app",
+  "main": "index.js"
 }

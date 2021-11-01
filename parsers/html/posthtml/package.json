@@ -32,5 +32,6 @@
     "astql",
     "astql-parser",
     "gen-codes"
-  ]
+  ],
+  "homepage": "https://github.com/gen-codes/astql/tree/main/parsers/html/posthtml"
 }

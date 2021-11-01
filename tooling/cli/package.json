@@ -4,13 +4,13 @@
   "author": "Vasilis Kefallinos <vkefallinos@gmail.com>",
   "contributors": [],
   "description": "AstQL cli tool",
-  "main": "cli.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/gencodes/astql.git"
   },
   "bugs": "https://github.com/gencodes/astql/issues",
-  "homepage": "https://github.com/gencodes/astql/",
+  "homepage": "https://github.com/gen-codes/astql/tree/main/tooling/cli",
   "keywords": [
     "ast",
     "ecmascript",

@@ -4,7 +4,7 @@
   "author": "Vasilis Kefallinos <vkefallinos@gmail.com>",
   "contributors": [],
   "description": "A query library for ECMAScript AST using a CSS selector like query language.",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "prebuild": "npm run grammar",
     "build": "digigov build --subpackages",
@@ -17,7 +17,7 @@
     "url": "https://github.com/gencodes/astql.git"
   },
   "bugs": "https://github.com/gencodes/astql/issues",
-  "homepage": "https://github.com/gencodes/astql/",
+  "homepage": "https://github.com/gen-codes/astql/tree/main/libs/parser",
   "keywords": [
     "ast",
     "ecmascript",

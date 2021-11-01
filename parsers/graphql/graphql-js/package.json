@@ -31,5 +31,6 @@
     "graphql",
     "astql",
     "astql-parser"
-  ]
+  ],
+  "homepage": "https://github.com/gen-codes/astql/tree/main/parsers/graphql/graphql-js"
 }

@@ -34,5 +34,6 @@
     "astql",
     "astql-parser",
     "gen-codes"
-  ]
+  ],
+  "homepage": "https://github.com/gen-codes/astql/tree/main/parsers/js/babel"
 }

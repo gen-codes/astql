@@ -31,5 +31,6 @@
     "reason",
     "astql",
     "astql-parser"
-  ]
+  ],
+  "homepage": "https://github.com/gen-codes/astql/tree/main/parsers/reason/refmt"
 }
