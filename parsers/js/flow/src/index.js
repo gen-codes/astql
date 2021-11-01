@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/languages/js/utils/defaultESTreeParserInterface';
 import pkg from 'flow-parser/package.json';
 
@@ -38,7 +37,7 @@ export default {
   locationProps: new Set(['range', 'loc']),
 
   loadParser(callback) {
-    multipleRequire(['flow-parser'], callback);
+    require(['flow-parser'], callback);
   },
 
   parse(flowParser, code, options) {

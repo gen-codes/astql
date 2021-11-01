@@ -439,6 +439,13 @@
       "publishFolder": "dist"
     },
     {
+      "packageName": "@astql/app",
+      "projectFolder": "libs/app",
+      "shouldPublish": true,
+      "reviewCategory": "library",
+      "publishFolder": "dist"
+    },
+    {
       "packageName": "astql",
       "projectFolder": "tooling/cli",
       "shouldPublish": true,

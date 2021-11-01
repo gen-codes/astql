@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/languages/js/utils/defaultESTreeParserInterface';
 import pkg from '@babel/parser/package.json';
 
@@ -98,7 +97,7 @@ export default {
   locationProps: new Set(['range', 'loc', 'start', 'end']),
 
   loadParser(callback) {
-    multipleRequire(['@babel/parser'], callback);
+    require(['@babel/parser'], callback);
   },
 
   parse(babylon, code, options = defaultOptions) {

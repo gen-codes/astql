@@ -50,7 +50,7 @@ export interface DataSelector {
 }
 export type Selector = string | DataSelector | [DataSelector];
 export interface CodeInterface {
-  autoDiscoverParserConfig(path, text): ParserConfig | null;
+  autoDiscoverParserConfig(path, text): Promise<ParserConfig | null>;
   text: string;
   ast: ASTNode;
   path: string;
@@ -64,8 +64,10 @@ export interface CodeInterface {
   transform?: (query: Selector) => ASTNode;
   query: (query: Selector) => Promise<ASTNode | ASTNode[] | string | string[]>;
 }
-export const importConfig = (packageName: string): ParserConfig => {
-  return require(packageName).default;
+export const importConfig = async (
+  packageName: string
+): Promise<ParserConfig> => {
+  return (await import(packageName)).default;
 };
 
 export class Code implements CodeInterface {
@@ -98,23 +100,26 @@ export class Code implements CodeInterface {
   parseOptions: any;
   queryPreHook?: (selector: string, ast: ASTNode) => Promise<ASTNode | false>;
   queryPostHook?: (selector: string, result: any) => Promise<any>;
-  loadParserConfig = (): void => {
+  loadParserConfig = async (): Promise<void> => {
     if (!this.config) {
       if (this.parserInput) {
         if (typeof this.parserInput === 'string') {
-          this.config = importConfig(`@astql/${this.parserInput}`);
+          this.config = await importConfig(`@astql/${this.parserInput}`);
         } else {
           this.config = this.parserInput;
         }
       } else {
-        const config = this.autoDiscoverParserConfig(this.path, this.text);
+        const config = await this.autoDiscoverParserConfig(
+          this.path,
+          this.text
+        );
         if (config) {
           this.config = config;
         }
       }
     }
   };
-  autoDiscoverParserConfig(path, text) {
+  autoDiscoverParserConfig = async (path, text) => {
     const extension = path.split('.').pop();
     if (languages[extension]) {
       const parser =
@@ -141,7 +146,7 @@ export class Code implements CodeInterface {
       }
     }
     return null;
-  }
+  };
   setText = (text: string) => {
     if (text !== this.text) {
       this.text = text;

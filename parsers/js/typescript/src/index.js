@@ -1,7 +1,6 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'typescript/package.json';
-
+import ts from 'typescript';
 const ID = 'typescript';
 const FILENAME = 'astExplorer.ts';
 
@@ -9,7 +8,7 @@ let getComments;
 const syntaxKind = {};
 
 // Typescript uses `process` somehow
-if (!global.process) {
+if(!global.process) {
   global.process = {};
 }
 
@@ -24,19 +23,17 @@ export default {
   typeProps: new Set(['kind']),
 
   loadParser(callback) {
-    multipleRequire(['typescript'], (_ts) => {
-      // workarounds issue described at https://github.com/Microsoft/TypeScript/issues/18062
-      for (const name of Object.keys(_ts.SyntaxKind).filter((x) =>
+    require(['typescript'], (tsModule) => {
+      for(const name of Object.keys(ts.SyntaxKind).filter((x) =>
         isNaN(parseInt(x))
       )) {
-        const value = _ts.SyntaxKind[name];
-        if (!syntaxKind[value]) {
+        const value = ts.SyntaxKind[name];
+        if(!syntaxKind[value]) {
           syntaxKind[value] = name;
         }
       }
-
-      callback(_ts);
-    });
+      callback(ts);
+    })
   },
 
   parse(ts, code, options) {
@@ -76,11 +73,11 @@ export default {
     const sourceFile = program.getSourceFile(filename);
 
     getComments = (node, isTrailing) => {
-      if (node.parent) {
+      if(node.parent) {
         const nodePos = isTrailing ? node.end : node.pos;
         const parentPos = isTrailing ? node.parent.end : node.parent.pos;
 
-        if (
+        if(
           node.parent.kind === ts.SyntaxKind.SourceFile ||
           nodePos !== parentPos
         ) {
@@ -88,7 +85,7 @@ export default {
             ? ts.getTrailingCommentRanges(sourceFile.text, nodePos)
             : ts.getLeadingCommentRanges(sourceFile.text, nodePos);
 
-          if (Array.isArray(comments)) {
+          if(Array.isArray(comments)) {
             comments.forEach((comment) => {
               comment.type = syntaxKind[comment.kind];
               comment.text = sourceFile.text.substring(
@@ -107,7 +104,7 @@ export default {
   },
 
   getNodeName(node) {
-    if (node.kind) {
+    if(node.kind) {
       return syntaxKind[node.kind];
     }
   },
@@ -115,9 +112,9 @@ export default {
   _ignoredProperties: new Set(['file', 'parent']),
 
   *forEachProperty(node) {
-    if (node && typeof node === 'object') {
-      for (let prop in node) {
-        if (this._ignoredProperties.has(prop) || prop.charAt(0) === '_') {
+    if(node && typeof node === 'object') {
+      for(let prop in node) {
+        if(this._ignoredProperties.has(prop) || prop.charAt(0) === '_') {
           continue;
         }
         yield {
@@ -125,7 +122,7 @@ export default {
           key: prop,
         };
       }
-      if (node.parent) {
+      if(node.parent) {
         yield {
           value: getComments(node),
           key: 'leadingComments',
@@ -141,12 +138,12 @@ export default {
   },
 
   nodeToRange(node) {
-    if (
+    if(
       typeof node.getStart === 'function' &&
       typeof node.getEnd === 'function'
     ) {
       return [node.getStart(), node.getEnd()];
-    } else if (
+    } else if(
       typeof node.pos !== 'undefined' &&
       typeof node.end !== 'undefined'
     ) {
