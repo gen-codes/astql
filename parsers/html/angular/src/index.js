@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from '@angular/compiler/package.json';
 
@@ -20,7 +19,7 @@ export default {
   typeProps: new Set(['name']),
 
   loadParser(callback) {
-    multipleRequire(['@angular/compiler'], callback);
+    new Promise((resolve)=> resolve(['@angular/compiler'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(ng, code, options) {

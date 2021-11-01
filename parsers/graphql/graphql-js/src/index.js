@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'graphql/package.json';
 
@@ -16,7 +15,7 @@ export default {
   _ignoredProperties: new Set(['parent', 'next', 'prev']),
 
   loadParser(callback) {
-    multipleRequire(['graphql/language'], ({ parse }) => {
+    new Promise((resolve)=> resolve(['graphql/language'].map((mdl)=>require(mdl)))).then( ({ parse }) => {
       callback({ parse });
     });
   },

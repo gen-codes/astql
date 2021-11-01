@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import pkg from '@gengjiawen/monkey-wasm/package.json';
 
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
@@ -15,7 +14,7 @@ export default {
   locationProps: new Set(['span']),
 
   async loadParser(callback) {
-    multipleRequire(['@gengjiawen/monkey-wasm/monkey_wasm.js'], callback);
+    new Promise((resolve)=> resolve(['@gengjiawen/monkey-wasm/monkey_wasm.js'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(parser, code) {

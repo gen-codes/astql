@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'yaml/package.json';
 
@@ -14,7 +13,7 @@ export default {
   locationProps: new Set(['position']),
 
   loadParser(callback) {
-    multipleRequire(['yaml'], callback);
+    new Promise((resolve)=> resolve(['yaml'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   nodeToRange(node) {

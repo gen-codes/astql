@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'pug-parser/package.json';
 
@@ -15,7 +14,7 @@ export default {
   locationProps: new Set(['line', 'column']),
 
   loadParser(callback) {
-    multipleRequire(['pug-lexer', 'pug-parser'], (lex, parse) => {
+    new Promise((resolve)=> resolve(['pug-lexer', 'pug-parser'].map((mdl)=>require(mdl)))).then( (lex, parse) => {
       callback({ lex, parse });
     });
   },

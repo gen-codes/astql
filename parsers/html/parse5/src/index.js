@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'parse5/package.json';
 

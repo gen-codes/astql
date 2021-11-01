@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/languages/handlebars/utils/defaultHandlebarsParserInterface';
 import pkg from 'handlebars/package.json';
 
@@ -13,7 +12,7 @@ export default {
   homepage: pkg.homepage,
 
   loadParser(callback) {
-    multipleRequire(['handlebars'], (handlebars) => callback(handlebars.parse));
+    new Promise((resolve)=> resolve(['handlebars'].map((mdl)=>require(mdl)))).then( (handlebars) => callback(handlebars.parse));
   },
 
   opensByDefault(node, key) {

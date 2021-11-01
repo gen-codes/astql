@@ -13,7 +13,7 @@ export default {
   locationProps: new Set(['range', 'loc']),
 
   loadParser(callback) {
-    require(['esprima'], callback);
+    new Promise((resolve)=> resolve(['esprima'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(esprima, code, options) {

@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import esyPkg from 'astexplorer-refmt/esy.json';
 
@@ -41,7 +40,7 @@ export default {
   locationProps: new Set(locKeys),
 
   loadParser(callback) {
-    multipleRequire(['astexplorer-refmt'], callback);
+    new Promise((resolve)=> resolve(['astexplorer-refmt'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(parser, code) {

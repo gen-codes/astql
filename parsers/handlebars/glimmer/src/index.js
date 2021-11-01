@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/languages/handlebars/utils/defaultHandlebarsParserInterface';
 import pkg from '@glimmer/syntax/package.json';
 
@@ -13,7 +12,7 @@ export default {
   homepage: pkg.homepage || 'https://github.com/glimmerjs/glimmer-vm',
 
   loadParser(callback) {
-    multipleRequire(['@glimmer/syntax'], (glimmer) =>
+    new Promise((resolve)=> resolve(['@glimmer/syntax'].map((mdl)=>require(mdl)))).then( (glimmer) =>
       callback(glimmer.preprocess)
     );
   },

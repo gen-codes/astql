@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'regexpp/package.json';
 
@@ -20,7 +19,7 @@ export default {
   locationProps: new Set(['end', 'start']),
 
   loadParser(callback) {
-    multipleRequire(['regexpp'], callback);
+    new Promise((resolve)=> resolve(['regexpp'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(regexpp, code, options) {

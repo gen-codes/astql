@@ -23,7 +23,7 @@ export default {
   typeProps: new Set(['kind']),
 
   loadParser(callback) {
-    require(['typescript'], (tsModule) => {
+    new Promise((resolve)=> resolve(['typescript'].map((mdl)=>require(mdl)))).then( (tsModule) => {
       for(const name of Object.keys(ts.SyntaxKind).filter((x) =>
         isNaN(parseInt(x))
       )) {

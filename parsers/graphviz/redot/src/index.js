@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'redot/package.json';
 
@@ -14,7 +13,7 @@ export default {
   locationProps: new Set(['position']),
 
   loadParser(callback) {
-    multipleRequire(['redot'], callback);
+    new Promise((resolve)=> resolve(['redot'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(redot, code) {

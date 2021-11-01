@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'yaml-ast-parser/package.json';
 
@@ -28,7 +27,7 @@ export default {
   },
 
   loadParser(callback) {
-    multipleRequire(['yaml-ast-parser'], function (yamlAstParser) {
+    new Promise((resolve)=> resolve(['yaml-ast-parser'].map((mdl)=>require(mdl)))).then( function (yamlAstParser) {
       Kind = yamlAstParser.Kind;
       callback(yamlAstParser);
     });

@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'java-parser/package.json';
 
@@ -22,7 +21,7 @@ export default {
   typeProps: new Set(['name']),
 
   loadParser(callback) {
-    multipleRequire(['java-parser'], callback);
+    new Promise((resolve)=> resolve(['java-parser'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(parser, code) {

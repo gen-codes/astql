@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'luaparse/package.json';
 
@@ -14,7 +13,7 @@ export default {
   locationProps: new Set(['range', 'loc']),
 
   loadParser(callback) {
-    multipleRequire(['luaparse'], callback);
+    new Promise((resolve)=> resolve(['luaparse'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(luaparse, code, options = {}) {

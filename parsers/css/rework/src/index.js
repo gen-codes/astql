@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/languages/css/utils/defaultCSSParserInterface';
 import pkg from 'css/package.json';
 
@@ -14,7 +13,7 @@ export default {
   locationProps: new Set(['position']),
 
   loadParser(callback) {
-    multipleRequire(['css/lib/parse'], callback);
+    new Promise((resolve)=> resolve(['css/lib/parse'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   nodeToRange({ position: range }) {

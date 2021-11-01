@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'cssom/package.json';
 
@@ -15,7 +14,7 @@ export default {
   typeProps: new Set(),
 
   loadParser(callback) {
-    multipleRequire(['cssom/lib/parse'], callback);
+    new Promise((resolve)=> resolve(['cssom/lib/parse'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(CSSOM, code) {

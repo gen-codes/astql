@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'php-parser/package.json';
 
@@ -24,7 +23,7 @@ export default {
   typeProps: new Set(['kind']),
 
   loadParser(callback) {
-    multipleRequire(['php-parser'], callback);
+    new Promise((resolve)=> resolve(['php-parser'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(Engine, code) {

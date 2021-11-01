@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'lucene/package.json';
 
@@ -14,7 +13,7 @@ export default {
   locationProps: new Set(['fieldLocation', 'termLocation', 'location']),
 
   loadParser(callback) {
-    multipleRequire(['lucene'], callback);
+    new Promise((resolve)=> resolve(['lucene'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse({ parse }, code) {

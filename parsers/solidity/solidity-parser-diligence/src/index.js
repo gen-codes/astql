@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import pkg from 'solidity-parser-diligence/package.json';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 
@@ -14,7 +13,7 @@ export default {
     pkg.homepage || 'https://github.com/consensys/solidity-parser-antlr',
 
   loadParser(callback) {
-    multipleRequire(['solidity-parser-diligence'], callback);
+    new Promise((resolve)=> resolve(['solidity-parser-diligence'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(parser, code, options) {

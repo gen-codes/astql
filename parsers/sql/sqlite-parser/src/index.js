@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'sqlite-parser/package.json';
 
@@ -13,7 +12,7 @@ export default {
   homepage: pkg.homepage || 'https://github.com/codeschool/sqlite-parser',
 
   loadParser(callback) {
-    multipleRequire(['sqlite-parser'], callback);
+    new Promise((resolve)=> resolve(['sqlite-parser'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(sqliteParser, code) {

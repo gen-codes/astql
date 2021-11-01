@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'posthtml-parser/package.json';
 
@@ -14,7 +13,7 @@ export default {
   homepage: pkg.homepage || 'https://github.com/fb55/htmlparser2',
 
   loadParser(callback) {
-    multipleRequire(['posthtml-parser'], callback);
+    new Promise((resolve)=> resolve(['posthtml-parser'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(posthtmlParser, code, options) {

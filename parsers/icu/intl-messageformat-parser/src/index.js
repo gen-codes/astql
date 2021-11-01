@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'intl-messageformat-parser/package.json';
 
@@ -30,7 +29,7 @@ export default {
   locationProps: new Set(['location']),
 
   loadParser(callback) {
-    multipleRequire(['intl-messageformat-parser'], (all) => {
+    new Promise((resolve)=> resolve(['intl-messageformat-parser'].map((mdl)=>require(mdl)))).then( (all) => {
       Object.keys(all.TYPE).forEach((k) => {
         TYPES[k] = all.TYPE[k];
       });

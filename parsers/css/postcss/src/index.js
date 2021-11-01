@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/languages/css/utils/defaultCSSParserInterface';
 import pkg from 'postcss/package.json';
 

@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import pkg from 'scalameta-parsers/package.json';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 
@@ -25,7 +24,7 @@ export default {
   locationProps: new Set(['pos']),
 
   loadParser(callback) {
-    multipleRequire(['scalameta-parsers'], callback);
+    new Promise((resolve)=> resolve(['scalameta-parsers'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(scalametaParser, code, options) {

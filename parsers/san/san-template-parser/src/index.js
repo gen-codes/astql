@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'san/package.json';
 
@@ -15,7 +14,7 @@ export default {
   typeProps: new Set(['tag']),
 
   loadParser(callback) {
-    multipleRequire(['san'], callback);
+    new Promise((resolve)=> resolve(['san'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(parser, code, options) {

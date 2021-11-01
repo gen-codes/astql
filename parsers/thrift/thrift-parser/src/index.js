@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from '@creditkarma/thrift-parser/package.json';
 
@@ -14,7 +13,7 @@ export default {
   locationProps: new Set(['location']),
 
   loadParser(callback) {
-    multipleRequire(['@creditkarma/thrift-parser'], callback);
+    new Promise((resolve)=> resolve(['@creditkarma/thrift-parser'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse({ parse }, code) {

@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'webidl2/package.json';
 
@@ -24,7 +23,7 @@ export default {
   },
 
   loadParser(callback) {
-    multipleRequire(['webidl2'], callback);
+    new Promise((resolve)=> resolve(['webidl2'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse({ parse }, code, options) {

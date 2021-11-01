@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'pbkit/package.json';
 
@@ -14,7 +13,7 @@ export default {
   typeProps: new Set(['type']),
 
   loadParser(callback) {
-    multipleRequire(['pbkit/core/parser/proto'], callback);
+    new Promise((resolve)=> resolve(['pbkit/core/parser/proto'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(parser, code) {

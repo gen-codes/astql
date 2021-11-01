@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'regjsparser/package.json';
 
@@ -20,7 +19,7 @@ export default {
   locationProps: new Set(['range']),
 
   loadParser(callback) {
-    multipleRequire(['regjsparser'], callback);
+    new Promise((resolve)=> resolve(['regjsparser'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(regjsparser, code, options) {

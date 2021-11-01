@@ -37,7 +37,7 @@ export default {
   locationProps: new Set(['range', 'loc']),
 
   loadParser(callback) {
-    require(['flow-parser'], callback);
+    new Promise((resolve)=> resolve(['flow-parser'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(flowParser, code, options) {

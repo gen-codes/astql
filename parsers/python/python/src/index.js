@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'filbert/package.json';
 
@@ -14,7 +13,7 @@ export default {
   locationProps: new Set(['range', 'loc', 'start', 'end']),
 
   loadParser(callback) {
-    multipleRequire(['filbert'], (parser) => {
+    new Promise((resolve)=> resolve(['filbert'].map((mdl)=>require(mdl)))).then( (parser) => {
       callback({ parser });
     });
   },

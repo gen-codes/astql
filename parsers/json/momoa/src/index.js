@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from '@humanwhocodes/momoa/package.json';
 
@@ -14,7 +13,7 @@ export default {
   locationProps: new Set(['loc']),
 
   loadParser(callback) {
-    multipleRequire(['@humanwhocodes/momoa'], callback);
+    new Promise((resolve)=> resolve(['@humanwhocodes/momoa'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(momoa, code, options) {

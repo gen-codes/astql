@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from 'json-to-ast/package.json';
 
@@ -14,7 +13,7 @@ export default {
   locationProps: new Set(['loc']),
 
   loadParser(callback) {
-    multipleRequire(['json-to-ast'], callback);
+    new Promise((resolve)=> resolve(['json-to-ast'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(jsonToAst, code) {

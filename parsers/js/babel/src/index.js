@@ -97,7 +97,7 @@ export default {
   locationProps: new Set(['range', 'loc', 'start', 'end']),
 
   loadParser(callback) {
-    require(['@babel/parser'], callback);
+    new Promise((resolve)=> resolve(['@babel/parser'].map((mdl)=>require(mdl)))).then( callback);
   },
 
   parse(babylon, code, options = defaultOptions) {

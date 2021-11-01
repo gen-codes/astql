@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/languages/handlebars/utils/defaultHandlebarsParserInterface';
 import pkg from 'ember-template-recast/package.json';
 
@@ -13,7 +12,7 @@ export default {
   homepage: pkg.homepage,
 
   loadParser(callback) {
-    multipleRequire(['ember-template-recast'], (recast) =>
+    new Promise((resolve)=> resolve(['ember-template-recast'].map((mdl)=>require(mdl)))).then( (recast) =>
       callback(recast.parse)
     );
   },

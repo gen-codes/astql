@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 import pkg from '@webassemblyjs/wast-parser/package.json';
 
@@ -24,7 +23,7 @@ export default {
   },
 
   loadParser(callback) {
-    multipleRequire(['@webassemblyjs/wast-parser'], function (parser) {
+    new Promise((resolve)=> resolve(['@webassemblyjs/wast-parser'].map((mdl)=>require(mdl)))).then( function (parser) {
       callback(parser);
     });
   },

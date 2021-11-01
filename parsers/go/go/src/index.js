@@ -1,4 +1,3 @@
-import { multipleRequire } from '@astql/core';
 import defaultParserInterface from '@astql/core/utils/defaultParserInterface';
 
 const ID = 'go';
@@ -14,7 +13,7 @@ export default {
   locationProps: new Set(['Loc']),
 
   async loadParser(callback) {
-    multipleRequire(['astexplorer-go'], async (parser) => {
+    new Promise((resolve)=> resolve(['astexplorer-go'].map((mdl)=>require(mdl)))).then( async (parser) => {
       await parser.init();
       callback(parser);
     });
