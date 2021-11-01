@@ -441,7 +441,7 @@
     {
       "packageName": "@astql/app",
       "projectFolder": "libs/app",
-      "shouldPublish": true,
+      "shouldPublish": false,
       "reviewCategory": "library",
       "publishFolder": "dist"
     },

@@ -1,0 +1,25 @@
+{
+  "name": "@astql/app",
+  "entries": [
+    {
+      "version": "0.1.2",
+      "tag": "@astql/app_v0.1.2",
+      "date": "Mon, 01 Nov 2021 13:02:58 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "add info"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@astql/core\" from `0.1.3` to `0.1.4`"
+          },
+          {
+            "comment": "Updating dependency \"@astql/js.typescript\" from `~0.1.1` to `~0.1.2`"
+          }
+        ]
+      }
+    }
+  ]
+}
