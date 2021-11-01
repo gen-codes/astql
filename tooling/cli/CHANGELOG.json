@@ -2,6 +2,18 @@
   "name": "astql",
   "entries": [
     {
+      "version": "0.1.6",
+      "tag": "astql_v0.1.6",
+      "date": "Mon, 01 Nov 2021 15:07:33 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "fix parsers"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.1.5",
       "tag": "astql_v0.1.5",
       "date": "Mon, 01 Nov 2021 13:28:52 GMT",

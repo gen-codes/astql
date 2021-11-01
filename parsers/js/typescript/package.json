@@ -2,7 +2,7 @@
   "name": "@astql/js.typescript",
   "module": "index.js",
   "main": "index.js",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "scripts": {
     "build": "digigov build --subpackages",
     "test": "digigov test src",

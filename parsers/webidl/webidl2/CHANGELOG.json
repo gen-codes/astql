@@ -2,6 +2,18 @@
   "name": "@astql/webidl.webidl2",
   "entries": [
     {
+      "version": "0.1.4",
+      "tag": "@astql/webidl.webidl2_v0.1.4",
+      "date": "Mon, 01 Nov 2021 15:07:33 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "fix parsers"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.1.3",
       "tag": "@astql/webidl.webidl2_v0.1.3",
       "date": "Mon, 01 Nov 2021 13:02:58 GMT",

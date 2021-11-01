@@ -2,6 +2,18 @@
   "name": "@astql/san.san-template-parser",
   "entries": [
     {
+      "version": "0.1.4",
+      "tag": "@astql/san.san-template-parser_v0.1.4",
+      "date": "Mon, 01 Nov 2021 15:07:33 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "fix parsers"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.1.3",
       "tag": "@astql/san.san-template-parser_v0.1.3",
       "date": "Mon, 01 Nov 2021 13:02:58 GMT",
