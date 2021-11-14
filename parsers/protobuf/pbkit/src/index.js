@@ -9,7 +9,7 @@ export default {
   id: ID,
   displayName: ID,
   version: pkg.version,
-  homepage: 'https://github.com/riiid/pbkit',
+  homepage: 'https://github.com/pbkit/pbkit',
   locationProps: new Set(['start', 'end']),
   typeProps: new Set(['type']),
 
