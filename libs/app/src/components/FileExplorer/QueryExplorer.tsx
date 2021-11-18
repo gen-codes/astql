@@ -15,7 +15,7 @@ export const QueryExplorer: React.FC = () => {
       <ModuleList
         activePath={sandpack.activeQueryPath}
         files={sandpack.queries}
-        prefixedPath={'queries'}
+        prefixedPath={'/queries'}
         selectFile={sandpack.openQuery}
         createFile={sandpack.createQuery}
         deleteFile={sandpack.deleteQuery}

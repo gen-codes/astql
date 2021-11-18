@@ -1,14 +1,14 @@
 import CompactArrayView from './CompactArrayView';
 import CompactObjectView from './CompactObjectView';
 import PropTypes from 'prop-types';
-import {publish} from '../../../utils/pubsub.js';
+import {publish} from '../../../../utils/pubsub.js';
 import React from 'react';
 import {useSelectedNode} from '../SelectedNodeContext.js';
 import focusNodes from '../focusNodes.js'
 
-import cx from '../../../utils/classnames.js';
-import stringify from '../../../utils/stringify';
-import {useSandpack} from '@gencodes/app/hooks/useSandpack';
+import cx from '../../../../utils/classnames.js';
+import stringify from '../../../../utils/stringify';
+import {useSandpack} from '../../../../hooks/useSandpack';
 
 const {useState, useRef, useMemo, useCallback, useEffect} = React;
 

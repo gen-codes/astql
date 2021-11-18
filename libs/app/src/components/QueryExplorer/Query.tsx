@@ -20,7 +20,7 @@ export class Query extends React.PureComponent<Props> {
       this.props.selectFile(this.props.path);
     }
   };
-  createFileDialog(isGenerator?: boolean = false) {
+  createFileDialog(isGenerator: boolean = false) {
     const dir = this.props.path.split('/').slice(0, -1).join('/');
     const filename = prompt('queryname  ' + dir);
     if (!filename) return;

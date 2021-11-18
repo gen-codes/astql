@@ -67,6 +67,8 @@ export interface CodeInterface {
 export const importConfig = async (
   packageName: string
 ): Promise<ParserConfig> => {
+  /* webpackInclude: /\@astql/.*?$/ */
+  /* webpackMode: "lazy" */
   return (await import(packageName)).default;
 };
 
@@ -217,7 +219,7 @@ export class Code implements CodeInterface {
       let isObject = false;
       let selector;
       let data;
-      let transform;
+      let transform = (data) => data;
       if (Array.isArray(objSelector)) {
         if (typeof objSelector[0] === 'function') {
           values[key] = objSelector[0](ast, values);
@@ -225,8 +227,12 @@ export class Code implements CodeInterface {
         } else if (typeof objSelector[0] === 'string') {
           selector = objSelector[0];
         } else {
-          selector = objSelector[0].selector;
-          data = objSelector[0].data;
+          if (objSelector[0].value) {
+            selector = objSelector[0].value;
+          } else {
+            selector = objSelector[0].selector;
+            data = objSelector[0].data;
+          }
           transform = objSelector[0].transform;
         }
         isArray = true;
@@ -287,6 +293,7 @@ export class Code implements CodeInterface {
         preHook: this.queryPreHook,
         postHook: this.queryPostHook,
       });
+      // parentQuery === 'Parameter' && console.log(selector, ast, result);
       if (!isArray && !isObject) {
         if (transform && result[0]) {
           values[key] = transform(result[0]);
@@ -326,9 +333,9 @@ export class Code implements CodeInterface {
           }
         } else {
           if (isArray) {
-            values[key] = result;
+            values[key] = transform(result);
           } else {
-            values[key] = result[0];
+            values[key] = transform(result[0]);
           }
         }
       }

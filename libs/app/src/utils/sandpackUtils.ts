@@ -1,0 +1,199 @@
+import type {
+  SandpackBundlerFile,
+  SandpackBundlerFiles,
+} from "@codesandbox/sandpack-client";
+import { addPackageJSONIfNeeded } from "@codesandbox/sandpack-client";
+
+import type { SandpackProviderProps } from "../contexts/sandpackContext";
+import type {
+  SandboxEnvironment,
+  SandboxTemplate,
+  SandpackPredefinedTemplate,
+  SandpackSetup,
+} from "../types";
+
+export interface SandpackContextInfo {
+  activePath: string;
+  openPaths: string[];
+  activeQueryPath: string;
+  openQueryPaths: string[];
+  files: Record<string, SandpackBundlerFile>;
+  environment: SandboxEnvironment;
+  queries:  Record<string, SandpackBundlerFile>;
+}
+
+export const getSandpackStateFromProps = (
+  props: SandpackProviderProps
+): SandpackContextInfo => {
+  // Merge predefined template with custom setup
+  const projectSetup = getSetup(props.template, props.customSetup);
+
+  // openPaths and activePath override the setup flags
+  const queries = {} 
+  let openPaths = props.openPaths ?? [];
+  let activePath = props.activePath;
+  if(props?.customSetup?.files){
+    const inputFiles = props.customSetup.files;
+    Object.keys(inputFiles).forEach((filePath) => {
+      if (filePath.startsWith("/queries/")) {
+        console.log(filePath)
+        queries[filePath] = inputFiles[filePath];
+        delete inputFiles[filePath];
+      }
+    })
+
+  }
+  if (openPaths.length === 0 && props?.customSetup?.files) {
+    const inputFiles = props.customSetup.files;
+    // extract open and active files from the custom input files
+    Object.keys(inputFiles).forEach((filePath) => {
+      const file = inputFiles[filePath];
+      if (typeof file === "string" && filePath.startsWith("/code")) {
+        openPaths.push(filePath);
+        return;
+      }
+
+      if (!activePath && file.active) {
+        activePath = filePath;
+        if (file.hidden === true) {
+          openPaths.push(filePath); // active file needs to be available even if someone sets it as hidden by accident
+        }
+      }
+
+      if (!file.hidden) {
+        openPaths.push(filePath);
+      }
+    });
+  }
+
+  if (openPaths.length === 0) {
+    // If no files are received, use the project setup / template
+    openPaths = Object.keys(projectSetup.files);
+  }
+
+  // If no activePath is specified, use the first open file
+  if (!activePath) {
+    activePath = projectSetup.main || openPaths[0];
+  }
+
+  // If for whatever reason the active path was not set as open, set it
+  if (!openPaths.includes(activePath)) {
+    openPaths.push(activePath);
+  }
+
+  if (!projectSetup.files[activePath]) {
+    throw new Error(
+      `${activePath} was set as the active file but was not provided`
+    );
+  }
+
+  const files = addPackageJSONIfNeeded(
+    projectSetup.files,
+    projectSetup.dependencies || {},
+    projectSetup.entry
+  );
+
+  const environment = projectSetup.environment;
+  console.log('queries', queries)
+  return { openPaths, 
+    
+    activePath, 
+    files: {
+      ...files,
+      ['files.js']: {code: JSON.stringify(files, null, 2)},
+    }, 
+    environment, queries,
+    activeQueryPath: props.activeQueryPath||'',
+    openQueryPaths: props.openQueryPaths|| [] 
+  };
+};
+
+// The template is predefined (eg: react, vue, vanilla)
+// The setup can overwrite anything from the template (eg: files, dependencies, environment, etc.)
+export const getSetup = (
+  template?: SandpackPredefinedTemplate,
+  inputSetup?: SandpackSetup
+): SandboxTemplate => {
+  // The input setup might have files in the simple form Record<string, string>
+  // so we convert them to the sandbox template format
+
+  const setup = createSetupFromUserInput(inputSetup);
+
+  if (!template) {
+    // If not input, default to vanilla
+    if (!setup) {
+      // return SANDBOX_TEMPLATES.vanilla;
+      return {
+        dependencies: {},
+        files: {},
+        entry: 'as',
+        main: 'as',
+        queries: {}
+      }
+    }
+
+    if (!setup.files || Object.keys(setup.files).length === 0) {
+      throw new Error(
+        `When using the customSetup without a template, you must pass at least one file for sandpack to work`
+      );
+    }
+
+    // If not template specified, use the setup entirely
+    return setup as SandboxTemplate;
+  }
+
+  const baseTemplate = SANDBOX_TEMPLATES[template];
+  if (!baseTemplate) {
+    throw new Error(`Invalid template '${template}' provided.`);
+  }
+
+  // If no setup, the template is used entirely
+  if (!setup) {
+    return baseTemplate;
+  }
+
+  // Merge the setup on top of the template
+  return {
+    files: { ...baseTemplate.files, ...setup.files },
+    queries: {...baseTemplate.queries, ...setup.queries},
+    dependencies: {
+      ...baseTemplate.dependencies,
+      ...setup.dependencies,
+    },
+    entry: setup.entry || baseTemplate.entry,
+    main: setup.main || baseTemplate.main,
+    environment: setup.environment || baseTemplate.environment,
+  };
+};
+
+const createSetupFromUserInput = (
+  setup?: SandpackSetup
+): Partial<SandboxTemplate> | null => {
+  if (!setup) {
+    return null;
+  }
+
+  if (!setup.files) {
+    return setup as Partial<SandboxTemplate>;
+  }
+
+  const { files } = setup;
+
+  const convertedFiles = Object.keys(files).reduce(
+    (acc: SandpackBundlerFiles, key) => {
+      if (typeof files[key] === "string") {
+        acc[key] = { code: files[key] as string };
+      } else {
+        acc[key] = files[key] as SandpackBundlerFile;
+      }
+
+      return acc;
+    },
+    {}
+  );
+
+  return {
+    ...setup,
+    files: convertedFiles,
+  };
+};

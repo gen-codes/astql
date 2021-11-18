@@ -1,5 +1,5 @@
-import type { Selector } from '.';
-import Code from './Code';
+import type { Selector } from '..';
+import Code from '../Code';
 const text = `/**
 * @ui-type molecule
 * @ui-group Layout/Page

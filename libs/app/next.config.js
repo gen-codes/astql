@@ -14,6 +14,7 @@ module.exports = withTM({
       path.resolve('../../', project.projectFolder, 'node_modules')
     ])
     },[])
+    config.resolve.plugins.push(new TsconfigPathsPlugin())
     config.module.rules.push({
       test: /\.ts[x]*$/,
       use: [

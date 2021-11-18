@@ -10,6 +10,7 @@ export default function generateASTAndVisitorKeys(
   const forEachProperty = config.forEachProperty.bind(config);
   const getNodeName = config.getNodeName.bind(config);
   const nodeToRange = config.nodeToRange.bind(config);
+  console.log(text);
   ast = {
     [typeKey]: 'File',
     path: filePath,
@@ -49,7 +50,9 @@ export default function generateASTAndVisitorKeys(
     const getFilePath = () => {
       return filePath;
     };
+    const partialText = getText();
     const node = {
+      _text: partialText,
       getText: getText.bind(unparsedNode),
       getFullText: getFullText.bind(unparsedNode),
       getFilePath: getFilePath.bind(unparsedNode),

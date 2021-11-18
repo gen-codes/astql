@@ -21,6 +21,30 @@
       ],
       "@astql/core/*": [
         "core/src/*",
+      ],
+      "@astql/query": [
+        "query/src/",
+      ],
+      "@astql/query/*": [
+        "query/src/*",
+      ],
+      "@astql/languages": [
+        "languages/src/",
+      ],
+      "@astql/languages/*": [
+        "languages/src/*",
+      ],
+      "@astql/parser": [
+        "parser/src/",
+      ],
+      "@astql/parser/*": [
+        "parser/src/*",
+      ],
+      "@astql/traverse": [
+        "traverse/src/",
+      ],
+      "@astql/traverse/*": [
+        "traverse/src/*",
       ]
     },
   },

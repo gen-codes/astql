@@ -39,6 +39,13 @@
       "incremental": false,
       "watchForChanges": false,
     },
+    {
+      "commandKind": "global",
+      "name": "publish-all",
+      "summary": "Publish all projects to npm.",
+      "description": "Publishes all projects to npm.",
+      "shellCommand": "node ./common/scripts/publish-all.js"
+    }
     // {
     //   /**
     //    * (Required) Determines the type of custom command.
@@ -213,6 +220,35 @@
       "longName": "--fix",
       "description": "fix code",
       "associatedCommands": ["lint"]
+    },
+    {
+      "parameterKind": "string",
+      "longName": "--message",
+      "argumentName": "MESSAGE",
+      "description": "Changelog message",
+      "associatedCommands": ["publish-all"]
+    },
+    {
+      "parameterKind": "choice",
+      "longName": "--bump-type",
+      "description": "Bump type",
+      "associatedCommands": ["publish-all"],
+      "required": false,
+      "defaultValue": "patch",
+      "alternatives": [
+        {
+          "name": "major",
+          "description": "Major bump"
+        },
+        {
+          "name": "minor",
+          "description": "Minor bump"
+        },
+        {
+          "name": "patch",
+          "description": "Patch bump"
+        },
+      ]
     }
     // {
     //   /**

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useClasser } from '@code-hike/classer';
 import { RunButton } from '../../common/RunButton';
 import { SandpackLayout } from '../../common/Layout';
@@ -12,7 +12,7 @@ import {
   functionFilter,
   emptyKeysFilter,
   typeKeysFilter,
-} from './core/TreeAdapter.js';
+} from '../ASTOutput/core/TreeAdapter.js';
 import ASTOutput from '../ASTOutput';
 import ReactSplit, { SplitDirection } from '@devbookhq/splitter';
 import { FileExplorer } from '../FileExplorer';
@@ -22,6 +22,7 @@ import { QueryExplorer } from '../QueryExplorer';
 
 import { getCompletions } from '../../utils/getCompletions';
 import { getTokens } from '../../utils/getTokens';
+import { Code } from '@astql/core/';
 `
 $func():
 
@@ -34,7 +35,7 @@ $/
 `
 export const SandpackCodeEditor: React.FC<SandpackCodeEditorProps> = ({
   showTabs,
-  showRunButton = true,
+  showRunButton = false,
 }) => {
   const { sandpack } = useSandpack();
   const { code, updateCode } = useActiveCode();
@@ -48,53 +49,54 @@ export const SandpackCodeEditor: React.FC<SandpackCodeEditorProps> = ({
     updateCode(newCode);
   };
   console.log(queryCode)
-  useEffect(()=>{
-    if(!queryCode || !ast.treeAdapter || !ast.treeAdapter.options.visitorKeys) return;
+  useEffect(() => {
+    if (!queryCode || !ast.treeAdapter || !ast.treeAdapter.options.visitorKeys) return;
     const code = activeQueryPath
-    .replace(/^\/queries\//, '')
-    .replace(/\/index.astql$/,'')
-    .split('/')
-    .reduce((files, query, index)=>{
-      if(index !== 0){
-        files.push(files[index-1].concat([query]))
-      
-      }else{
-        files.push(['/queries', query])
-      }
-      return files;
-    },[])
-    .reduce((res, value)=>{
-      const file = [...value, 'index.astql'].join('/')
+      .replace(/^\/queries\//, '')
+      .replace(/\/index.astql$/, '')
+      .split('/')
+      .reduce((files, query, index) => {
+        if (index !== 0) {
+          files.push(files[index - 1].concat([query]))
 
-      const code = sandpack.queries[file] && sandpack.queries[file].code || ''
-      res += ` ${code}`
-      return res
-    },'')
-  
+        } else {
+          files.push(['/queries', query])
+        }
+        return files;
+      }, [])
+      .reduce((res, value) => {
+        const file = [...value, 'index.astql'].join('/')
+
+        const code = sandpack.queries[file] && sandpack.queries[file].code || ''
+        res += ` ${code}`
+        return res
+      }, '')
+
     console.log('queries', code)
-    try{
+    try {
       const result = esquery(ast.initial, code, {
         visitorKeys: {
           ...ast.treeAdapter.options.visitorKeys,
-      }})
-      if(result.length > 0){
-        setAst({...ast, ast: result})
-      }else{
+        }
+      })
+      if (result.length > 0) {
+        setAst({ ...ast, ast: result })
+      } else {
       }
-      
-    }catch(err){
+
+    } catch (err) {
       console.log(err)
-      setAst({...ast, ast: ast.initial})
+      setAst({ ...ast, ast: ast.initial })
     }
-  },[queryCode, ast.treeAdapter])
+  }, [queryCode, ast.treeAdapter])
   const handleQueryCodeUpdate = (newCode: string) => {
     updateQueryCode(newCode);
   };
   React.useEffect(() => {
     setTimeout(() => {
-      try{
+      try {
         setConfig(getConfig(activePath.split('.').pop()));
-      }catch(err){
+      } catch (err) {
         setConfig(null);
       }
     }, 1000);
@@ -107,7 +109,7 @@ export const SandpackCodeEditor: React.FC<SandpackCodeEditorProps> = ({
       const parsed = parse(code, newParser.getDefaultOptions())
       const visitorKeys = getObjectsWithType(parsed)
       treeAdapter.options.visitorKeys = visitorKeys
-      const {tokens} = getTokens(visitorKeys)
+      const { tokens } = getTokens(visitorKeys)
       // regex to get everything but specific word
       console.log(tokens)
 
@@ -116,39 +118,96 @@ export const SandpackCodeEditor: React.FC<SandpackCodeEditorProps> = ({
         tokens,
         getCompletions: getCompletions(visitorKeys)
       }
-      setAst({ treeAdapter, ast: parsed , initial: parsed });
+      setAst({ treeAdapter, ast: parsed, initial: parsed });
     });
   }, [config, code]);
   console.log('activeQueryPath', activeQueryPath)
   return (
     <ReactSplit direction={SplitDirection.Horizontal}>
       <SandpackLayout>
-        <div style={{height: '50vh'}}>
-          <FileExplorer prefixedPath={'/code'}/>
+        <div style={{ height: '50vh' }}>
+          <FileExplorer prefixedPath={'/code'} />
 
         </div>
 
         <SandpackStack>
           {shouldShowTabs ? <FileTabs closableTabs={true} /> : null}
 
-          <Navigator />
+          {/* <Navigator /> */}
 
-          <div
-            className={c('code-editor')}
-            style={{ width: '100%', height: '100vh' }}
-          >
-            <CodeEditor
-              key={activePath}
-              text={code}
-              // editorState={editorState}
-              filePath={activePath}
-              onChange={handleCodeUpdate}
-              onClick={sandpack.setHighlight}
-              highlight={sandpack.highlight}
-              height={'50vh'}
+          <CodeEditor
+            key={activePath}
+            text={code}
+            // editorState={editorState}
+            filePath={activePath}
+            onChange={handleCodeUpdate}
+            onClick={sandpack.setHighlight}
+            highlight={sandpack.highlight}
+            height={'50vh'}
 
-            />
-          </div>
+          />
+          <CodeEditor
+            text={queryCode || 'sdsdsd'}
+            onChange={handleQueryCodeUpdate}
+            filePath={activeQueryPath || 'indexd.astql'}
+          />
+          {showRunButton && status === 'idle' ? <RunButton /> : null}
+        </SandpackStack>
+      </SandpackLayout>
+      <SandpackLayout>
+        <QueryExplorer></QueryExplorer>
+
+        <SandpackStack>
+          <CodeEditor
+            text={queryCode || 'sdsdsd'}
+            onChange={handleQueryCodeUpdate}
+            filePath={activeQueryPath || 'index.astql'}
+          />
+            {/* {config && ast.treeAdapter && ast.treeAdapter.monaco  && <CodeEditor
+                // height={'500px'}
+                text={queryCode || ''}
+                onChange={handleQueryCodeUpdate}
+                filePath={activeQueryPath || 'index.astql'}
+                language={activeQueryPath.endsWith('astql')?`${config.id}-ast`:undefined}
+                {...ast.treeAdapter.monaco}
+              ></CodeEditor>} */}
+          {/* <ReactSplit direction={SplitDirection.Vertical}>
+
+            <ASTOutput
+              parseResult={ast}
+              position={sandpack.highlight && sandpack.highlight[0]}
+            ></ASTOutput>
+
+          </ReactSplit> */}
+        </SandpackStack>
+      </SandpackLayout>
+    </ReactSplit>
+
+  )
+  return (
+    <ReactSplit direction={SplitDirection.Horizontal}>
+      <SandpackLayout>
+        <div style={{ height: '50vh' }}>
+          <FileExplorer prefixedPath={'/code'} />
+
+        </div>
+
+        <SandpackStack>
+          {shouldShowTabs ? <FileTabs closableTabs={true} /> : null}
+
+          {/* <Navigator /> */}
+
+          <CodeEditor
+            key={activePath}
+            text={code}
+            // editorState={editorState}
+            filePath={activePath}
+            onChange={handleCodeUpdate}
+            onClick={sandpack.setHighlight}
+            highlight={sandpack.highlight}
+            height={'50vh'}
+
+          />
           {showRunButton && status === 'idle' ? <RunButton /> : null}
         </SandpackStack>
       </SandpackLayout>
@@ -157,20 +216,25 @@ export const SandpackCodeEditor: React.FC<SandpackCodeEditorProps> = ({
         <QueryExplorer></QueryExplorer>
 
         <SandpackStack>
+          <CodeEditor
+            text={queryCode || 'sdsdsd'}
+            onChange={handleQueryCodeUpdate}
+            filePath={activeQueryPath || 'index.astql'}
+          />
           <ReactSplit direction={SplitDirection.Vertical}>
-            {config && ast.treeAdapter && ast.treeAdapter.monaco  && <CodeEditor
+            {/* {config && ast.treeAdapter && ast.treeAdapter.monaco  && <CodeEditor
                 // height={'500px'}
                 text={queryCode || ''}
                 onChange={handleQueryCodeUpdate}
                 filePath={activeQueryPath || 'index.astql'}
                 language={activeQueryPath.endsWith('astql')?`${config.id}-ast`:undefined}
                 {...ast.treeAdapter.monaco}
-              ></CodeEditor>}
+              ></CodeEditor>} */}
 
-              <ASTOutput
-                parseResult={ast}
-                position={sandpack.highlight && sandpack.highlight[0]}
-              ></ASTOutput>
+            <ASTOutput
+              parseResult={ast}
+              position={sandpack.highlight && sandpack.highlight[0]}
+            ></ASTOutput>
 
           </ReactSplit>
         </SandpackStack>

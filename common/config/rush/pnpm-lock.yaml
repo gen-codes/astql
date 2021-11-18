@@ -137,6 +137,7 @@ dependencies:
   pug-lexer: 4.1.0
   pug-parser: 5.0.1
   react: 17.0.2
+  react-contextmenu: 2.14.0_9bdd65c2b60ce8638444b80b396a481b
   react-dom: 17.0.2_react@17.0.2
   react-monaco-editor: 0.46.0_9d0cf66947262c1e0b2dc45c1b58fa82
   react-spinners: 0.11.0_14fc3c4d570feae7d722fbbd1b906730
@@ -11487,6 +11488,20 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-9WmIKF6mkvA0SLmA2Knm9+qj89e+j1zqgyn8aXGd7+nAduPoqgI9lO57SAZNn/Byzo5P7JhXTyg9PzaJbH73bA==
+  /react-contextmenu/2.14.0_9bdd65c2b60ce8638444b80b396a481b:
+    dependencies:
+      classnames: 2.2.6
+      object-assign: 4.1.1
+      prop-types: 15.7.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+    peerDependencies:
+      prop-types: ^15.0.0
+      react: ^0.14.0 || ^15.0.0 || ^16.0.1
+      react-dom: ^0.14.0 || ^15.0.0 || ^16.0.1
+    resolution:
+      integrity: sha512-ktqMOuad6sCFNJs/ltEwppN8F0YeXmqoZfwycgtZR/MxOXMYx1xgYC44SzWH259HdGyshk1/7sXGuIRwj9hzbw==
   /react-devtools-core/4.20.2:
     dependencies:
       shell-quote: 1.7.3
@@ -14118,6 +14133,7 @@ packages:
       next-transpile-modules: 9.0.0
       prop-types: 15.7.2
       react: 17.0.2
+      react-contextmenu: 2.14.0_9bdd65c2b60ce8638444b80b396a481b
       react-dom: 17.0.2_react@17.0.2
       react-monaco-editor: 0.46.0_9d0cf66947262c1e0b2dc45c1b58fa82
       react-spinners: 0.11.0_14fc3c4d570feae7d722fbbd1b906730
@@ -14126,7 +14142,7 @@ packages:
     dev: false
     name: '@rush-temp/app'
     resolution:
-      integrity: sha512-uhuNV7UpR4TZkA0WXReyuL4Wd7Y7/utGfnGSZAJRxuCskxHKd+tVr4LDmYboE+ZUaGhyXntR67m+ftTBbOIZXA==
+      integrity: sha512-2Yd3OyvSWSvazHnkVHLEMn5CSkWmcQNf+Dm7X88rFHJtEV2G+yNQga1uPPtq8pCRhZaGass4uHMnsUXxv+6E4A==
       tarball: file:projects/app.tgz
     version: 0.0.0
   file:projects/astql.tgz_944029ea5d7b75d73a0fa38dfdd975f3:
@@ -15786,6 +15802,7 @@ specifiers:
   pug-lexer: ^4.1.0
   pug-parser: ^5.0.1
   react: ^17.0.2
+  react-contextmenu: ~2.14.0
   react-dom: ^17.0.2
   react-monaco-editor: ~0.46.0
   react-spinners: ~0.11.0

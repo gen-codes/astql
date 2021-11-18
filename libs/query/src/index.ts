@@ -6,6 +6,7 @@ import { traverse } from './utils/traverse';
 
 export interface ASTNode {
   _type: string;
+  _text: string;
   getText: () => string;
   getFullText: () => string;
   getFilePath: () => string;

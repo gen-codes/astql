@@ -3,5 +3,5 @@ import Tree from './Tree';
 
 export default [
   Tree,
-  JSON,
+  // JSON,
 ];

@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`match match complex ts query 1`] = `
+Object {
+  "code": "
+import join from 'array/join';
+import join from 'array/join';
+
+export const  Params(params: string[]): string {
+  const {file, partial} = useContext(FileContext)
+  const template = file.compile(\`{{join params ', '}}\`)
+  return template({ params}) 
+}
+
+export const  Function(name:string, parameters:string[], body:Template): string {
+  const {file, partial} = useContext(FileContext)
+  const template = file.compile(\`
+{{>imports}}
+def {{name}}({{Params params=parameters}}):
+  {{body}}
+
+{{>exports}}\`)
+  return template({ params}) 
+})}  
+",
+  "imports": Array [
+    "import join from 'array/join';",
+    "import join from 'array/join';",
+  ],
+  "staticWithMetadata": Array [
+    Object {
+      "name": "body",
+      "partials": Array [
+        Object {
+          "name": "imports",
+          "template": "import data from 'some'",
+        },
+        Object {
+          "name": "exports",
+          "template": "some",
+        },
+      ],
+      "template": "
+  print('Hello ' + data(text) + '!')
+",
+    },
+  ],
+  "templates": Array [
+    Object {
+      "args": Array [
+        Object {
+          "fullParams": "params: string[]",
+          "name": "params",
+          "type": "string[]",
+        },
+      ],
+      "name": "Params",
+      "partials": "BinaryExpression",
+      "template": "{{join params ', '}}",
+    },
+    Object {
+      "args": Array [
+        Object {
+          "fullParams": "name:string",
+          "name": "name",
+          "type": "string",
+        },
+        Object {
+          "fullParams": "parameters:string[]",
+          "name": "parameters",
+          "type": "string[]",
+        },
+        Object {
+          "fullParams": "body:Template",
+          "name": "body",
+          "type": "Template",
+        },
+      ],
+      "name": "Function",
+      "partials": "BinaryExpression",
+      "template": "
+{{>imports}}
+def {{name}}({{Params params=parameters}}):
+  {{body}}
+
+{{>exports}}",
+    },
+  ],
+}
+`;
